@@ -1,4 +1,4 @@
-# Get all users
+# Get multi users
 
 This can be run with `silk -silk.url="http://localhost:9001/"`
 
