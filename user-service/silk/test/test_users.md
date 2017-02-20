@@ -4,7 +4,7 @@ This can be run with `silk -silk.url="http://localhost:9001/"`
 
 ## `GET users?page=2&item_per_page=5`
 
-Perform a find all users information with default parameters.
+Perform a find all users information at page 2 and 5 item per page
 
 ===
 
