@@ -34,5 +34,10 @@ public class FieldController {
         fieldRepository.addField(field);
         return new ResponseEntity(HttpStatus.CREATED);
     }
+    @RequestMapping(value = "/fields/{field_id}/delete", method = RequestMethod.DELETE)
+    public ResponseEntity cancelReservation(@PathVariable String field_id) {
+        fieldRepository.deleteField(Integer.valueOf(field_id));
+        return new ResponseEntity(HttpStatus.OK);
+    }
 
 }

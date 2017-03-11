@@ -29,4 +29,10 @@ public class FieldRepository {
                 field.getField_type(),
                 field.getField_price());
     }
+    public void deleteField(Integer field_id){
+        String sql = "DELETE FROM field WHERE field_id = ?";
+        jdbcTemplate.update(sql, field_id);
+    }
+
+
 }
