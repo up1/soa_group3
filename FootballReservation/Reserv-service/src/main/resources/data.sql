@@ -1,4 +1,8 @@
 INSERT INTO RESERV
-(reserv_id, reserv_user, reserv_field_id, reserv_ex_id, reserv_time, reserv_date, reserv_status)
+(reserv_user, reserv_field_id, reserv_ex_id, reserv_time, reserv_date)
 VALUES
-(1,'TestUser',1,1,1,'TestDate','TestStatus');
+('TestUser',1,1,1,'2017/03/12'),
+('TestUser',1,1,2,'2017/03/12'),
+('TestUser',1,1,3,'2017/03/12'),
+('TestUser',1,1,4,'2017/03/12'),
+('TestUser',1,1,5,'2017/03/12');

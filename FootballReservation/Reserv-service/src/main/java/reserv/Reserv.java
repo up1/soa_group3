@@ -9,6 +9,14 @@ public class Reserv {
     private String reserv_date;
     private String reserv_status;
 
+    public Reserv(String reserv_user, int reserv_field_id, int reserv_ex_id, int reserv_time, String reserv_date) {
+        this.reserv_user = reserv_user;
+        this.reserv_field_id = reserv_field_id;
+        this.reserv_ex_id = reserv_ex_id;
+        this.reserv_time = reserv_time;
+        this.reserv_date = reserv_date;
+    }
+
     public Reserv() {
     }
 
