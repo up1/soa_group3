@@ -22,7 +22,11 @@ public class FieldRepository {
         return fields;
     }
     public void addField(Field field){
-
+        String sql = "insert into field values(null, ?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, field.getField_image(),
+                field.getField_name(),
+                field.getField_country(),
+                field.getField_type(),
+                field.getField_price());
     }
-
 }
