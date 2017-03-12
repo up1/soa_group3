@@ -16,9 +16,10 @@ public class ReservController {
     public ReservController(ReservRepository reservRepository){ this.reservRepository = reservRepository; }
 
     @RequestMapping(value = "/reserv", method = RequestMethod.GET)
-    public Reserv getReserv(
-            @RequestParam(value = "id", defaultValue = "1" ) int reserv_id){
-        return this.reservRepository.findById((long) reserv_id);
+    public List<Reserv> getReseervByDate(
+            @RequestParam(value = "date", required = false) String date,
+            @RequestParam(value = "user", required = false) String user){
+        return this.reservRepository.findByFilter(date,user);
     }
 
     @RequestMapping(value = "/reservs", method = RequestMethod.GET)
@@ -27,11 +28,10 @@ public class ReservController {
             @RequestParam(value = "item_per_page", defaultValue = "10") int itemPerPage) {
         return this.reservRepository.findByPage(page, itemPerPage);
     }
-    @RequestMapping(value = "/reserv/filter", method = RequestMethod.GET)
-    public List<Reserv> getReseervByDate(
-            @RequestParam(value = "date", required = false) String date,
-            @RequestParam(value = "user", required = false) String user){
-        return this.reservRepository.findByFilter(date,user);
+
+    @RequestMapping(value = "/reserv/{reserv_id}", method = RequestMethod.GET)
+    public Reserv getReservByID(@PathVariable int reserv_id) {
+        return reservRepository.getReservByID(reserv_id);
     }
 
 
@@ -40,9 +40,9 @@ public class ReservController {
 
 
     @RequestMapping(value = "/reserv/{reserv_id}/confirm", method = RequestMethod.PUT)
-    public ResponseEntity putReserv(@PathVariable int reserv_id) {
-        reservRepository.confirmReserv(reserv_id);
-        return new ResponseEntity(HttpStatus.OK);
+    public Reserv putReserv(@PathVariable int reserv_id) {
+        return reservRepository.confirmReserv(reserv_id);
+//        return new ResponseEntity(HttpStatus.OK);
     }
 
     @RequestMapping(value = "/reserv/{reserv_id}/delete", method = RequestMethod.DELETE)
@@ -52,14 +52,15 @@ public class ReservController {
     }
 
     @RequestMapping(value = "/reserv", method = RequestMethod.POST)
-    public ResponseEntity postReserv(@RequestBody Reserv reserv) {
+    public Reserv postReserv(@RequestBody Reserv reserv) {
         if(reserv != null) {
-            reservRepository.doReserv(reserv);
+           return reservRepository.doReserv(reserv);
         }
         else {
             System.out.print("Null");
+            return null;
         }
-        return new ResponseEntity(HttpStatus.CREATED);
+//        return new ResponseEntity(HttpStatus.CREATED);
     }
 
 
