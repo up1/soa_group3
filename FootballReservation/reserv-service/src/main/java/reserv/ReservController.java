@@ -2,6 +2,7 @@ package reserv;
 
 import java.util.List;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class ReservController {
     @RequestMapping(value = "/reservs", method = RequestMethod.GET)
     public List<Reserv> getReseervs(
             @RequestParam(value = "page", defaultValue = "1") int page,
-            @RequestParam(value = "item_per_page", defaultValue = "10") int itemPerPage) {
+            @RequestParam(value = "item_per_page", defaultValue = "30") int itemPerPage) {
         return this.reservRepository.findByPage(page, itemPerPage);
     }
 
@@ -40,10 +41,18 @@ public class ReservController {
 
 
     @RequestMapping(value = "/reserv/{reserv_id}/confirm", method = RequestMethod.PUT)
-    public Reserv putReserv(@PathVariable int reserv_id) {
-        return reservRepository.confirmReserv(reserv_id);
-//        return new ResponseEntity(HttpStatus.OK);
+    public ResponseEntity confirmReserv(@PathVariable int reserv_id) {
+        reservRepository.confirmReserv(reserv_id);
+        return new ResponseEntity(HttpStatus.OK);
     }
+
+    //Customer already paid
+    @RequestMapping(value = "/reserv/{reserv_id}/cancel", method = RequestMethod.PUT)
+    public ResponseEntity cancelReserv(@PathVariable int reserv_id) {
+        reservRepository.cancelReserv(reserv_id);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
 
     @RequestMapping(value = "/reserv/{reserv_id}/delete", method = RequestMethod.DELETE)
     public ResponseEntity deleteReserv(@PathVariable int reserv_id) {
@@ -52,15 +61,9 @@ public class ReservController {
     }
 
     @RequestMapping(value = "/reserv", method = RequestMethod.POST)
-    public Reserv postReserv(@RequestBody Reserv reserv) {
-        if(reserv != null) {
-           return reservRepository.doReserv(reserv);
-        }
-        else {
-            System.out.print("Null");
-            return null;
-        }
-//        return new ResponseEntity(HttpStatus.CREATED);
+    public ResponseEntity postReserv(@RequestBody Reserv reserv) {
+        reservRepository.doReserv(reserv);
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 
 

@@ -33,7 +33,7 @@ public class ReservRepository {
     @Transactional(readOnly = true)
     public List<Reserv> findByPage(int page, int itemPerPage) {
         int offset = (page-1) * itemPerPage;
-        return this.jdbcTemplate.query("SELECT * FROM reserv WHERE reserv_id LIMIT ? OFFSET ?",
+        return this.jdbcTemplate.query("SELECT * FROM reserv WHERE reserv_id ORDER BY reserv_id LIMIT ? OFFSET ?",
                 new Object[]{itemPerPage,offset},new ReservRowMapper());
     }
 
@@ -57,18 +57,13 @@ public class ReservRepository {
     }
 
     @Transactional
-    public Reserv doReserv(Reserv reserv){
+    public void doReserv(Reserv reserv){
         String sql = "INSERT INTO RESERV" +
                 "(reserv_user, reserv_field_id, reserv_ex_id, reserv_time, reserv_date) " +
                 "VALUE(?,?,?,?,?);";
         try {
             this.jdbcTemplate.update(sql, reserv.getReserv_user(), reserv.getReserv_field_id(),
                     reserv.getReserv_ex_id(), reserv.getReserv_time(), reserv.getReserv_date());
-
-            return this.jdbcTemplate.queryForObject("SELECT * FROM reserv WHERE reserv_field_id=? " +
-                            "AND reserv_ex_id=? AND reserv_time=? AND reserv_date=? ",
-                    new Object[]{reserv.getReserv_field_id(), reserv.getReserv_ex_id(),
-                            reserv.getReserv_time(), reserv.getReserv_date()}, new ReservRowMapper());
         }catch (Exception ex){
             throw new AlreadyReservException(reserv);
         }
@@ -76,12 +71,10 @@ public class ReservRepository {
     }
 
     @Transactional
-    public Reserv confirmReserv(int reserv_id){
+    public void confirmReserv(int reserv_id){
         String sql = "UPDATE reserv SET reserv_status='confirm' WHERE reserv_id=?;";
         try {
             this.jdbcTemplate.update(sql,reserv_id);
-            return this.jdbcTemplate.queryForObject("SELECT * FROM reserv WHERE reserv_id=?"
-                , new Object[]{reserv_id},new ReservRowMapper());
         }catch (Exception ex){
             throw new ReservNotFoundException(reserv_id);
         }
@@ -93,6 +86,17 @@ public class ReservRepository {
         try {
             this.jdbcTemplate.update(sql, reserv_id);
         }catch (Exception ex){
+            throw new ReservNotFoundException(reserv_id);
+        }
+    }
+
+    //Customer already paid
+    @Transactional
+    public void cancelReserv(int reserv_id) {
+        String sql = "UPDATE reserv SET reserv_status='cancel' WHERE reserv_id=?;";
+        try {
+            this.jdbcTemplate.update(sql,reserv_id);
+        }catch (Exception ex) {
             throw new ReservNotFoundException(reserv_id);
         }
     }
