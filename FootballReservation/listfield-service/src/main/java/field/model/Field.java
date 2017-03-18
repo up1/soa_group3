@@ -3,26 +3,22 @@ package field.model;
 import java.sql.Blob;
 import java.util.DoubleSummaryStatistics;
 
-/**
- * Created by phossawatpruekphanasant on 3/7/2017 AD.
- */
+
 public class Field {
     private int field_id;
     private String field_name;
-    private Blob field_image;
-    private String field_type;
-    private String field_country;
-    private int field_price;
+    private String tel;
+    private String price;
+    private String location;
+    private String email;
+    private String website;
+    private String detail;
+    private String imgurl;
+    private int stime;
+    private int etime;
+    private String username;
 
-    public Field(int field_id){
-        this.field_id = field_id;
-        this.field_name = "test";
-        this.field_type = "test";
-        this.field_country = "test";
-        this.field_price = 10000;
-    }
-    public Field(){
-
+    public Field() {
     }
 
     public int getField_id() {
@@ -33,43 +29,92 @@ public class Field {
         this.field_id = field_id;
     }
 
-    public Blob getField_image() {
-        return field_image;
-    }
-
-    public void setField_image(Blob field_image) {
-        this.field_image = field_image;
-    }
-
-    public String getField_type() {
-        return field_type;
-    }
-
-    public void setField_type(String field_type) {
-        this.field_type = field_type;
-    }
-
-    public String getField_country() {
-        return field_country;
-    }
-
-    public void setField_country(String field_country) {
-        this.field_country = field_country;
-    }
-
-    public int getField_price() {
-        return field_price;
-    }
-
-    public void setField_price(int field_price) {
-        this.field_price = field_price;
-    }
-
     public String getField_name() {
         return field_name;
     }
 
     public void setField_name(String field_name) {
         this.field_name = field_name;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    public String getImgurl() {
+        return imgurl;
+    }
+
+    public void setImgurl(String imgurl) {
+        this.imgurl = imgurl;
+    }
+
+    public int getStime() {
+        return stime;
+    }
+
+    public void setStime(int stime) {
+        this.stime = stime;
+    }
+
+    public int getEtime() {
+        return etime;
+    }
+
+    public void setEtime(int etime) {
+        this.etime = etime;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
