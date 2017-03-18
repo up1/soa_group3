@@ -22,15 +22,15 @@ public class FieldController {
         this.fieldRepository = filedRepository;
     }
 
-    @RequestMapping(value = "/field", method = RequestMethod.GET)
+    @RequestMapping(value = "/listfield", method = RequestMethod.GET)
     public List<Field> getFields(
             @RequestParam(value = "page", defaultValue = "1") int page,
             @RequestParam(value = "item_per_page", defaultValue = "10") int itemPerPage) {
         return this.fieldRepository.queryFields(page, itemPerPage);
     }
 
-    @RequestMapping(value = "/field/{field_id}", method = RequestMethod.GET)
-    public Field getField(@PathVariable int field_id) {
+    @RequestMapping(value = "/field", method = RequestMethod.GET)
+    public Field getField( @RequestParam(value = "field_id") int field_id) {
         return this.fieldRepository.getFieldByID(field_id);
     }
 
@@ -40,7 +40,7 @@ public class FieldController {
         return this.fieldRepository.getFieldEXByID(field_id,ex_id);
     }
 
-    @RequestMapping(value = "/field/{field_id}/ex", method = RequestMethod.GET)
+    @RequestMapping(value = "/field/{field_id}", method = RequestMethod.GET)
     public List<Field_extend> getFieldExs(@PathVariable int field_id) {
         return this.fieldRepository.getFieldExs(field_id);
     }
