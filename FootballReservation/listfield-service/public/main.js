@@ -3,7 +3,7 @@ var trHTML = '';
 var page = '';
 var i = 1;
     $.ajax({
-        url: "http://localhost:9001/listfield?page=1&item_per_page=10"
+        url: "http://localhost:9001/listfield?page=1&item_per_page=5"
     }).then(function(data,status,jqxhr){
         $.each(data, function(key ,value){
             trHTML += '<tr>'+
@@ -22,8 +22,8 @@ var i = 1;
         url: "http://localhost:9001/listfield"
     }).then(function(data,status,jqxhr){
         $.each(data, function(key ,value){
-            if(key%9==0){
-                page += '<li><a href="#'+i+'" class="pageclick">'+i+'</a></li>'
+            if(key%5==0){
+                page += '<li><button class="pageclick btn-default" value="'+i+'">'+i+'</button></li>'
                 i++;
             };
 
@@ -33,7 +33,7 @@ var i = 1;
         $('.pageclick').on('click',function(){
             trHTML = '';
             $.ajax({
-            url:"http://localhost:9001/listfield?page=2&item_per_page=10"
+            url:"http://localhost:9001/listfield?page="+$(this).val()+"&item_per_page=5"
             }).then(function(data, status, jqxhr) {
             $.each(data, function(key ,value){
                 trHTML += '<tr>'+
