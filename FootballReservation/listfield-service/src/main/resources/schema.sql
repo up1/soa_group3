@@ -16,7 +16,7 @@ CREATE TABLE `field` (
   `email` varchar(45) DEFAULT NULL,
   `website` varchar(45) DEFAULT NULL,
   `detail` varchar(400) DEFAULT NULL,
-  `imgurl` BLOB DEFAULT NULL,
+  `img` BLOB DEFAULT NULL,
   `stime` int(11) DEFAULT '0',
   `etime` int(11) DEFAULT '24',
   `username` varchar(45) DEFAULT NULL,

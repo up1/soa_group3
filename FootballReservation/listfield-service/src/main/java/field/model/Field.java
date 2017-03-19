@@ -13,7 +13,7 @@ public class Field {
     private String email;
     private String website;
     private String detail;
-    private String imgurl;
+    private String img;
     private int stime;
     private int etime;
     private String username;
@@ -86,12 +86,12 @@ public class Field {
         this.detail = detail;
     }
 
-    public String getImgurl() {
-        return imgurl;
+    public String getImg() {
+        return img;
     }
 
-    public void setImgurl(String imgurl) {
-        this.imgurl = imgurl;
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public int getStime() {

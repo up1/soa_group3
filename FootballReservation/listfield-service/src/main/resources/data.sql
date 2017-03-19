@@ -5,7 +5,7 @@ SET character_set_client=utf8;
 SET character_set_connection=utf8;
 
 INSERT INTO `field` VALUES
-(1,N'สนามฟุตบอลสำเภาแสน','081-732-7343','3,000 - 3,500','98/1 ม.13 ซ.คู้บอน (ทางเข้า ร.ร. จินดาบำรุง) ถ.รามอินทรา แขวง/เขต คันนายาว ','sampaosan@hotmail.com',NULL,'Test123','http://sport-club-f.weebly.com/uploads/5/2/9/5/52955679/111371_orig.jpg',9,24,'man'),
+(1,N'สนามฟุตบอลสำเภาแสน','081-732-7343','3,000 - 3,500','98/1 ม.13 ซ.คู้บอน (ทางเข้า ร.ร. จินดาบำรุง) ถ.รามอินทรา แขวง/เขต คันนายาว ','sampaosan@hotmail.com',NULL,'Test123','img',9,24,'man'),
 (2,N'สนามฟุตบอลเก้าแสน','081-918-2677','2,000 - 2,600','สวนสยาม ซอย 16 แขวง/เขตคันนายาว กรุงเทพ 10320','aphone2501@yahoo.com',NULL,NULL,'http://www.grassthai.com/wp-content/uploads/2015/06/sriracha-1500x600.jpg',9,24,'man1'),
 (3,N'สนามฟุตบอลตุงตาข่าย','02-513-3425','1,200 - 1,300','ซอยลาดพร้าว 18 ถนนลาดพร้าว แขวงลาดยาว เขตจตุจักร กรุงเทพฯ 10900',NULL,NULL,NULL,NULL,9,24,'man2'),
 (4,N'สนามฟุตบอลริชคอร์ต','089-910-8519','	800 - 1,000','12/15 ถนนกัลปพฤกษ์ แขวงจอมทอง เขตจอมทอง กรุงเทพฯ',NULL,NULL,NULL,NULL,9,24,'man3'),
@@ -20,7 +20,7 @@ INSERT INTO `field` VALUES
 (13,'สนามฟุตบอลสำเภาแสน','081-732-7343','	3,000 - 3,500','98/1 ม.13 ซ.คู้บอน (ทางเข้า ร.ร. จินดาบำรุง) ถ.รามอินทรา แขวง/เขต คันนายาว ','sampaosan@hotmail.com',NULL,'Test123','http://sport-club-f.weebly.com/uploads/5/2/9/5/52955679/111371_orig.jpg',9,24,'man34');
 
 INSERT INTO `field_extend` VALUES
-(1,1,'test112',500,'http://www.siamsport.co.th/_PicOther/O120211F3U8P.jpg','35x50 ม','หญ้าจริง'),
+(1,1,'test112',500,'img','35x50 ม','หญ้าจริง'),
 (2,1,'test2',700,'http://www.oho4sale.com/images-upload/20130516172217706.jpg','35x50 ม','หญ้าจริง'),
 (3,1,'test3',800,'http://www.gangzabaaball.com/img/content/aHR0cDovL3BlMi5zMXNmLmNvbS9zcC8wL3VpLzQyLzIxNDIxNy8xMDM4OTA2OF8xMTE5MjE2MDMxNDUxMzczXzMuanBn.jpg','35x50 ม','หญ้าจริง'),
 (4,1,'test4',1000,'http://www.plawaan.com/FieldIMG/09102559144906_wall_3.jpg','105x75 ม','พื้นเทียม'),

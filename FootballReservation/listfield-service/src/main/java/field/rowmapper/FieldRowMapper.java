@@ -19,7 +19,7 @@ public class FieldRowMapper implements RowMapper<Field>{
         field.setEmail(resultSet.getString("email"));
         field.setWebsite(resultSet.getString("website"));
         field.setDetail(resultSet.getString("detail"));
-        field.setImgurl(resultSet.getString("imgurl"));
+        field.setImg(resultSet.getString("img"));
         field.setStime(resultSet.getInt("stime"));
         field.setEtime(resultSet.getInt("etime"));
         field.setUsername(resultSet.getString("username"));

@@ -25,7 +25,7 @@ public class FieldController {
     @RequestMapping(value = "/listfield", method = RequestMethod.GET)
     public List<Field> getFields(
             @RequestParam(value = "page", defaultValue = "1") int page,
-            @RequestParam(value = "item_per_page", defaultValue = "10") int itemPerPage) {
+            @RequestParam(value = "item_per_page", defaultValue = "10000") int itemPerPage) {
         return this.fieldRepository.queryFields(page, itemPerPage);
     }
 
