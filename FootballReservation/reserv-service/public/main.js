@@ -11,7 +11,7 @@ var $g = $('.g');
 $('#search-by-id').on('click', function(){
     $.ajax({
     type: 'GET',
-    url:'http://localhost:9001/reserv/'+$("#idreserve").val()
+    url:'http://localhost:9004/reserv/'+$("#idreserve").val()
     }).then(function(data, status, jqxhr) {
         $a.text(data.reserv_id);
         $b.text(data.reserv_user);
