@@ -15,7 +15,7 @@ public class FieldExtendRowMapper implements RowMapper<Field_extend>{
         extend.setField_id(resultSet.getInt("field_id"));
         extend.setFieldex_name(resultSet.getString("fieldex_name"));
         extend.setRent(resultSet.getInt("rent"));
-        extend.setImg(resultSet.getString("img"));
+        extend.setImg(resultSet.getString("image"));
         extend.setSize(resultSet.getString("size"));
         extend.setFloor(resultSet.getString("floor"));
         return extend;

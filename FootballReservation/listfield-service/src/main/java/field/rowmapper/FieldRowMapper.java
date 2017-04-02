@@ -14,12 +14,12 @@ public class FieldRowMapper implements RowMapper<Field>{
         field.setField_id(resultSet.getInt("field_id"));
         field.setField_name(resultSet.getString("field_name"));
         field.setTel(resultSet.getString("tel"));
-        field.setPrice(resultSet.getString("price"));
+        field.setPrice(resultSet.getString("price_range"));
         field.setLocation(resultSet.getString("location"));
         field.setEmail(resultSet.getString("email"));
         field.setWebsite(resultSet.getString("website"));
         field.setDetail(resultSet.getString("detail"));
-        field.setImg(resultSet.getString("img"));
+        field.setImg(resultSet.getString("image"));
         field.setStime(resultSet.getInt("stime"));
         field.setEtime(resultSet.getInt("etime"));
         field.setUsername(resultSet.getString("username"));

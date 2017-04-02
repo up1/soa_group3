@@ -1,8 +1,3 @@
-USE `field_service`;
-
-SET character_set_results=utf8;
-SET character_set_client=utf8;
-SET character_set_connection=utf8;
 
 INSERT INTO `field` VALUES
 (1,N'สนามฟุตบอลสำเภาแสน','081-732-7343','3,000 - 3,500','98/1 ม.13 ซ.คู้บอน (ทางเข้า ร.ร. จินดาบำรุง) ถ.รามอินทรา แขวง/เขต คันนายาว ','sampaosan@hotmail.com',NULL,'Test123','img',9,24,'man'),
