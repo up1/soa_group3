@@ -27,7 +27,7 @@ CREATE TABLE `field_extend` (
   `rent` int(11) DEFAULT NULL,
   `image` varchar(400) CHARACTER SET  utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `size` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `floor` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT 'หญ้าจริง',
+  `floor` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT 'Natural Grass',
   PRIMARY KEY (`ex_id`)
 );
 

@@ -8,7 +8,7 @@ public class Field_extend {
     int field_id;
     String fieldex_name;
     int rent;
-    String img;
+    String image;
     String size;
     String floor;
 
@@ -47,12 +47,12 @@ public class Field_extend {
         this.rent = rent;
     }
 
-    public String getImg() {
-        return img;
+    public String getImage() {
+        return image;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getSize() {

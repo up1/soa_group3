@@ -13,7 +13,7 @@ public class Field {
     private String email;
     private String website;
     private String detail;
-    private String img;
+    private String image;
     private int stime;
     private int etime;
     private String username;
@@ -86,12 +86,12 @@ public class Field {
         this.detail = detail;
     }
 
-    public String getImg() {
-        return img;
+    public String getImage() {
+        return image;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public int getStime() {
