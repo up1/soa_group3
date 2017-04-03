@@ -20,17 +20,17 @@ public class UserRepository {
 
     @Transactional(readOnly = true)
     public User findById(Long id) {
-        return this.jdbcTemplate.queryForObject("SELECT * FROM USERS WHERE id=?", new Object[]{id}, new UserRowMapper());
+        return this.jdbcTemplate.queryForObject("SELECT * FROM USERS WHERE user_id=?", new Object[]{id}, new UserRowMapper());
     }
 
     @Transactional
     public void save(User user) {
-        String sql = "INSERT INTO USERS(user_name, fullname,email,profile_picture,user_type) VALUES (?,?,?,?,?,?)";
-        this.jdbcTemplate.update(sql, user.getUser_name(), user.getFullName(), user.getEmail(), user.getProfile_picture(), user.getUser_Type());
+        String sql = "INSERT INTO USERS(user_fullname, user_email, user_address, user_picture, username, password,role) VALUES (?,?,?,?,?,?,?)";
+        this.jdbcTemplate.update(sql,user.getFullname(), user.getEmail(),user.getAddress(), user.getPicture(),user.getUsername(),user.getPassword(), user.getRole());
     }
 
     public void delete(Long id) {
-        String sql = "DELETE FROM USERS WHERE id=?";
+        String sql = "DELETE FROM USERS WHERE user_id=?";
         this.jdbcTemplate.update(sql, id);
     }
 
@@ -41,8 +41,12 @@ public class UserRepository {
         return users;
     }
 
+    public User login(String username, String password){
+        return this.jdbcTemplate.queryForObject("SELECT * FROM USERS WHERE username=? AND password=?", new Object[]{username,password}, new UserRowMapper());
+    }
+
     public void update(User user, Long id){
-        String sql = "UPDATE USERS SET user_name = ? , fullname = ?,email = ?,profile_picture = ?,type = ? where = ?";
-        this.jdbcTemplate.update(sql, user.getUser_name(), user.getFullName(), user.getEmail(), user.getProfile_picture(), user.getUser_Type(), id);
+        String sql = "UPDATE USERS SET user_fullname = ? ,user_email = ? ,user_address = ?,user_picture = ? WHERE user_id= ?";
+        this.jdbcTemplate.update(sql, user.getFullname(), user.getEmail(), user.getAddress(), user.getPicture(), id);
     }
 }
