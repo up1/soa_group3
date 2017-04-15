@@ -1,0 +1,172 @@
+t=2017-04-15T19:18:41+0700 lvl=info msg="Starting Grafana" logger=main version=4.2.0 commit=349f3eb93 compiled=2017-03-22T17:06:41+0700
+t=2017-04-15T19:18:41+0700 lvl=info msg="Config loaded from" logger=settings file=D:\\A_Project\\soa_3\\FootballReservation\\monitoring\\grafana-4.2.0/conf/defaults.ini
+t=2017-04-15T19:18:41+0700 lvl=info msg="Path Home" logger=settings path=D:\\A_Project\\soa_3\\FootballReservation\\monitoring\\grafana-4.2.0
+t=2017-04-15T19:18:41+0700 lvl=info msg="Path Data" logger=settings path=D:\\A_Project\\soa_3\\FootballReservation\\monitoring\\grafana-4.2.0\\data
+t=2017-04-15T19:18:41+0700 lvl=info msg="Path Logs" logger=settings path=D:\\A_Project\\soa_3\\FootballReservation\\monitoring\\grafana-4.2.0\\data\\log
+t=2017-04-15T19:18:41+0700 lvl=info msg="Path Plugins" logger=settings path=D:\\A_Project\\soa_3\\FootballReservation\\monitoring\\grafana-4.2.0\\data\\plugins
+t=2017-04-15T19:18:41+0700 lvl=info msg="Initializing DB" logger=sqlstore dbtype=sqlite3
+t=2017-04-15T19:18:41+0700 lvl=info msg="Starting DB migration" logger=migrator
+t=2017-04-15T19:18:41+0700 lvl=info msg="Executing migration" logger=migrator id="create migration_log table"
+t=2017-04-15T19:18:41+0700 lvl=info msg="Executing migration" logger=migrator id="create user table"
+t=2017-04-15T19:18:41+0700 lvl=info msg="Executing migration" logger=migrator id="add unique index user.login"
+t=2017-04-15T19:18:41+0700 lvl=info msg="Executing migration" logger=migrator id="add unique index user.email"
+t=2017-04-15T19:18:41+0700 lvl=info msg="Executing migration" logger=migrator id="drop index UQE_user_login - v1"
+t=2017-04-15T19:18:41+0700 lvl=info msg="Executing migration" logger=migrator id="drop index UQE_user_email - v1"
+t=2017-04-15T19:18:42+0700 lvl=info msg="Executing migration" logger=migrator id="Rename table user to user_v1 - v1"
+t=2017-04-15T19:18:42+0700 lvl=info msg="Executing migration" logger=migrator id="create user table v2"
+t=2017-04-15T19:18:42+0700 lvl=info msg="Executing migration" logger=migrator id="create index UQE_user_login - v2"
+t=2017-04-15T19:18:42+0700 lvl=info msg="Executing migration" logger=migrator id="create index UQE_user_email - v2"
+t=2017-04-15T19:18:42+0700 lvl=info msg="Executing migration" logger=migrator id="copy data_source v1 to v2"
+t=2017-04-15T19:18:42+0700 lvl=info msg="Executing migration" logger=migrator id="Drop old table user_v1"
+t=2017-04-15T19:18:42+0700 lvl=info msg="Executing migration" logger=migrator id="Add column help_flags1 to user table"
+t=2017-04-15T19:18:42+0700 lvl=info msg="Executing migration" logger=migrator id="create temp user table v1-7"
+t=2017-04-15T19:18:42+0700 lvl=info msg="Executing migration" logger=migrator id="create index IDX_temp_user_email - v1-7"
+t=2017-04-15T19:18:42+0700 lvl=info msg="Executing migration" logger=migrator id="create index IDX_temp_user_org_id - v1-7"
+t=2017-04-15T19:18:42+0700 lvl=info msg="Executing migration" logger=migrator id="create index IDX_temp_user_code - v1-7"
+t=2017-04-15T19:18:43+0700 lvl=info msg="Executing migration" logger=migrator id="create index IDX_temp_user_status - v1-7"
+t=2017-04-15T19:18:43+0700 lvl=info msg="Executing migration" logger=migrator id="create star table"
+t=2017-04-15T19:18:43+0700 lvl=info msg="Executing migration" logger=migrator id="add unique index star.user_id_dashboard_id"
+t=2017-04-15T19:18:43+0700 lvl=info msg="Executing migration" logger=migrator id="create org table v1"
+t=2017-04-15T19:18:43+0700 lvl=info msg="Executing migration" logger=migrator id="create index UQE_org_name - v1"
+t=2017-04-15T19:18:43+0700 lvl=info msg="Executing migration" logger=migrator id="create org_user table v1"
+t=2017-04-15T19:18:43+0700 lvl=info msg="Executing migration" logger=migrator id="create index IDX_org_user_org_id - v1"
+t=2017-04-15T19:18:43+0700 lvl=info msg="Executing migration" logger=migrator id="create index UQE_org_user_org_id_user_id - v1"
+t=2017-04-15T19:18:43+0700 lvl=info msg="Executing migration" logger=migrator id="copy data account to org"
+t=2017-04-15T19:18:43+0700 lvl=info msg="Skipping migration condition not fulfilled" logger=migrator id="copy data account to org"
+t=2017-04-15T19:18:43+0700 lvl=info msg="Executing migration" logger=migrator id="copy data account_user to org_user"
+t=2017-04-15T19:18:43+0700 lvl=info msg="Skipping migration condition not fulfilled" logger=migrator id="copy data account_user to org_user"
+t=2017-04-15T19:18:43+0700 lvl=info msg="Executing migration" logger=migrator id="Drop old table account"
+t=2017-04-15T19:18:43+0700 lvl=info msg="Executing migration" logger=migrator id="Drop old table account_user"
+t=2017-04-15T19:18:44+0700 lvl=info msg="Executing migration" logger=migrator id="create dashboard table"
+t=2017-04-15T19:18:44+0700 lvl=info msg="Executing migration" logger=migrator id="add index dashboard.account_id"
+t=2017-04-15T19:18:44+0700 lvl=info msg="Executing migration" logger=migrator id="add unique index dashboard_account_id_slug"
+t=2017-04-15T19:18:44+0700 lvl=info msg="Executing migration" logger=migrator id="create dashboard_tag table"
+t=2017-04-15T19:18:44+0700 lvl=info msg="Executing migration" logger=migrator id="add unique index dashboard_tag.dasboard_id_term"
+t=2017-04-15T19:18:44+0700 lvl=info msg="Executing migration" logger=migrator id="drop index UQE_dashboard_tag_dashboard_id_term - v1"
+t=2017-04-15T19:18:44+0700 lvl=info msg="Executing migration" logger=migrator id="Rename table dashboard to dashboard_v1 - v1"
+t=2017-04-15T19:18:44+0700 lvl=info msg="Executing migration" logger=migrator id="create dashboard v2"
+t=2017-04-15T19:18:45+0700 lvl=info msg="Executing migration" logger=migrator id="create index IDX_dashboard_org_id - v2"
+t=2017-04-15T19:18:45+0700 lvl=info msg="Executing migration" logger=migrator id="create index UQE_dashboard_org_id_slug - v2"
+t=2017-04-15T19:18:45+0700 lvl=info msg="Executing migration" logger=migrator id="copy dashboard v1 to v2"
+t=2017-04-15T19:18:45+0700 lvl=info msg="Executing migration" logger=migrator id="drop table dashboard_v1"
+t=2017-04-15T19:18:45+0700 lvl=info msg="Executing migration" logger=migrator id="alter dashboard.data to mediumtext v1"
+t=2017-04-15T19:18:45+0700 lvl=info msg="Executing migration" logger=migrator id="Add column updated_by in dashboard - v2"
+t=2017-04-15T19:18:45+0700 lvl=info msg="Executing migration" logger=migrator id="Add column created_by in dashboard - v2"
+t=2017-04-15T19:18:45+0700 lvl=info msg="Executing migration" logger=migrator id="Add column gnetId in dashboard"
+t=2017-04-15T19:18:46+0700 lvl=info msg="Executing migration" logger=migrator id="Add index for gnetId in dashboard"
+t=2017-04-15T19:18:46+0700 lvl=info msg="Executing migration" logger=migrator id="Add column plugin_id in dashboard"
+t=2017-04-15T19:18:46+0700 lvl=info msg="Executing migration" logger=migrator id="Add index for plugin_id in dashboard"
+t=2017-04-15T19:18:46+0700 lvl=info msg="Executing migration" logger=migrator id="Add index for dashboard_id in dashboard_tag"
+t=2017-04-15T19:18:46+0700 lvl=info msg="Executing migration" logger=migrator id="create data_source table"
+t=2017-04-15T19:18:46+0700 lvl=info msg="Executing migration" logger=migrator id="add index data_source.account_id"
+t=2017-04-15T19:18:46+0700 lvl=info msg="Executing migration" logger=migrator id="add unique index data_source.account_id_name"
+t=2017-04-15T19:18:46+0700 lvl=info msg="Executing migration" logger=migrator id="drop index IDX_data_source_account_id - v1"
+t=2017-04-15T19:18:46+0700 lvl=info msg="Executing migration" logger=migrator id="drop index UQE_data_source_account_id_name - v1"
+t=2017-04-15T19:18:47+0700 lvl=info msg="Executing migration" logger=migrator id="Rename table data_source to data_source_v1 - v1"
+t=2017-04-15T19:18:47+0700 lvl=info msg="Executing migration" logger=migrator id="create data_source table v2"
+t=2017-04-15T19:18:47+0700 lvl=info msg="Executing migration" logger=migrator id="create index IDX_data_source_org_id - v2"
+t=2017-04-15T19:18:47+0700 lvl=info msg="Executing migration" logger=migrator id="create index UQE_data_source_org_id_name - v2"
+t=2017-04-15T19:18:47+0700 lvl=info msg="Executing migration" logger=migrator id="copy data_source v1 to v2"
+t=2017-04-15T19:18:47+0700 lvl=info msg="Executing migration" logger=migrator id="Drop old table data_source_v1 #2"
+t=2017-04-15T19:18:47+0700 lvl=info msg="Executing migration" logger=migrator id="Add column with_credentials"
+t=2017-04-15T19:18:47+0700 lvl=info msg="Executing migration" logger=migrator id="Add secure json data column"
+t=2017-04-15T19:18:48+0700 lvl=info msg="Executing migration" logger=migrator id="create api_key table"
+t=2017-04-15T19:18:48+0700 lvl=info msg="Executing migration" logger=migrator id="add index api_key.account_id"
+t=2017-04-15T19:18:48+0700 lvl=info msg="Executing migration" logger=migrator id="add index api_key.key"
+t=2017-04-15T19:18:48+0700 lvl=info msg="Executing migration" logger=migrator id="add index api_key.account_id_name"
+t=2017-04-15T19:18:48+0700 lvl=info msg="Executing migration" logger=migrator id="drop index IDX_api_key_account_id - v1"
+t=2017-04-15T19:18:48+0700 lvl=info msg="Executing migration" logger=migrator id="drop index UQE_api_key_key - v1"
+t=2017-04-15T19:18:48+0700 lvl=info msg="Executing migration" logger=migrator id="drop index UQE_api_key_account_id_name - v1"
+t=2017-04-15T19:18:48+0700 lvl=info msg="Executing migration" logger=migrator id="Rename table api_key to api_key_v1 - v1"
+t=2017-04-15T19:18:49+0700 lvl=info msg="Executing migration" logger=migrator id="create api_key table v2"
+t=2017-04-15T19:18:49+0700 lvl=info msg="Executing migration" logger=migrator id="create index IDX_api_key_org_id - v2"
+t=2017-04-15T19:18:49+0700 lvl=info msg="Executing migration" logger=migrator id="create index UQE_api_key_key - v2"
+t=2017-04-15T19:18:49+0700 lvl=info msg="Executing migration" logger=migrator id="create index UQE_api_key_org_id_name - v2"
+t=2017-04-15T19:18:49+0700 lvl=info msg="Executing migration" logger=migrator id="copy api_key v1 to v2"
+t=2017-04-15T19:18:49+0700 lvl=info msg="Executing migration" logger=migrator id="Drop old table api_key_v1"
+t=2017-04-15T19:18:50+0700 lvl=info msg="Executing migration" logger=migrator id="create dashboard_snapshot table v4"
+t=2017-04-15T19:18:50+0700 lvl=info msg="Executing migration" logger=migrator id="drop table dashboard_snapshot_v4 #1"
+t=2017-04-15T19:18:50+0700 lvl=info msg="Executing migration" logger=migrator id="create dashboard_snapshot table v5 #2"
+t=2017-04-15T19:18:50+0700 lvl=info msg="Executing migration" logger=migrator id="create index UQE_dashboard_snapshot_key - v5"
+t=2017-04-15T19:18:50+0700 lvl=info msg="Executing migration" logger=migrator id="create index UQE_dashboard_snapshot_delete_key - v5"
+t=2017-04-15T19:18:50+0700 lvl=info msg="Executing migration" logger=migrator id="create index IDX_dashboard_snapshot_user_id - v5"
+t=2017-04-15T19:18:50+0700 lvl=info msg="Executing migration" logger=migrator id="alter dashboard_snapshot to mediumtext v2"
+t=2017-04-15T19:18:50+0700 lvl=info msg="Executing migration" logger=migrator id="create quota table v1"
+t=2017-04-15T19:18:51+0700 lvl=info msg="Executing migration" logger=migrator id="create index UQE_quota_org_id_user_id_target - v1"
+t=2017-04-15T19:18:51+0700 lvl=info msg="Executing migration" logger=migrator id="create plugin_setting table"
+t=2017-04-15T19:18:51+0700 lvl=info msg="Executing migration" logger=migrator id="create index UQE_plugin_setting_org_id_plugin_id - v1"
+t=2017-04-15T19:18:51+0700 lvl=info msg="Executing migration" logger=migrator id="Add column plugin_version to plugin_settings"
+t=2017-04-15T19:18:51+0700 lvl=info msg="Executing migration" logger=migrator id="create session table"
+t=2017-04-15T19:18:51+0700 lvl=info msg="Executing migration" logger=migrator id="Drop old table playlist table"
+t=2017-04-15T19:18:51+0700 lvl=info msg="Executing migration" logger=migrator id="Drop old table playlist_item table"
+t=2017-04-15T19:18:51+0700 lvl=info msg="Executing migration" logger=migrator id="create playlist table v2"
+t=2017-04-15T19:18:51+0700 lvl=info msg="Executing migration" logger=migrator id="create playlist item table v2"
+t=2017-04-15T19:18:52+0700 lvl=info msg="Executing migration" logger=migrator id="drop preferences table v2"
+t=2017-04-15T19:18:52+0700 lvl=info msg="Executing migration" logger=migrator id="drop preferences table v3"
+t=2017-04-15T19:18:52+0700 lvl=info msg="Executing migration" logger=migrator id="create preferences table v3"
+t=2017-04-15T19:18:52+0700 lvl=info msg="Executing migration" logger=migrator id="create alert table v1"
+t=2017-04-15T19:18:52+0700 lvl=info msg="Executing migration" logger=migrator id="add index alert org_id & id "
+t=2017-04-15T19:18:52+0700 lvl=info msg="Executing migration" logger=migrator id="add index alert state"
+t=2017-04-15T19:18:52+0700 lvl=info msg="Executing migration" logger=migrator id="add index alert dashboard_id"
+t=2017-04-15T19:18:52+0700 lvl=info msg="Executing migration" logger=migrator id="create alert_notification table v1"
+t=2017-04-15T19:18:53+0700 lvl=info msg="Executing migration" logger=migrator id="Add column is_default"
+t=2017-04-15T19:18:53+0700 lvl=info msg="Executing migration" logger=migrator id="add index alert_notification org_id & name"
+t=2017-04-15T19:18:53+0700 lvl=info msg="Executing migration" logger=migrator id="Drop old annotation table v4"
+t=2017-04-15T19:18:53+0700 lvl=info msg="Executing migration" logger=migrator id="create annotation table v5"
+t=2017-04-15T19:18:54+0700 lvl=info msg="Executing migration" logger=migrator id="add index annotation 0 v3"
+t=2017-04-15T19:18:54+0700 lvl=info msg="Executing migration" logger=migrator id="add index annotation 1 v3"
+t=2017-04-15T19:18:54+0700 lvl=info msg="Executing migration" logger=migrator id="add index annotation 2 v3"
+t=2017-04-15T19:18:54+0700 lvl=info msg="Executing migration" logger=migrator id="add index annotation 3 v3"
+t=2017-04-15T19:18:54+0700 lvl=info msg="Executing migration" logger=migrator id="add index annotation 4 v3"
+t=2017-04-15T19:18:55+0700 lvl=info msg="Created default admin user: [admin]"
+t=2017-04-15T19:18:55+0700 lvl=info msg="Starting plugin search" logger=plugins
+t=2017-04-15T19:18:55+0700 lvl=warn msg="Plugin dir does not exist" logger=plugins dir=D:\\A_Project\\soa_3\\FootballReservation\\monitoring\\grafana-4.2.0\\data\\plugins
+t=2017-04-15T19:18:55+0700 lvl=info msg="Plugin dir created" logger=plugins dir=D:\\A_Project\\soa_3\\FootballReservation\\monitoring\\grafana-4.2.0\\data\\plugins
+t=2017-04-15T19:18:55+0700 lvl=info msg="Initializing Alerting" logger=alerting.engine
+t=2017-04-15T19:18:55+0700 lvl=info msg="Initializing CleanUpService" logger=cleanup
+t=2017-04-15T19:18:55+0700 lvl=info msg="Initializing Stream Manager"
+t=2017-04-15T19:18:55+0700 lvl=info msg="Initializing HTTP Server" logger=http.server address=0.0.0.0:3000 protocol=http subUrl=
+t=2017-04-15T19:19:09+0700 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/ status=302 remote_addr=[::1] time_ms=8ns size=29
+t=2017-04-15T19:22:07+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/label/__name__/values status=502 remote_addr=[::1] time_ms=42ns size=0
+t=2017-04-15T19:31:57+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/label/__name__/values status=502 remote_addr=[::1] time_ms=2.032µs size=0
+t=2017-04-15T19:34:11+0700 lvl=info msg="Starting Grafana" logger=main version=4.2.0 commit=349f3eb93 compiled=2017-03-22T17:06:41+0700
+t=2017-04-15T19:34:11+0700 lvl=info msg="Config loaded from" logger=settings file=D:\\A_Project\\soa_3\\FootballReservation\\monitoring\\grafana-4.2.0/conf/defaults.ini
+t=2017-04-15T19:34:11+0700 lvl=info msg="Path Home" logger=settings path=D:\\A_Project\\soa_3\\FootballReservation\\monitoring\\grafana-4.2.0
+t=2017-04-15T19:34:11+0700 lvl=info msg="Path Data" logger=settings path=D:\\A_Project\\soa_3\\FootballReservation\\monitoring\\grafana-4.2.0\\data
+t=2017-04-15T19:34:11+0700 lvl=info msg="Path Logs" logger=settings path=D:\\A_Project\\soa_3\\FootballReservation\\monitoring\\grafana-4.2.0\\data\\log
+t=2017-04-15T19:34:11+0700 lvl=info msg="Path Plugins" logger=settings path=D:\\A_Project\\soa_3\\FootballReservation\\monitoring\\grafana-4.2.0\\data\\plugins
+t=2017-04-15T19:34:11+0700 lvl=info msg="Initializing DB" logger=sqlstore dbtype=sqlite3
+t=2017-04-15T19:34:11+0700 lvl=info msg="Starting DB migration" logger=migrator
+t=2017-04-15T19:34:11+0700 lvl=info msg="Executing migration" logger=migrator id="copy data account to org"
+t=2017-04-15T19:34:11+0700 lvl=info msg="Skipping migration condition not fulfilled" logger=migrator id="copy data account to org"
+t=2017-04-15T19:34:11+0700 lvl=info msg="Executing migration" logger=migrator id="copy data account_user to org_user"
+t=2017-04-15T19:34:11+0700 lvl=info msg="Skipping migration condition not fulfilled" logger=migrator id="copy data account_user to org_user"
+t=2017-04-15T19:34:11+0700 lvl=info msg="Starting plugin search" logger=plugins
+t=2017-04-15T19:34:12+0700 lvl=info msg="Initializing Alerting" logger=alerting.engine
+t=2017-04-15T19:34:12+0700 lvl=info msg="Initializing CleanUpService" logger=cleanup
+t=2017-04-15T19:34:12+0700 lvl=info msg="Initializing Stream Manager"
+t=2017-04-15T19:34:12+0700 lvl=info msg="Initializing HTTP Server" logger=http.server address=0.0.0.0:3000 protocol=http subUrl=
+t=2017-04-15T19:34:26+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/label/__name__/values status=404 remote_addr=[::1] time_ms=513ns size=132
+t=2017-04-15T19:34:47+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/prometheus/api/v1/label/__name__/values status=404 remote_addr=[::1] time_ms=81ns size=143
+t=2017-04-15T19:35:41+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/label/__name__/values status=404 remote_addr=[::1] time_ms=59ns size=132
+t=2017-04-15T19:35:42+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/label/__name__/values status=404 remote_addr=[::1] time_ms=49ns size=132
+t=2017-04-15T19:35:56+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/prometheus/api/v1/label/__name__/values status=404 remote_addr=[::1] time_ms=72ns size=143
+t=2017-04-15T19:37:43+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=37ns size=111
+t=2017-04-15T19:37:46+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=33ns size=111
+t=2017-04-15T19:37:55+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=47ns size=111
+t=2017-04-15T19:37:57+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=26ns size=111
+t=2017-04-15T19:38:06+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=49ns size=111
+t=2017-04-15T19:38:09+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=30ns size=111
+t=2017-04-15T19:38:14+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=39ns size=111
+t=2017-04-15T19:38:16+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=35ns size=111
+t=2017-04-15T19:38:33+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=42ns size=111
+t=2017-04-15T19:38:35+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=34ns size=111
+t=2017-04-15T19:38:35+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=37ns size=111
+t=2017-04-15T19:38:35+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=39ns size=111
+t=2017-04-15T19:38:36+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=33ns size=111
+t=2017-04-15T19:38:36+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=32ns size=111
+t=2017-04-15T19:38:36+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=43ns size=111
+t=2017-04-15T19:38:36+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=32ns size=111
+t=2017-04-15T19:38:36+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=33ns size=111
+t=2017-04-15T19:38:37+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=32ns size=111
+t=2017-04-15T19:38:37+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=31ns size=111
