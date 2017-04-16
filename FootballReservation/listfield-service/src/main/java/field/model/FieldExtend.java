@@ -3,7 +3,7 @@ package field.model;
 /**
  * Created by LoserGhost on 18/3/2560.
  */
-public class Field_extend {
+public class FieldExtend {
     int ex_id;
     int field_id;
     String fieldex_name;
@@ -12,7 +12,7 @@ public class Field_extend {
     String size;
     String floor;
 
-    public Field_extend() {
+    public FieldExtend() {
     }
 
     public int getEx_id() {

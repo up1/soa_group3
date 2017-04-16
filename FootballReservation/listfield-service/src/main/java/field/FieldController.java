@@ -1,7 +1,7 @@
 package field;
 
 import field.model.Field;
-import field.model.Field_extend;
+import field.model.FieldExtend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,13 +35,13 @@ public class FieldController {
     }
 
     @RequestMapping(value = "/field/{field_id}/{ex_id}", method = RequestMethod.GET)
-    public Field_extend getFieldEx(@PathVariable int field_id,
-                                   @PathVariable int ex_id) {
+    public FieldExtend getFieldEx(@PathVariable int field_id,
+                                  @PathVariable int ex_id) {
         return this.fieldRepository.getFieldEXByID(field_id,ex_id);
     }
 
     @RequestMapping(value = "/field/{field_id}", method = RequestMethod.GET)
-    public List<Field_extend> getFieldExs(@PathVariable int field_id) {
+    public List<FieldExtend> getFieldExs(@PathVariable int field_id) {
         return this.fieldRepository.getFieldExs(field_id);
     }
 

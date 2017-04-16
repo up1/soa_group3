@@ -1,7 +1,7 @@
 package field;
 
 import field.model.Field;
-import field.model.Field_extend;
+import field.model.FieldExtend;
 import field.rowmapper.FieldExtendRowMapper;
 import field.rowmapper.FieldRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +31,12 @@ public class FieldRepository {
         return jdbcTemplate.queryForObject(sql, new Object[]{field_id}, new FieldRowMapper());
     }
 
-    public Field_extend getFieldEXByID(int field_id, int ex_id) {
+    public FieldExtend getFieldEXByID(int field_id, int ex_id) {
         String sql ="select * from field_extend WHERE ex_id=? AND field_id=?";
         return jdbcTemplate.queryForObject(sql, new Object[]{ex_id,field_id}, new FieldExtendRowMapper());
     }
 
-    public List<Field_extend> getFieldExs(int field_id) {
+    public List<FieldExtend> getFieldExs(int field_id) {
         String sql ="select * from field_extend WHERE field_id=?";
         return jdbcTemplate.query(sql, new Object[]{field_id}, new FieldExtendRowMapper());
     }

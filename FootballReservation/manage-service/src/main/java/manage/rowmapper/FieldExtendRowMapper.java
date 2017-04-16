@@ -1,7 +1,7 @@
-package field.rowmapper;
+package manage.rowmapper;
 
 
-import field.model.FieldExtend;
+import manage.model.FieldExtend;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
