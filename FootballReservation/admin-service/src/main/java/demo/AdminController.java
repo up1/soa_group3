@@ -23,7 +23,7 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public List<Admin> getUsers(
+    public List<User> getUsers(
             @RequestParam(value="page", defaultValue="1") int page,
             @RequestParam(value="item_per_page", defaultValue="10") int itemPerPage) {
         return this.adminRepository.queryUsers(page, itemPerPage);

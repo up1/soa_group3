@@ -1,6 +1,6 @@
-=============== Apr 15, 2017 (ICT) ===============
-19:36:31.001184 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-19:36:31.006203 db@open opening
-19:36:31.008190 version@stat F·[] S·0B[] Sc·[]
-19:36:31.032979 db@janitor F·2 G·0
-19:36:31.032979 db@open done T·26.7765ms
+=============== Apr 17, 2017 (ICT) ===============
+21:53:25.084816 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:53:25.085817 db@open opening
+21:53:25.122051 version@stat F·[] S·0B[] Sc·[]
+21:53:25.354687 db@janitor F·2 G·0
+21:53:25.355687 db@open done T·269.8693ms

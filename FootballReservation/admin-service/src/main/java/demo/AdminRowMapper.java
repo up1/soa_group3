@@ -9,16 +9,18 @@ import java.sql.SQLException;
  * By Nattakit 57070033
  */
 
-public class AdminRowMapper implements RowMapper<Admin> {
+public class AdminRowMapper implements RowMapper<User> {
     @Override
-    public Admin mapRow(ResultSet resultSet, int rowNumber) throws SQLException {
-        Admin admin = new Admin();
-        admin.setUser_id(resultSet.getInt("user_id"));
-        admin.setUser_firstname(resultSet.getString("user_firstname"));
-        admin.setUser_lastname(resultSet.getString("user_lastname"));
-        admin.setUser_address(resultSet.getString("user_address"));
-        admin.setUser_email(resultSet.getString("user_email"));
-        admin.setUser_role(resultSet.getString("user_role"));
-        return admin;
+    public User mapRow(ResultSet resultSet, int rowNumber) throws SQLException {
+        User user = new User();
+        user.setId(resultSet.getLong("user_id"));
+        user.setFullname(resultSet.getString("user_fullname"));
+        user.setEmail(resultSet.getString("user_email"));
+        user.setAddress(resultSet.getString("user_address"));
+        user.setPicture(resultSet.getString("user_picture"));
+        user.setUsername(resultSet.getString("username"));
+        user.setPassword(resultSet.getString("password"));
+        user.setRole(resultSet.getString("role"));
+        return user;
     }
 }

@@ -1,10 +1,8 @@
-INSERT INTO MEMBER
-(user_firstname, user_lastname, user_address, user_email,)
+INSERT INTO USERS
+(user_fullname, user_email, user_address, user_picture, username, password,role)
 VALUES
-('Tae','Eiei','Bangkok','taeza007@gmail.com'),
-('Job','Error','Birmingham','jobjobolo@gmail.com'),
-('Mos','Blackhole','Los Angelis','moseding@gmail.com'),
-('Tam','Slumdog','New Delhi','billionaire_tam@gmail.com'),
-('Ohm','Mookhon','Dallas','obg015@gmail.com'),
-('Aem','Patcha','Nakhon Ratchasrima','emmy_m@gmail.com'),
-('Aut','Synester','Florida','avenged_7aut@gmail.com');
+('TestUser','user@test.com','address1','Tc/f/d/s','username','username','user'),
+('TestManager','manager@test.com','address2','Tc/f/d/s','manager','manager','manager'),
+('TestAdmin','admin@test.com','address3','Tc/f/d/s','admin','admin','admin'),
+('TestUser2','user2@test.com','address4','Tc/f/d/s','username2','username','user'),
+('TestUser3','user3@test.com','address5','Tc/f/d/s','username3','username','user');

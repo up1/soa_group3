@@ -38,6 +38,11 @@ public class ManageController {
         return this.manageRepository.getFieldExs(field_id);
     }
 
+    @RequestMapping(value = "/field_ex/{ex_id}", method = RequestMethod.GET)
+    public List<FieldExtend> getFieldEx(@PathVariable int ex_id) {
+        return this.manageRepository.getFieldEx(ex_id);
+    }
+
     @RequestMapping(value = "/field/{id}/update", method = RequestMethod.PUT)
     public void updateField(Field field,@PathVariable Long id) {
         this.manageRepository.updateField(field,id);

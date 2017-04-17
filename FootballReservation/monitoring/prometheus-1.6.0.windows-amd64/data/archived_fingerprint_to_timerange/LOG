@@ -31,3 +31,12 @@
 19:36:30.910241 version@stat F·[] S·0B[] Sc·[]
 19:36:30.917263 db@janitor F·2 G·0
 19:36:30.917263 db@open done T·29.02ms
+=============== Apr 17, 2017 (ICT) ===============
+21:53:24.706552 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:53:24.818754 version@stat F·[] S·0B[] Sc·[]
+21:53:24.818754 db@open opening
+21:53:24.818754 journal@recovery F·1
+21:53:24.821754 journal@recovery recovering @6
+21:53:24.823754 version@stat F·[] S·0B[] Sc·[]
+21:53:24.825761 db@janitor F·2 G·0
+21:53:24.825761 db@open done T·7.0068ms

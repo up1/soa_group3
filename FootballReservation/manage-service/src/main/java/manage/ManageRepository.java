@@ -38,6 +38,11 @@ public class ManageRepository {
         return jdbcTemplate.query(sql, new Object[]{field_id}, new FieldExtendRowMapper());
     }
 
+    public List<FieldExtend> getFieldEx(int ex_id) {
+        String sql ="select * from field_extend WHERE ex_id=?";
+        return jdbcTemplate.query(sql, new Object[]{ex_id}, new FieldExtendRowMapper());
+    }
+
     public void updateField(Field field, Long id){
         String sql = "UPDATE field SET field_name = ? ,tel = ? ,price_range = ?,location = ?,email = ?" +
                 ",website = ?,detail = ?,image = ?,stime = ?,etime = ? WHERE field_id= ?";

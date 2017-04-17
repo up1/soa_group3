@@ -170,3 +170,46 @@ t=2017-04-15T19:38:36+0700 lvl=info msg="Request Completed" logger=context userI
 t=2017-04-15T19:38:36+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=33ns size=111
 t=2017-04-15T19:38:37+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=32ns size=111
 t=2017-04-15T19:38:37+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=31ns size=111
+t=2017-04-17T21:53:26+0700 lvl=info msg="Starting Grafana" logger=main version=4.2.0 commit=349f3eb93 compiled=2017-03-22T17:06:41+0700
+t=2017-04-17T21:53:26+0700 lvl=info msg="Config loaded from" logger=settings file=D:\\A_GitHub\\soa3\\FootballReservation\\monitoring\\grafana-4.2.0/conf/defaults.ini
+t=2017-04-17T21:53:26+0700 lvl=info msg="Path Home" logger=settings path=D:\\A_GitHub\\soa3\\FootballReservation\\monitoring\\grafana-4.2.0
+t=2017-04-17T21:53:26+0700 lvl=info msg="Path Data" logger=settings path=D:\\A_GitHub\\soa3\\FootballReservation\\monitoring\\grafana-4.2.0\\data
+t=2017-04-17T21:53:26+0700 lvl=info msg="Path Logs" logger=settings path=D:\\A_GitHub\\soa3\\FootballReservation\\monitoring\\grafana-4.2.0\\data\\log
+t=2017-04-17T21:53:26+0700 lvl=info msg="Path Plugins" logger=settings path=D:\\A_GitHub\\soa3\\FootballReservation\\monitoring\\grafana-4.2.0\\data\\plugins
+t=2017-04-17T21:53:26+0700 lvl=info msg="Initializing DB" logger=sqlstore dbtype=sqlite3
+t=2017-04-17T21:53:26+0700 lvl=info msg="Starting DB migration" logger=migrator
+t=2017-04-17T21:53:27+0700 lvl=info msg="Executing migration" logger=migrator id="copy data account to org"
+t=2017-04-17T21:53:27+0700 lvl=info msg="Skipping migration condition not fulfilled" logger=migrator id="copy data account to org"
+t=2017-04-17T21:53:27+0700 lvl=info msg="Executing migration" logger=migrator id="copy data account_user to org_user"
+t=2017-04-17T21:53:27+0700 lvl=info msg="Skipping migration condition not fulfilled" logger=migrator id="copy data account_user to org_user"
+t=2017-04-17T21:53:27+0700 lvl=info msg="Starting plugin search" logger=plugins
+t=2017-04-17T21:53:28+0700 lvl=warn msg="Plugin dir does not exist" logger=plugins dir=D:\\A_GitHub\\soa3\\FootballReservation\\monitoring\\grafana-4.2.0\\data\\plugins
+t=2017-04-17T21:53:28+0700 lvl=info msg="Plugin dir created" logger=plugins dir=D:\\A_GitHub\\soa3\\FootballReservation\\monitoring\\grafana-4.2.0\\data\\plugins
+t=2017-04-17T21:53:28+0700 lvl=info msg="Initializing Alerting" logger=alerting.engine
+t=2017-04-17T21:53:28+0700 lvl=info msg="Initializing CleanUpService" logger=cleanup
+t=2017-04-17T21:53:30+0700 lvl=info msg="Initializing Stream Manager"
+t=2017-04-17T21:53:30+0700 lvl=info msg="Initializing HTTP Server" logger=http.server address=0.0.0.0:3000 protocol=http subUrl=
+t=2017-04-17T21:54:25+0700 lvl=info msg="Starting Grafana" logger=main version=4.2.0 commit=349f3eb93 compiled=2017-03-22T17:06:41+0700
+t=2017-04-17T21:54:25+0700 lvl=info msg="Config loaded from" logger=settings file=D:\\A_GitHub\\soa3\\FootballReservation\\monitoring\\grafana-4.2.0/conf/defaults.ini
+t=2017-04-17T21:54:25+0700 lvl=info msg="Path Home" logger=settings path=D:\\A_GitHub\\soa3\\FootballReservation\\monitoring\\grafana-4.2.0
+t=2017-04-17T21:54:25+0700 lvl=info msg="Path Data" logger=settings path=D:\\A_GitHub\\soa3\\FootballReservation\\monitoring\\grafana-4.2.0\\data
+t=2017-04-17T21:54:25+0700 lvl=info msg="Path Logs" logger=settings path=D:\\A_GitHub\\soa3\\FootballReservation\\monitoring\\grafana-4.2.0\\data\\log
+t=2017-04-17T21:54:25+0700 lvl=info msg="Path Plugins" logger=settings path=D:\\A_GitHub\\soa3\\FootballReservation\\monitoring\\grafana-4.2.0\\data\\plugins
+t=2017-04-17T21:54:25+0700 lvl=info msg="Initializing DB" logger=sqlstore dbtype=sqlite3
+t=2017-04-17T21:54:25+0700 lvl=info msg="Starting DB migration" logger=migrator
+t=2017-04-17T21:54:25+0700 lvl=info msg="Executing migration" logger=migrator id="copy data account to org"
+t=2017-04-17T21:54:25+0700 lvl=info msg="Skipping migration condition not fulfilled" logger=migrator id="copy data account to org"
+t=2017-04-17T21:54:25+0700 lvl=info msg="Executing migration" logger=migrator id="copy data account_user to org_user"
+t=2017-04-17T21:54:25+0700 lvl=info msg="Skipping migration condition not fulfilled" logger=migrator id="copy data account_user to org_user"
+t=2017-04-17T21:54:25+0700 lvl=info msg="Starting plugin search" logger=plugins
+t=2017-04-17T21:54:25+0700 lvl=info msg="Initializing CleanUpService" logger=cleanup
+t=2017-04-17T21:54:25+0700 lvl=info msg="Initializing Alerting" logger=alerting.engine
+t=2017-04-17T21:54:25+0700 lvl=info msg="Initializing Stream Manager"
+t=2017-04-17T21:54:25+0700 lvl=info msg="Initializing HTTP Server" logger=http.server address=0.0.0.0:3000 protocol=http subUrl=
+t=2017-04-17T21:54:40+0700 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/ status=302 remote_addr=[::1] time_ms=91ns size=29
+t=2017-04-17T22:18:28+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=13ns size=111
+t=2017-04-17T22:18:39+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=12ns size=111
+t=2017-04-17T22:18:41+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=10ns size=111
+t=2017-04-17T22:21:39+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=5ns size=113
+t=2017-04-17T22:21:42+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=GET path=/api/v1/query_range status=400 remote_addr=[::1] time_ms=5ns size=113
+t=2017-04-17T23:00:17+0700 lvl=info msg="Request Completed" logger=context userId=1 orgId=1 uname=admin method=POST path=/api/dashboards/db/ status=412 remote_addr=[::1] time_ms=59ns size=88
