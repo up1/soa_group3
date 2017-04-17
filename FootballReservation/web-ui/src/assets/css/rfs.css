@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt');
+
+html {
+    background-color: #131313;
+}
+
+body, button {
+    font-family: 'Prompt', sans-serif;
+    color: #fff;
+}
+
+.nav-item a, a.nav-item, .title, .label {
+    color: #fff;
+}
+
+.label-reserve {
+    color: #000000;
+}
+
+.title.is-5, .title.is-6 {
+    color: #000000;
+}
+
+.nav-item a:hover, a.nav-item:hover {
+    color: #00d1b2;
+}
+
+.nav-item img {
+    max-height: 2.75em;
+}
+
+.nav {
+    background-color: #000403;
+}
+
+

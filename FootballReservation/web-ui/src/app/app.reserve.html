@@ -1,0 +1,47 @@
+<div class="container">
+  <h2 class="title is-2 has-text-centered">รายการจองสนาม</h2>
+  <div class="tabs is-toggle is-fullwidth">
+  <ul>
+    <li (click)="reserveMode(0)" class="is-active">
+      <a>
+        <span>การจองปัจจุบัน</span>
+      </a>
+    </li>
+    <li (click)="reserveMode(1)">
+      <a>
+        <span>ประวัติการจอง</span>
+      </a>
+    </li>
+  </ul>
+</div>
+  <table class="table">
+  <thead>
+    <tr>
+      <th>ลำดับที่</th>
+      <th>สนาม</th>
+      <th>สนามย่อย</th>
+      <th>วันที่</th>
+      <th>เวลา</th>
+      <th>สถานะ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>บุรีรัมย์ ยูไนเต็ด</td>
+      <td>สนามซ้อม</td>
+      <td>06/04/2560</td>
+      <td>17:00-21:00</td>
+      <td><a class="button is-warning is-active">รอการยืนยัน</a></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>SCG Stadium</td>
+      <td>สนามหลัก</td>
+      <td>07/04/2560</td>
+      <td>08:00-18:00</td>
+      <td><a class="button is-success is-active">ยืนยันแล้ว</a></td>
+    </tr>
+  </tbody>
+  </table>
+</div>
