@@ -4,9 +4,7 @@ import { StadiumService } from 'app/data/stadium.service';
 
 @Component({
   selector: 'stadium-page',
-  template: `<ul *ngFor="let stadium of stadiums">
-                <li>{{stadium}}</li>
-              </ul>`
+  templateUrl: './app.stadium.html'
 })
 
 export class AppStadium implements OnInit {

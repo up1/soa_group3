@@ -1,221 +1,57 @@
 <div class="container">
   <h2 class="title is-2 has-text-centered"></h2>
-  <div class="columns">
-    <div class="column">
-        <div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="https://scontent-fbkk5-7.us-fbcdn.net/v1/t.1-48/1426l78O9684I4108ZPH0J4S8_842023153_K1DlXQOI5DHP/dskvvc.qpjhg.xmwo/p/data/250/250182-5280dc6e1af1a.jpg" alt="Image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="https://upload.wikimedia.org/wikipedia/en/1/1e/Buriram_united.png" alt="Image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-6">ไอ-โมบาย สเตเดี้ยม</p>
-        <p class="subtitle is-6">อ.เมือง, บุรีรัมย์</p>
-      </div>
-    </div>
-
-    <div class="content">
-      สุดยอดสนามมาตรฐานขนาดใหญ่ ได้รับการรับรองจากฟีฟ่า หญ้าสีเขียวสวยงาม
-    </div>
-    <a class="button is-info">ข้อมูลเพิ่มเติม</a>
-    <a class="button is-primary">จองสนาม</a>
-  </div>
-</div>
-    </div>
-    <div class="column">
-        <div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="http://filacrosse.com/wp-content/uploads/2015/06/scg-stadium.jpg" alt="Image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="https://upload.wikimedia.org/wikipedia/en/e/ed/MTUTD.png" alt="Image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-5">SCG Stadium</p>
-        <p class="subtitle is-6">ปากเกร็ด, นนทบุรี</p>
+  <div class="columns is-multiline is-mobile">
+    <div class="column is-one-quarter" *ngFor="let stadium of stadiums">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="http://filacrosse.com/wp-content/uploads/2015/06/scg-stadium.jpg" alt="Image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="https://upload.wikimedia.org/wikipedia/en/e/ed/MTUTD.png" alt="Image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-5">{{stadium.field_name}}</p>
+              <p class="subtitle is-6">{{stadium.location}}</p>
+            </div>
+          </div>
+          <div class="content">
+            {{stadium.detail}}
+          </div>
+          <a class="button is-info">ข้อมูลเพิ่มเติม</a>
+          <a class="button is-primary">จองสนาม</a>
+        </div>
       </div>
     </div>
-    <div class="content">
-      สนามฟุตบอลระดับมาตรฐาน เดินทางสะดวก ใกล้เมืองทองธานี แหล่งรถติดเพราะจัดงานบ่อย
-    </div>
-    <a class="button is-info">ข้อมูลเพิ่มเติม</a>
-    <a class="button is-primary">จองสนาม</a>
   </div>
-</div>
-    </div>
-    <div class="column">
-        <div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="http://filacrosse.com/wp-content/uploads/2015/06/scg-stadium.jpg" alt="Image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="https://upload.wikimedia.org/wikipedia/en/e/ed/MTUTD.png" alt="Image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-5">SCG Stadium</p>
-        <p class="subtitle is-6">ปากเกร็ด, นนทบุรี</p>
-      </div>
-    </div>
-    <div class="content">
-      สนามฟุตบอลระดับมาตรฐาน เดินทางสะดวก ใกล้เมืองทองธานี แหล่งรถติดเพราะจัดงานบ่อย
-    </div>
-    <a class="button is-info">ข้อมูลเพิ่มเติม</a>
-    <a class="button is-primary">จองสนาม</a>
-  </div>
-</div>
-    </div><div class="column">
-        <div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="http://filacrosse.com/wp-content/uploads/2015/06/scg-stadium.jpg" alt="Image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="https://upload.wikimedia.org/wikipedia/en/e/ed/MTUTD.png" alt="Image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-5">SCG Stadium</p>
-        <p class="subtitle is-6">ปากเกร็ด, นนทบุรี</p>
-      </div>
-    </div>
-    <div class="content">
-      สนามฟุตบอลระดับมาตรฐาน เดินทางสะดวก ใกล้เมืองทองธานี แหล่งรถติดเพราะจัดงานบ่อย
-    </div>
-    <a class="button is-info">ข้อมูลเพิ่มเติม</a>
-    <a class="button is-primary">จองสนาม</a>
-  </div>
-</div>
-    </div>
-</div>
-<div class="columns">
-  <div class="column is-one-quarter">
-        <div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="http://filacrosse.com/wp-content/uploads/2015/06/scg-stadium.jpg" alt="Image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="https://upload.wikimedia.org/wikipedia/en/e/ed/MTUTD.png" alt="Image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-5">SCG Stadium</p>
-        <p class="subtitle is-6">ปากเกร็ด, นนทบุรี</p>
-      </div>
-    </div>
-    <div class="content">
-      สนามฟุตบอลระดับมาตรฐาน เดินทางสะดวก ใกล้เมืองทองธานี แหล่งรถติดเพราะจัดงานบ่อย
-    </div>
-    <a class="button is-info">ข้อมูลเพิ่มเติม</a>
-    <a class="button is-primary">จองสนาม</a>
-  </div>
-</div>
-    </div>
-     <div class="column is-one-quarter">
-        <div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="http://filacrosse.com/wp-content/uploads/2015/06/scg-stadium.jpg" alt="Image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="https://upload.wikimedia.org/wikipedia/en/e/ed/MTUTD.png" alt="Image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-5">SCG Stadium</p>
-        <p class="subtitle is-6">ปากเกร็ด, นนทบุรี</p>
-      </div>
-    </div>
-    <div class="content">
-      สนามฟุตบอลระดับมาตรฐาน เดินทางสะดวก ใกล้เมืองทองธานี แหล่งรถติดเพราะจัดงานบ่อย
-    </div>
-    <a class="button is-info">ข้อมูลเพิ่มเติม</a>
-    <a class="button is-primary">จองสนาม</a>
-  </div>
-</div>
-    </div>
-     <div class="column is-one-quarter">
-        <div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="http://filacrosse.com/wp-content/uploads/2015/06/scg-stadium.jpg" alt="Image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="https://upload.wikimedia.org/wikipedia/en/e/ed/MTUTD.png" alt="Image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-5">SCG Stadium</p>
-        <p class="subtitle is-6">ปากเกร็ด, นนทบุรี</p>
-      </div>
-    </div>
-    <div class="content">
-      สนามฟุตบอลระดับมาตรฐาน เดินทางสะดวก ใกล้เมืองทองธานี แหล่งรถติดเพราะจัดงานบ่อย
-    </div>
-    <a class="button is-info">ข้อมูลเพิ่มเติม</a>
-    <a class="button is-primary">จองสนาม</a>
-  </div>
-</div>
-    </div>
-</div>
-<div class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">จองสนาม</p>
-      <button class="delete"></button>
-    </header>
-    <section class="modal-card-body">
-      <div class="field">
-  <label class="label-reserve">สนามย่อย</label>
-  <p class="control">
-    <span class="select">
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">จองสนาม</p>
+        <button class="delete"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="field">
+          <label class="label-reserve">สนามย่อย</label>
+          <p class="control">
+            <span class="select">
       <select>
         <option>สนามใหญ่</option>
         <option>สนามซ้อม</option>
       </select>
     </span>
-  </p>
-</div>
-     <div class="field is-grouped">
-  <label class="label-reserve">เวลาเริ่ม</label>
-  <p class="control">
-    <span class="select">
+          </p>
+        </div>
+        <div class="field is-grouped">
+          <label class="label-reserve">เวลาเริ่ม</label>
+          <p class="control">
+            <span class="select">
       <select>
         <option>00:00</option>
         <option>01:00</option>
@@ -243,10 +79,10 @@
         <option>23:00</option>
       </select>
     </span>
-  </p>
-   <label class="label-reserve">เวลาสิ้นสุด</label>
-  <p class="control">
-    <span class="select">
+          </p>
+          <label class="label-reserve">เวลาสิ้นสุด</label>
+          <p class="control">
+            <span class="select">
       <select>
         <option>00:00</option>
         <option>01:00</option>
@@ -274,12 +110,12 @@
         <option>23:00</option>
       </select>
     </span>
-  </p>
-</div>
-    </section>
-    <footer class="modal-card-foot">
-      <a class="button is-success">จอง</a>
-      <a class="button">ปิดหน้าต่างนี้</a>
-    </footer>
+          </p>
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <a class="button is-success">จอง</a>
+        <a class="button">ปิดหน้าต่างนี้</a>
+      </footer>
+    </div>
   </div>
-</div>
