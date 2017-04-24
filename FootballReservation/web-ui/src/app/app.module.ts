@@ -11,6 +11,8 @@ import { AppReserve } from './app.reserve';
 import { AppStadium } from './app.stadium';
 import { AppUser } from './app.user';
 
+import { StadiumService } from 'app/data/stadium.service';
+
 const appRoutes: Routes = [
   { path: 'auth', component: AppLogin },
   { path: 'auth/regis', component: AppRegister },
@@ -35,7 +37,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [StadiumService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
