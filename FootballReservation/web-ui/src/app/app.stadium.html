@@ -21,27 +21,28 @@
             </div>
           </div>
           <div class="content">
-            <span class="icon"><i class="fa fa-clock-o"></i></span>
-            {{stadium.stime}}:00 - {{stadium.etime}}:00
+            <span class="icon"><i class="fa fa-clock-o"></i></span> {{stadium.stime}}:00 - {{stadium.etime}}:00
             <br>
             <span class="tag is-info">{{stadium.price}} บาท / ชั่วโมง</span>
-            <br><br>
-            {{stadium.detail}}
+            <br><br> {{stadium.detail | slice:0:10}}...
           </div>
           <a class="button is-info">ข้อมูลเพิ่มเติม</a>
-          <a class="button is-primary">จองสนาม</a>
+          <a class="button is-primary" (click)="toggleBooking($stadium.field_id)" >จองสนาม</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="modal">
+  <div class="modal" [class.is-active]=modalWork>
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title">จองสนาม</p>
-        <button class="delete"></button>
+        <button class="delete" (click)="toggleBooking(0)"></button>
       </header>
       <section class="modal-card-body">
+        <div class="field">
+          <label class="label-reserve" *ngIf="sodium">สนามที่เลือก: {{ sodium.field_name }}</label> 
+        </div>
         <div class="field">
           <label class="label-reserve">สนามย่อย</label>
           <p class="control">
@@ -119,8 +120,7 @@
         </div>
       </section>
       <footer class="modal-card-foot">
-        <a class="button is-success">จอง</a>
-        <a class="button">ปิดหน้าต่างนี้</a>
+        <a class="button is-success" id="bookingButton">จอง</a>
       </footer>
     </div>
   </div>

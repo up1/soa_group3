@@ -14,4 +14,11 @@ export class StadiumService {
         .get('http://localhost:9001/listfield')
         .map((response: Response) => <Stadium[]> response.json());
   }
+
+  getStadium(field_id: number): Observable<Stadium[]> {
+    console.log('http://localhost:9001/field?field_id='+field_id.toString())
+    return this._http
+        .get('http://localhost:9001/field?field_id='+field_id.toString())
+        .map((response: Response) => <Stadium[]> response.json());
+  }
 }
