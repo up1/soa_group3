@@ -34,6 +34,7 @@ public class FieldController {
         return this.fieldRepository.getFieldByID(field_id);
     }
 
+
     @RequestMapping(value = "/field/{field_id}/{ex_id}", method = RequestMethod.GET)
     public FieldExtend getFieldEx(@PathVariable int field_id,
                                   @PathVariable int ex_id) {

@@ -10,6 +10,7 @@ import { AppRegister } from './app.register';
 import { AppReserve } from './app.reserve';
 import { AppStadium } from './app.stadium';
 import { AppUser } from './app.user';
+import { AppManage } from './app.manage';
 
 import { StadiumService } from 'app/data/stadium.service';
 
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
   { path: 'reserve', component: AppStadium },
   { path: 'reserve/id', component: AppReserve },
   { path: 'reserve/id/history', component: AppReserve },
-  { path: 'user/id', component: AppUser  }
+  { path: 'user/id', component: AppUser  },
+  { path: 'manage', component: AppManage  }
 ];
 
 @NgModule({
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     AppRegister,
     AppReserve,
     AppStadium,
-    AppUser
+    AppUser,
+    AppManage
   ],
   imports: [
     BrowserModule,

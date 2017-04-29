@@ -1,5 +1,5 @@
 <nav class="nav">
-  <div class="container">
+  <div *ngIf="mode === 1" class="container">
     <div class="nav-left">
       <a class="nav-item" routerLink="/" routerLinkActive="active">
         <img src="assets/images/web-logo2.png" alt="Reserve Football Stadium">
@@ -15,6 +15,30 @@
     <div class="nav-right nav-menu">
       <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">จองสนาม</a>
       <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">รายการจองสนาม</a>
+      <a class="nav-item is-tab" routerLink="/user/id" routerLinkActive="is-active">
+        <span class="icon">
+          <i class="fa fa-user"></i>
+        </span>
+        User
+      </a>
+      <a class="nav-item is-tab" routerLink="/auth" routerLinkActive="is-active">เข้าสู่ระบบ</a>
+    </div>
+  </div>
+
+  <div *ngIf="mode === 2" class="container">
+    <div class="nav-left">
+      <a class="nav-item" routerLink="/" routerLinkActive="active">
+        <img src="assets/images/web-logo2.png" alt="Reserve Football Stadium">
+      </a>
+      <a class="nav-item is-tab is-hidden-mobile" routerLink="/manage" routerLinkActive="is-active">จัดการสนาม</a>
+    </div>
+    <span class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div class="nav-right nav-menu">
+      <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">จัดการสนาม</a>
       <a class="nav-item is-tab" routerLink="/user/id" routerLinkActive="is-active">
         <span class="icon">
           <i class="fa fa-user"></i>

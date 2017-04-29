@@ -31,6 +31,7 @@ public class FieldRepository {
         return jdbcTemplate.queryForObject(sql, new Object[]{field_id}, new FieldRowMapper());
     }
 
+
     public FieldExtend getFieldEXByID(int field_id, int ex_id) {
         String sql ="select * from field_extend WHERE ex_id=? AND field_id=?";
         return jdbcTemplate.queryForObject(sql, new Object[]{ex_id,field_id}, new FieldExtendRowMapper());

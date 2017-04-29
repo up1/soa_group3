@@ -27,7 +27,7 @@
             <br><br> {{stadium.detail | slice:0:10}}...
           </div>
           <a class="button is-info">ข้อมูลเพิ่มเติม</a>
-          <a class="button is-primary" (click)="toggleBooking($stadium.field_id)" >จองสนาม</a>
+          <a class="button is-primary" (click)="toggleBooking(stadium.field_id)" >จองสนาม</a>
         </div>
       </div>
     </div>
@@ -48,8 +48,7 @@
           <p class="control">
             <span class="select">
       <select>
-        <option>สนามใหญ่</option>
-        <option>สนามซ้อม</option>
+        <option *ngFor="let s of soda">{{ s.fieldex_name }}</option>
       </select>
     </span>
           </p>
