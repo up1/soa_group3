@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { Stadium } from 'app/data/stadium';
 import { SubStadium } from 'app/data/substadium';
 import { StadiumService } from 'app/data/stadium.service';
+import { AppManage } from './app.manage';
 
 @Component({
   selector: 'stadium-create-page',
@@ -34,7 +35,8 @@ export class StadiumCreate {
       .subscribe(
       soda => this.soda = soda,
       error => this.errorMessage = <any>error
-      );
+      
+      ); 
     this.router.navigate(['/manage']);
   }
 

@@ -19,14 +19,14 @@ export class AppManage implements OnInit {
   constructor(private _stadiumService: StadiumService) { }
 
   ngOnInit() {
-    this.getSubStadiumList(1)
+    this.getSubStadiumList(1);
     this.SubStadiumModal = false;
   }
 
-  ngDoCheck() {
-    this.getSubStadiumList(1)
+  ngAfterContentInit() {
+    this.getSubStadiumList(1);
   }
-  
+
   getSubStadiumList(field_id: number) {
     this._stadiumService.getSubStadium(field_id)
       .subscribe(
