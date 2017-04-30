@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Stadium } from 'app/data/stadium';
 import { SubStadium } from 'app/data/substadium';
 import { StadiumService } from 'app/data/stadium.service';
@@ -16,7 +17,7 @@ export class AppManage implements OnInit {
   SubStadiumModal: boolean;
   editSubStadium: boolean;
 
-  constructor(private _stadiumService: StadiumService) { }
+  constructor(private _stadiumService: StadiumService, private router: Router) { }
 
   ngOnInit() {
     this.getSubStadiumList(1);
@@ -35,7 +36,16 @@ export class AppManage implements OnInit {
       );
   }
 
+  deleteSubStadium(ex_id: number) {
+    this._stadiumService.deleteSubStadium(ex_id)
+      .subscribe(
+      soda => this.soda = soda,
+      error => this.errorMessage = <any>error
+      );
+    this.router.navigate(['/manage']);
+  }
+
   toggleEditSubStadium() {
-    
+
   }
 }
