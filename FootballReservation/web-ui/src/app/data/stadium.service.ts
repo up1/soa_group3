@@ -34,9 +34,9 @@ export class StadiumService {
         .map((response: Response) => <SubStadium[]> response.json());
   }
 
-  createSubStadium() {
+  createSubStadium(fieldex_name: string, rent: number, size: string, floor: string) {
     return this._http
-    .post('http://localhost:9003/field_ex/add', JSON.parse('{"field_id": 1,"fieldex_name": "TEST4","rent": 800,"image": "img","size": "555x555 m","floor": "Natural grass"}'))
+    .post('http://localhost:9003/field_ex/add', JSON.parse('{"field_id": 1,"fieldex_name": "'+fieldex_name+'","rent": '+rent.toString()+',"image": "img","size": "'+size+'","floor": "'+floor+'"}'))
     .map((response: Response) => response.json());
   }
 

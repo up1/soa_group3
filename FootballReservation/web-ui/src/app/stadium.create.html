@@ -6,7 +6,7 @@
     <div class="field">
       <label class="label">ชื่อสนาม</label>
       <p class="control">
-        <input class="input" type="text" placeholder="">
+        <input class="input" type="text" placeholder="" [(ngModel)]="fieldex_name">
       </p>
     </div>
   </div>
@@ -15,7 +15,7 @@
     <div class="field has-addons">
       <label class="label" style="margin-right: 10px; line-height: 2.5;">ราคาค่าเช่า</label>
       <p class="control">
-        <input class="input" type="number" placeholder="">
+        <input class="input" type="number" placeholder="" [(ngModel)]="rent">
       </p>
       <p class="control">
         <a class="button">
@@ -42,7 +42,7 @@
       <div class="field-body">
         <div class="field">
           <p class="control is-expanded">
-            <input class="input" type="number" placeholder="W">
+            <input class="input" type="number" placeholder="W" [(ngModel)]="size_w">
           </p>
         </div>
         <div class="field-label is-normal">
@@ -50,7 +50,7 @@
         </div>
         <div class="field">
           <p class="control is-expanded">
-            <input class="input" type="number" placeholder="H">
+            <input class="input" type="number" placeholder="H" [(ngModel)]="size_h">
           </p>
         </div>
         <div class="field-label is-normal">
@@ -64,7 +64,7 @@
     <div class="field">
       <label class="label">ประเภทพื้นสนาม</label>
       <p class="control">
-        <input class="input" type="text" placeholder="">
+        <input class="input" type="text" placeholder="" [(ngModel)]="floor">
       </p>
     </div>
   </div>
