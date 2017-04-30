@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
+
 import { AppComponent } from './app.component';
 import { AppLogin } from './app.login';
 import { AppRegister } from './app.register';
@@ -11,7 +12,8 @@ import { AppReserve } from './app.reserve';
 import { AppStadium } from './app.stadium';
 import { AppUser } from './app.user';
 import { AppManage } from './app.manage';
-
+//import { AlertComponent } from './_directives/index';
+import { AlertService, AuthenticationService, UserService } from './_services/index';
 import { StadiumService } from 'app/data/stadium.service';
 
 const appRoutes: Routes = [
@@ -32,7 +34,9 @@ const appRoutes: Routes = [
     AppReserve,
     AppStadium,
     AppUser,
-    AppManage
+    AppManage,
+    //AlertService,
+    //AlertComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,10 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [StadiumService],
+  providers: [StadiumService,
+        AlertService,
+        AuthenticationService,
+        UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

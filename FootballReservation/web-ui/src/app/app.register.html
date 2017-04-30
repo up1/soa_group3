@@ -1,67 +1,57 @@
 <div class="container">
   <div class="column is-half is-offset-one-quarter">
     <h2 class="title is-2 has-text-centered">สมัครสมาชิก</h2>
-<div class="field is-grouped">
-  <p class="control has-icon is-expanded">
-    <input class="input" type="text" placeholder="ชื่อ">
-    <span class="icon is-small">
+    <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+      <div class="field is-grouped">
+        <p class="control has-icon is-expanded">
+          <input class="input" type="text" placeholder="ชื่อ" name="fname" [(ngModel)]="model.fname" #fname="ngModel" required>
+          <span class="icon is-small">
       <i class="fa fa-user"></i>
     </span>
-  </p>
-  <p class="control has-icon is-expanded">
-    <input class="input" type="text" placeholder="นามสกุล">
-    <span class="icon is-small">
+        </p>
+        <p class="control has-icon is-expanded">
+          <input class="input" type="text" placeholder="นามสกุล" name="lname" [(ngModel)]="model.lname" #lname="ngModel" required>
+          <span class="icon is-small">
       <i class="fa fa-user"></i>
     </span>
-  </p>
-</div>
-<div class="field">
-  <p class="control has-icon">
-    <input class="input" type="email" placeholder="Email">
-    <span class="icon is-small">
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icon">
+          <input class="input" type="email" placeholder="Email" name="email" [(ngModel)]="model.email" #email="ngModel" required>
+          <span class="icon is-small">
       <i class="fa fa-user"></i>
     </span>
-  </p>
-</div>
-<div class="field">
-  <p class="control">
-<textarea class="textarea" placeholder="ที่อยู่"></textarea>
-  </p>
-</div>
-<div class="field">
-  <p class="control has-icon">
-    <input class="input" type="password" placeholder="Password">
-    <span class="icon is-small">
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icon">
+          <input class="input" type="password" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required >
+          <span class="icon is-small">
       <i class="fa fa-lock"></i>
     </span>
-  </p>
-</div>
-<div class="field">
-  <p class="control has-icon">
-    <input class="input" type="password" placeholder="Comfirm Password">
-    <span class="icon is-small">
-      <i class="fa fa-lock"></i>
-    </span>
-  </p>
-</div>
-<div class="field">
-  <label class="label">ประเภท</label>
-  <p class="control">
-    <label class="radio">
-      <input type="radio" name="role_type">
+        </p>
+      </div>
+      <div class="field">
+        <label class="label">ประเภท</label>
+        <p class="control">
+          <label class="radio">
+      <input type="radio" name="role" value="user" [(ngModel)]="model.role" #role="ngModel" checked> 
       บุคคล
     </label>
-    <label class="radio">
-      <input type="radio" name="role_type">
+          <label class="radio">
+      <input type="radio" name="role" value="manager" [(ngModel)]="model.role" #role="ngModel">
       ผู้ดูแลสนาม
     </label>
-  </p>
-</div>
-
-<div class="field">
-  <p class="control">
-    <button class="button is-primary is-outlined">ลงทะเบียน</button>
-  </p>
-</div>
-</div>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+          <button [disabled]="loading" class="button is-primary is-outlined">ลงทะเบียน</button>
+          <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+          <a [routerLink]="['/auth']" class="button is-primary is-outlined">ยกเลิก</a>
+        </p>
+      </div>
+    </form>
+  </div>
 </div>

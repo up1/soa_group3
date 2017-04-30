@@ -9,6 +9,7 @@ import java.util.List;
  * Created by mosed on 3/13/2017.
  */
 @RestController
+@CrossOrigin(origins = "*")
 public class UserController {
     private final UserRepository UserRepository;
 
@@ -27,9 +28,9 @@ public class UserController {
     }
     @RequestMapping(value = "/user" , method = {RequestMethod.GET, RequestMethod.POST})
     public User loginUser(
-            @RequestParam(value="username") String username,
+            @RequestParam(value="email") String email,
             @RequestParam(value="password") String password) {
-        return this.UserRepository.login(username,password);
+        return this.UserRepository.login(email,password);
     }
 
     @RequestMapping(value = "/user/add", method = RequestMethod.POST)

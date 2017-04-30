@@ -25,8 +25,8 @@ public class UserRepository {
 
     @Transactional
     public void save(User user) {
-        String sql = "INSERT INTO USERS(user_fullname, user_email, user_address, user_picture, username, password,role) VALUES (?,?,?,?,?,?,?)";
-        this.jdbcTemplate.update(sql,user.getFullname(), user.getEmail(),user.getAddress(), user.getPicture(),user.getUsername(),user.getPassword(), user.getRole());
+        String sql = "INSERT INTO USERS(user_fname, user_lname, user_email, password, role) VALUES (?,?,?,?,?)";
+        this.jdbcTemplate.update(sql, user.getFname(), user.getLname(), user.getEmail(), user.getPassword(), user.getRole());
     }
 
     public void delete(Long id) {
@@ -41,12 +41,12 @@ public class UserRepository {
         return users;
     }
 
-    public User login(String username, String password){
-        return this.jdbcTemplate.queryForObject("SELECT * FROM USERS WHERE username=? AND password=?", new Object[]{username,password}, new UserRowMapper());
+    public User login(String email, String password){
+        return this.jdbcTemplate.queryForObject("SELECT * FROM USERS WHERE email=? AND password=?", new Object[]{email,password}, new UserRowMapper());
     }
 
     public void update(User user, Long id){
-        String sql = "UPDATE USERS SET user_fullname = ? ,user_email = ? ,user_address = ?,user_picture = ? WHERE user_id= ?";
-        this.jdbcTemplate.update(sql, user.getFullname(), user.getEmail(), user.getAddress(), user.getPicture(), id);
+        String sql = "UPDATE USERS SET user_fname = ? , user_lname = ?, user_email = ? , WHERE user_id= ?";
+        this.jdbcTemplate.update(sql, user.getFname(),  user.getLname(), user.getEmail(), id);
     }
 }
