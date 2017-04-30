@@ -35,7 +35,7 @@ export class StadiumCreate {
       soda => this.soda = soda,
       error => this.errorMessage = <any>error
       );
-    this.router.navigateByUrl('/manage');
+    this.router.navigate(['/manage']);
   }
 
 }

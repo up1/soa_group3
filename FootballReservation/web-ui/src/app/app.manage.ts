@@ -4,6 +4,7 @@ import { SubStadium } from 'app/data/substadium';
 import { StadiumService } from 'app/data/stadium.service';
 
 @Component({
+  moduleId: module.id,
   selector: 'manage-page',
   templateUrl: './app.manage.html'
 })
@@ -21,6 +22,11 @@ export class AppManage implements OnInit {
     this.getSubStadiumList(1)
     this.SubStadiumModal = false;
   }
+
+  ngDoCheck() {
+    this.getSubStadiumList(1)
+  }
+  
   getSubStadiumList(field_id: number) {
     this._stadiumService.getSubStadium(field_id)
       .subscribe(
