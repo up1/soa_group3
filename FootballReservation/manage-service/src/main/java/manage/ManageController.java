@@ -64,18 +64,6 @@ public class ManageController {
         this.manageRepository.deleteEx(id);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
     @RequestMapping(value = "/reservation", method = RequestMethod.GET)
     public List<Reservation> getReseervByDate(
             @RequestParam(value = "field_id", required = false) String field_id,

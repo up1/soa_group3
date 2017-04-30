@@ -4,11 +4,11 @@ import { SubStadium } from 'app/data/substadium';
 import { StadiumService } from 'app/data/stadium.service';
 
 @Component({
-  selector: 'manage-page',
-  templateUrl: './app.manage.html'
+  selector: 'stadium-create-page',
+  templateUrl: './stadium.create.html'
 })
 
-export class AppManage implements OnInit {
+export class StadiumCreate {
 
   soda: SubStadium[];
   errorMessage: string;
@@ -17,19 +17,12 @@ export class AppManage implements OnInit {
 
   constructor(private _stadiumService: StadiumService) { }
 
-  ngOnInit() {
-    this.getSubStadiumList(1)
-    this.SubStadiumModal = false;
-  }
-  getSubStadiumList(field_id: number) {
-    this._stadiumService.getSubStadium(field_id)
+  createSubStadium() {
+    this._stadiumService.createSubStadium()
       .subscribe(
       soda => this.soda = soda,
       error => this.errorMessage = <any>error
       );
   }
 
-  toggleEditSubStadium() {
-    
-  }
 }

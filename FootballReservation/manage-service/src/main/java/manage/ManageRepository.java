@@ -68,25 +68,6 @@ public class ManageRepository {
         this.jdbcTemplate.update(sql, id);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Transactional(readOnly = true)
     public Reservation getReservByID(int reserv_id) {
         try {

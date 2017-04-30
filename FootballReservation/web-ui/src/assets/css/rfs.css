@@ -37,3 +37,7 @@ body, button {
     margin-left: 90%;
 }
 
+#manage-control {
+    text-align: right;
+}
+

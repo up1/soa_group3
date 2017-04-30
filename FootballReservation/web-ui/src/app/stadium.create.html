@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="column is-half is-offset-one-quarter">
+    <h2 class="title is-2 has-text-centered">เพิ่มสนามย่อย</h2>
+  </div>
+  <div class="column is-half is-offset-one-quarter">
+    <div class="field">
+      <label class="label">ชื่อสนาม</label>
+      <p class="control">
+        <input class="input" type="text" placeholder="">
+      </p>
+    </div>
+  </div>
+
+  <div class="column is-4 is-offset-3">
+    <div class="field has-addons">
+      <label class="label" style="margin-right: 10px; line-height: 2.5;">ราคาค่าเช่า</label>
+      <p class="control">
+        <input class="input" type="number" placeholder="">
+      </p>
+      <p class="control">
+        <a class="button">
+      บาท
+    </a>
+      </p>
+    </div>
+  </div>
+
+  <div class="column is-half is-offset-one-quarter">
+    <div class="field">
+      <label class="label">รูปภาพ</label>
+      <p class="control">
+        <image-upload [max]="1"></image-upload>
+      </p>
+    </div>
+  </div>
+
+  <div class="column is-half is-offset-one-quarter">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">ขนาด</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control is-expanded">
+            <input class="input" type="number" placeholder="W">
+          </p>
+        </div>
+        <div class="field-label is-normal">
+          <label class="label">X</label>
+        </div>
+        <div class="field">
+          <p class="control is-expanded">
+            <input class="input" type="number" placeholder="H">
+          </p>
+        </div>
+        <div class="field-label is-normal">
+          <label class="label">m</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-half is-offset-one-quarter">
+    <div class="field">
+      <label class="label">ประเภทพื้นสนาม</label>
+      <p class="control">
+        <input class="input" type="text" placeholder="">
+      </p>
+    </div>
+  </div>
+
+  <div class="column is-half is-offset-one-quarter">
+    <div class="block">
+      <a class="button is-success" (click)="createSubStadium()">เพิ่มสนาม</a>
+    </div>
+  </div>
+
+</div>

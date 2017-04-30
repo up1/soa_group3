@@ -1,5 +1,9 @@
 <div class="container">
   <h2 class="title is-2 has-text-centered">จัดการสนาม</h2>
+  <div class="block" id="manage-control">
+    <a class="button is-info">แก้ไขข้อมูลสนาม</a>
+    <a class="button is-success" routerLink="/manage/create" >เพิ่มสนาม</a>
+  </div>
   <div class="columns is-multiline is-mobile">
     <div class="column is-one-quarter" *ngFor="let stadium of soda">
       <div class="card">
@@ -10,26 +14,18 @@
         </div>
         <div class="card-content">
           <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="https://upload.wikimedia.org/wikipedia/en/e/ed/MTUTD.png" alt="Image">
-              </figure>
-            </div>
             <div class="media-content">
-              <p class="title is-5">{{stadium.field_name}}</p>
-              <p class="subtitle is-6">{{stadium.location}}</p>
+              <p class="title is-5">{{stadium.fieldex_name}}</p>
+              <p class="subtitle is-6">ขนาด {{stadium.size}}</p>
             </div>
           </div>
           <div class="content">
-            <span class="icon"><i class="fa fa-clock-o"></i></span> {{stadium.stime}}:00 - {{stadium.etime}}:00
-            <br>
-            <span class="tag is-info">{{stadium.price}} บาท / ชั่วโมง</span>
-            <br><br> {{stadium.detail | slice:0:10}}...
+            <span class="tag is-info">{{stadium.rent}} บาท / ชั่วโมง</span>
           </div>
-          <a class="button is-info">ข้อมูลเพิ่มเติม</a>
-          <a class="button is-primary" (click)="toggleBooking(stadium.field_id)">จองสนาม</a>
+          <a class="button is-info">แก้ไขข้อมูล</a>
+          <a class="button is-danger" (click)="toggleBooking(stadium.field_id)">ลบสนาม</a>
         </div>
       </div>
     </div>
   </div>
-  </div>
+</div>
