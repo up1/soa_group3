@@ -27,8 +27,8 @@ const appRoutes: Routes = [
   { path: 'reserve/id/history', component: AppReserve },
   { path: 'user/id', component: AppUser  },
   { path: 'manage', component: AppManage  },
-  { path: 'manage/create', component: StadiumCreate }
-  { apath: 'home', component: HomeComponent }
+  { path: 'manage/create', component: StadiumCreate },
+  { path: 'home', component: HomeComponent }
 ];
 
 @NgModule({
@@ -41,7 +41,7 @@ const appRoutes: Routes = [
     AppUser,
     AppManage,
     AlertComponent,
-    StadiumCreate
+    StadiumCreate,
     HomeComponent
   ],
   imports: [
