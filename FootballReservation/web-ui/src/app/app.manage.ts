@@ -15,7 +15,6 @@ export class AppManage implements OnInit {
   soda: SubStadium[];
   errorMessage: string;
   SubStadiumModal: boolean;
-  editSubStadium: boolean;
 
   constructor(private _stadiumService: StadiumService, private router: Router) { }
 
@@ -34,6 +33,10 @@ export class AppManage implements OnInit {
       soda => this.soda = soda,
       error => this.errorMessage = <any>error
       );
+  }
+
+  editSubStadium(ex_id: number) {
+    this.router.navigate(['/manage/edit'], { queryParams: { substadium: ex_id } });
   }
 
   deleteSubStadium(ex_id: number) {

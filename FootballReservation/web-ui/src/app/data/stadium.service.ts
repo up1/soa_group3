@@ -34,6 +34,13 @@ export class StadiumService {
       .map((response: Response) => <SubStadium[]>response.json());
   }
 
+  getSubStadiumData(ex_id: number): Observable<SubStadium[]> {
+    return this._http
+      .get('http://localhost:9003/field_ex/' + ex_id.toString())
+      .map((response: Response) => <SubStadium[]>response.json());
+  }
+  
+
   createSubStadium(fieldex_name: string, rent: number, size: string, floor: string) {
     return this._http
       .post('http://localhost:9003/field_ex/add', JSON.parse('{"field_id": 1,"fieldex_name": "' + fieldex_name + '","rent": ' + rent.toString() + ',"image": "img","size": "' + size + '","floor": "' + floor + '"}'))

@@ -12,10 +12,11 @@ import { AppReserve } from './app.reserve';
 import { AppStadium } from './app.stadium';
 import { AppUser } from './app.user';
 import { AppManage } from './app.manage';
-import { AuthGuard } from './_guards/index';
+//import { AuthGuard } from './_guards/index';
 import { AlertComponent } from './_directives/index';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
 import { StadiumCreate } from './stadium.create';
+import { StadiumEdit } from './stadium.edit';
 import { StadiumService } from 'app/data/stadium.service';
 import { HomeComponent } from './home/home.component';
 
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
   { path: 'user/id', component: AppUser  },
   { path: 'manage', component: AppManage  },
   { path: 'manage/create', component: StadiumCreate },
+  { path: 'manage/edit', component: StadiumEdit },
   { path: 'home', component: HomeComponent }
 ];
 
@@ -42,6 +44,7 @@ const appRoutes: Routes = [
     AppManage,
     AlertComponent,
     StadiumCreate,
+    StadiumEdit,
     HomeComponent
   ],
   imports: [
@@ -52,7 +55,7 @@ const appRoutes: Routes = [
     ImageUploadModule.forRoot()
   ],
   providers: [
-        AuthGuard,
+        //AuthGuard,
         StadiumService,
         AlertService,
         AuthenticationService,
