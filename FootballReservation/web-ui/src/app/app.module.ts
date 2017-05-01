@@ -12,10 +12,12 @@ import { AppReserve } from './app.reserve';
 import { AppStadium } from './app.stadium';
 import { AppUser } from './app.user';
 import { AppManage } from './app.manage';
+import { AuthGuard } from './_guards/index';
 import { AlertComponent } from './_directives/index';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
 import { StadiumCreate } from './stadium.create';
 import { StadiumService } from 'app/data/stadium.service';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   { path: 'auth', component: AppLogin },
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
   { path: 'reserve/id/history', component: AppReserve },
   { path: 'user/id', component: AppUser  },
   { path: 'manage', component: AppManage  },
-  { path: 'manage/create', component: StadiumCreate }
+  { path: 'manage/create', component: StadiumCreate },
+  { path: 'home', component: HomeComponent }
 ];
 
 @NgModule({
@@ -37,9 +40,9 @@ const appRoutes: Routes = [
     AppStadium,
     AppUser,
     AppManage,
-    //AlertService,
     AlertComponent,
-    StadiumCreate
+    StadiumCreate,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -48,10 +51,13 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     ImageUploadModule.forRoot()
   ],
-  providers: [StadiumService,
+  providers: [
+        AuthGuard,
+        StadiumService,
         AlertService,
         AuthenticationService,
-        UserService],
+        UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
