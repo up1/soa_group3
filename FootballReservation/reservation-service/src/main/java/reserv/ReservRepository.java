@@ -23,7 +23,7 @@ public class ReservRepository {
     @Transactional(readOnly = true)
     public Reserv getReservByID(int reserv_id) {
         try {
-            return this.jdbcTemplate.queryForObject("SELECT * FROM reservation WHERE reservation_id=?",
+            return this.jdbcTemplate.queryForObject("SELECT * FROM RESERVATION WHERE reservation_id=?",
                     new Object[]{reserv_id},new ReservRowMapper());
         }catch (Exception ex){
             throw new ReservNotFoundException(reserv_id);
@@ -33,7 +33,7 @@ public class ReservRepository {
     @Transactional(readOnly = true)
     public List<Reserv> findByPage(int page, int itemPerPage) {
         int offset = (page-1) * itemPerPage;
-        return this.jdbcTemplate.query("SELECT * FROM reservation WHERE reservation_id ORDER BY reservation_id LIMIT ? OFFSET ?",
+        return this.jdbcTemplate.query("SELECT * FROM RESERVATION WHERE reservation_id ORDER BY reservation_id LIMIT ? OFFSET ?",
                 new Object[]{itemPerPage,offset},new ReservRowMapper());
     }
 
@@ -41,17 +41,17 @@ public class ReservRepository {
     public List<Reserv> findByFilter(String date,String user) {
         if(date == null && user == null) {
             LocalDate localDate = LocalDate.now();
-            return this.jdbcTemplate.query("SELECT * FROM reservation WHERE reservation_date>?",
+            return this.jdbcTemplate.query("SELECT * FROM RESERVATION WHERE reservation_date>?",
                     new Object[]{dtf.format(localDate)}, new ReservRowMapper());
         }
         else if(date != null && user != null){
-            return this.jdbcTemplate.query("SELECT * FROM reservation WHERE reservation_date=? AND reservation_user=?",
+            return this.jdbcTemplate.query("SELECT * FROM RESERVATION WHERE reservation_date=? AND reservation_user=?",
                     new Object[]{date,user}, new ReservRowMapper());
         }else if(date != null){
-            return this.jdbcTemplate.query("SELECT * FROM reservation WHERE reservation_date=?",
+            return this.jdbcTemplate.query("SELECT * FROM RESERVATION WHERE reservation_date=?",
                     new Object[]{date}, new ReservRowMapper());
         }else{
-            return this.jdbcTemplate.query("SELECT * FROM reservation WHERE reservation_user=?",
+            return this.jdbcTemplate.query("SELECT * FROM RESERVATION WHERE reservation_user=?",
                     new Object[]{user}, new ReservRowMapper());
         }
     }
@@ -72,7 +72,7 @@ public class ReservRepository {
 
     @Transactional
     public void confirmReserv(int reserv_id){
-        String sql = "UPDATE reserv SET reserv_status='confirm' WHERE reserv_id=?;";
+        String sql = "UPDATE RESERV SET reserv_status='confirm' WHERE reserv_id=?;";
         try {
             this.jdbcTemplate.update(sql,reserv_id);
         }catch (Exception ex){
@@ -82,7 +82,7 @@ public class ReservRepository {
 
     @Transactional
     public void deleteReserv(int reserv_id) {
-        String sql = "DELETE FROM reserv WHERE reserv_id=?;";
+        String sql = "DELETE FROM RESERV WHERE reserv_id=?;";
         try {
             this.jdbcTemplate.update(sql, reserv_id);
         }catch (Exception ex){
@@ -93,7 +93,7 @@ public class ReservRepository {
     //Customer already paid
     @Transactional
     public void cancelReserv(int reserv_id) {
-        String sql = "UPDATE reserv SET reserv_status='cancel' WHERE reserv_id=?;";
+        String sql = "UPDATE RESERV SET reserv_status='cancel' WHERE reserv_id=?;";
         try {
             this.jdbcTemplate.update(sql,reserv_id);
         }catch (Exception ex) {
