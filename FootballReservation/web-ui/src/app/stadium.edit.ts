@@ -15,7 +15,6 @@ export class StadiumEdit implements OnInit {
   soda: SubStadium[];
   errorMessage: string;
   SubStadiumModal: boolean;
-  editSubStadium: boolean;
   ex_id: number;
 
   fieldex_name: string;
@@ -48,11 +47,11 @@ export class StadiumEdit implements OnInit {
       );
   }
 
-  createSubStadium() {
+  editSubStadium() {
 
     this.size = this.size_w.toString() + "x" + this.size_h + " m";
 
-    this._stadiumService.createSubStadium(this.fieldex_name, this.rent, this.size, this.floor)
+    this._stadiumService.editSubStadium(this.ex_id, this.fieldex_name, this.rent, this.size, this.floor)
       .subscribe(
       soda => this.soda = soda,
       error => this.errorMessage = <any>error
