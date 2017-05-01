@@ -58,7 +58,7 @@ public class ReservRepository {
 
     @Transactional
     public void doReserv(Reserv reserv){
-        String sql = "INSERT INTO RESERV" +
+        String sql = "INSERT INTO RESERVATION" +
                 "(reserv_user, reserv_field_id, reserv_ex_id, reserv_time, reserv_date) " +
                 "VALUE(?,?,?,?,?);";
         try {
@@ -72,7 +72,7 @@ public class ReservRepository {
 
     @Transactional
     public void confirmReserv(int reserv_id){
-        String sql = "UPDATE RESERV SET reserv_status='confirm' WHERE reserv_id=?;";
+        String sql = "UPDATE RESERVATION SET reserv_status='confirm' WHERE reserv_id=?;";
         try {
             this.jdbcTemplate.update(sql,reserv_id);
         }catch (Exception ex){
@@ -82,7 +82,7 @@ public class ReservRepository {
 
     @Transactional
     public void deleteReserv(int reserv_id) {
-        String sql = "DELETE FROM RESERV WHERE reserv_id=?;";
+        String sql = "DELETE FROM RESERVATION WHERE reserv_id=?;";
         try {
             this.jdbcTemplate.update(sql, reserv_id);
         }catch (Exception ex){
@@ -93,7 +93,7 @@ public class ReservRepository {
     //Customer already paid
     @Transactional
     public void cancelReserv(int reserv_id) {
-        String sql = "UPDATE RESERV SET reserv_status='cancel' WHERE reserv_id=?;";
+        String sql = "UPDATE RESERVATION SET reserv_status='cancel' WHERE reserv_id=?;";
         try {
             this.jdbcTemplate.update(sql,reserv_id);
         }catch (Exception ex) {
