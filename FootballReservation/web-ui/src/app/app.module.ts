@@ -12,6 +12,7 @@ import { AppReserve } from './app.reserve';
 import { AppStadium } from './app.stadium';
 import { AppUser } from './app.user';
 import { AppManage } from './app.manage';
+import { AuthGuard } from './_guards/index';
 import { AlertComponent } from './_directives/index';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
 import { StadiumCreate } from './stadium.create';
@@ -37,7 +38,6 @@ const appRoutes: Routes = [
     AppStadium,
     AppUser,
     AppManage,
-    //AlertService,
     AlertComponent,
     StadiumCreate
   ],
@@ -48,10 +48,13 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     ImageUploadModule.forRoot()
   ],
-  providers: [StadiumService,
+  providers: [
+        AuthGuard,
+        StadiumService,
         AlertService,
         AuthenticationService,
-        UserService],
+        UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
