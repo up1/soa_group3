@@ -17,6 +17,7 @@ import { AlertComponent } from './_directives/index';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
 import { StadiumCreate } from './stadium.create';
 import { StadiumService } from 'app/data/stadium.service';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   { path: 'auth', component: AppLogin },
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
   { path: 'user/id', component: AppUser  },
   { path: 'manage', component: AppManage  },
   { path: 'manage/create', component: StadiumCreate }
+  { apath: 'home', component: HomeComponent }
 ];
 
 @NgModule({
@@ -40,6 +42,7 @@ const appRoutes: Routes = [
     AppManage,
     AlertComponent,
     StadiumCreate
+    HomeComponent
   ],
   imports: [
     BrowserModule,
