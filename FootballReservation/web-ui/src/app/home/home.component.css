@@ -4,9 +4,9 @@
     float: left;
     height: 300px;
     /*width: 65px;*/
-    background: #F5F5F5;
+    /*background: #F5F5F5;*/
+    background: #000000;
     overflow-y: scroll;
-    margin-bottom: 25px;
 }
 .force-overflow
 {
