@@ -50,7 +50,7 @@ public class ManageController {
     }
 
     @RequestMapping(value = "/field_ex/{id}/update", method = RequestMethod.PUT)
-    public void updateFieldEx(FieldExtend fieldex,@PathVariable Long id) {
+    public void updateFieldEx(@RequestBody FieldExtend fieldex,@PathVariable Long id) {
         this.manageRepository.updateFieldex(fieldex,id);
     }
 
