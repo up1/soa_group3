@@ -19,7 +19,7 @@ export class AppRegister {
  
     register() {
         this.loading = true;
-        this.userService.create(this.model)
+        this.userService.create(this.model).subscribe();
         this.alertService.success('Registration successful', true);
         this.router.navigate(['/auth']);
             // .subscribe(
