@@ -1,4 +1,4 @@
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 	    jssor_1_slider_init = function() {
 
             var jssor_1_SlideoTransitions = [
@@ -62,7 +62,7 @@
             /* size of bullet elment */
             width: 16px;
             height: 16px;
-            background: url('img/b05.png') no-repeat;
+            background: url('assets/images/b05.png') no-repeat;
             overflow: hidden;
             cursor: pointer;
         }
@@ -89,7 +89,7 @@
             width: 40px;
             height: 58px;
             cursor: pointer;
-            background: url('img/a22.png') center center no-repeat;
+            background: url('assets/images/a22.png') center center no-repeat;
             overflow: hidden;
         }
         .jssora22l { background-position: -10px -31px; }
@@ -100,7 +100,7 @@
         .jssora22r.jssora22rdn { background-position: -310px -31px; }
         .jssora22l.jssora22lds { background-position: -10px -31px; opacity: .3; pointer-events: none; }
         .jssora22r.jssora22rds { background-position: -70px -31px; opacity: .3; pointer-events: none; }
-    </style>
+    </style>-->
     <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
@@ -109,24 +109,16 @@
         </div>
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
             <div>
-                <img data-u="image" src="img/red.jpg" />
-                <!-- <div style="position:absolute;top:30px;left:30px;width:480px;height:120px;z-index:0;font-size:50px;color:#ffffff;line-height:60px;">TOUCH SWIPE SLIDER</div>
-                <div style="position:absolute;top:300px;left:30px;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">Build your slider with anything, includes image, content, text, html, photo, picture</div>
-                <div style="position:absolute;top:120px;left:650px;width:470px;height:220px;z-index:0;">
-                    <img style="position:absolute;top:0px;left:0px;width:470px;height:220px;z-index:0;" src="img/c-phone-horizontal.png" />
-                    <div style="position:absolute;top:4px;left:45px;width:379px;height:213px;z-index:0; overflow:hidden;">
-                        <img data-u="caption" data-t="0" style="position:absolute;top:0px;left:0px;width:379px;height:213px;z-index:0;" src="img/c-slide-1.jpg" />
-                        <img data-u="caption" data-t="1" style="position:absolute;top:0px;left:379px;width:379px;height:213px;z-index:0;" src="img/c-slide-3.jpg" />
-                    </div>
-                    <img style="position:absolute;top:4px;left:45px;width:379px;height:213px;z-index:0;" src="img/c-navigator-horizontal.png" />
-                    <img data-u="caption" data-t="2" style="position:absolute;top:476px;left:454px;width:63px;height:77px;z-index:0;" src="img/hand.png" />
-                </div> -->
+                <img data-u="image" src="assets/images/img1.jpg" />
             </div>
             <div>
-                <img data-u="image" src="img/purple.jpg" />
+                <img data-u="image" src="assets/images/img2.jpg" />
             </div>
             <div>
-                <img data-u="image" src="img/blue.jpg" />
+                <img data-u="image" src="assets/images/img3.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="assets/images/img4.jpg" />
             </div>
         </div>
         <!-- Bullet Navigator -->
@@ -141,17 +133,15 @@
 
 
 
-
-		<div class="container" style="background-image: url('img/img.jpg'); height: 800px;">
-		
-			<div class="test" style="background-color:#000000;; height: 100%; width: 100%;">
+		<div class="container" [style.background-image] = "'url(assets/images/img.jpg)'" style="height: 800px">
+			<div class="test" style="background-color:#000000;; height: 100%; width: 100%; opacity: 0.8">
 					<p style="opacity: 100; text-align: center; font-size: 50px; padding-top: 20%"> Footbal Resevation</p>
 					<p style="text-align: center;">เว็บไซต์จองสนามฟุตบอลออนไลน์ ไม่ว่าคุณจะอยู่ที่ใดก็สามารถจองสนามฟุตบอลออนไลน์ได้ทั่วประเทศไทย เว้บไซต์ของเรามีสนามมากกว่า 1024 ทั่วประเทศ<br>
 					ที่ประเทศที่พร้อมจะสาดความมันส์ไปกับพวกคุณ รออ่ะไรอยู่ </p>
 					<!--<div class="field has-addons has-addons-centered" style="margin-top: 30px">-->
 						<div class="level-item has-text-centered" style="margin-top: 30px">
-					  <a class="button is-success is-large" style="margin-right: 30px;">จองเลย</a>
-  					<a class="button is-warning is-large" style="opacity: 100">สมัครสมาชิก</a>
+					  <a class="button is-success is-large" routerLink="/reserve/" style="margin-right: 30px;">จองเลย</a>
+  					<a class="button is-warning is-large" routerLink="/auth/regis" style="opacity: 100">สมัครสมาชิก</a>
 						</div>
 					<!--</div>-->
 			</div>
@@ -168,19 +158,20 @@
 
 
     <div class="container scrollbar" id="style-2" style=" margin: 100px 0px 100px 100px; height: 500px;">
-    	<div class="force-overflow" style="background: #000000">
-    	<article class="media">
+    	<div class="force-overflow" style="background: #000000; margin-top: 15px">
+    	<article class="media" style="margin-bottom: 50px">
 		  <figure class="media-left" style="width: 20%;">
-		    <p class="image is-64x64" style="width: 70%; margin: auto;">
-		      <img src="http://bulma.io/images/placeholders/128x128.png">
+		    <p class="image is-64x64" style="width: 80%; margin: auto;">
+		      <img src="assets/images/img.jpg">
 		    </p>
 		  </figure>
 		  <div class="media-content">
 		    <div class="content">
+		      <p style="font-size: 20px">
+		        <strong>สนามบอล โอทราฟฟอร์ด</strong> <small>เขตบางบอน</small> <small>อำเภอบางไทร</small> <small>กรุงเทพมหานคร</small>
+              </p>
 		      <p>
-		        <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-		        <br>
-		        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                    สนามบอลที่ดีที่สุดในเลขบางบอน ที่มาพร้อมกับโปรโมชั่นจอง 2สนามพร้อมกัน จอง 5 ชม แถม 1 ชมกันไปเลย !!!
 		      </p>
 		    </div>
 		    <nav class="level is-mobile">
@@ -202,18 +193,19 @@
 		  </div>
 		</article>
 
-		<article class="media">
-		  <figure class="media-left" style="width: 20%">
-		    <p class="image is-64x64" style="width: 70%; margin: auto;">
-		      <img src="http://bulma.io/images/placeholders/128x128.png">
+    	<article class="media" style="margin-bottom: 50px">
+		  <figure class="media-left" style="width: 20%;">
+		    <p class="image is-64x64" style="width: 80%; margin: auto;">
+		      <img src="assets/images/img3.jpg">
 		    </p>
 		  </figure>
 		  <div class="media-content">
 		    <div class="content">
+		      <p style="font-size: 20px">
+		        <strong>สนามบอล มิดฟิว</strong> <small>เขตบางนา</small> <small>อำเภอบางนา</small> <small>กรุงเทพมหานคร</small>
+              </p>
 		      <p>
-		        <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-		        <br>
-		        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                    สนามบอลที่ไม่ใช่แค่สนามบอล มีกิจกรรมอื่นอีกมากมายที่รอท่านอยู่โปรโมชั่นต่อยมวยฟรี 1 ครั้ง เมื่อจองสนามบอลครบ 3 ชม.
 		      </p>
 		    </div>
 		    <nav class="level is-mobile">
@@ -235,18 +227,19 @@
 		  </div>
 		</article>
 
-		<article class="media">
-		  <figure class="media-left" style="width: 20%">
-		    <p class="image is-64x64" style="width: 70%; margin: auto;">
-		      <img src="http://bulma.io/images/placeholders/128x128.png">
+    	<article class="media" style="margin-bottom: 50px">
+		  <figure class="media-left" style="width: 20%;">
+		    <p class="image is-64x64" style="width: 80%; margin: auto;">
+		      <img src="assets/images/img4.jpg">
 		    </p>
 		  </figure>
 		  <div class="media-content">
 		    <div class="content">
+		      <p style="font-size: 20px">
+		        <strong>สนามบอล หญ้านิ่ม</strong> <small>เขตบางรัก</small> <small>อำเภอบางกระโหก</small> <small>กรุงเทพมหานคร</small>
+              </p>
 		      <p>
-		        <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-		        <br>
-		        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                    หญ้านิ่มเหมือนปุยนุ่น ถ้าล้มแล้วหัวแตก ทำแผลฟรี !!!!
 		      </p>
 		    </div>
 		    <nav class="level is-mobile">
@@ -268,18 +261,19 @@
 		  </div>
 		</article>
 
-		<article class="media">
-		  <figure class="media-left" style="width: 20%">
-		    <p class="image is-64x64" style="width: 70%; margin: auto;">
-		      <img src="http://bulma.io/images/placeholders/128x128.png">
+    	<article class="media" style="margin-bottom: 50px">
+		  <figure class="media-left" style="width: 20%;">
+		    <p class="image is-64x64" style="width: 80%; margin: auto;">
+		      <img src="assets/images/img.jpg">
 		    </p>
 		  </figure>
 		  <div class="media-content">
 		    <div class="content">
+		      <p style="font-size: 20px">
+		        <strong>สนามบอล เตะบอลกันเถอะ</strong> <small>เขตจรเข้น้อย</small> <small>อำเภอจนเข้ใหญ่</small> <small>ชลบุรี</small>
+              </p>
 		      <p>
-		        <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-		        <br>
-		        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                    โปรโมชั่นวันนี้ที่คุณก็พลาดไม่ได้ จองสนามก่อนวันเตะ ลดราคา 30%
 		      </p>
 		    </div>
 		    <nav class="level is-mobile">
@@ -301,18 +295,19 @@
 		  </div>
 		</article>
 
-		<article class="media">
-		  <figure class="media-left" style="width: 20%">
-		    <p class="image is-64x64" style="width: 70%; margin: auto;">
-		      <img src="http://bulma.io/images/placeholders/128x128.png">
+    	<article class="media" style="margin-bottom: 50px;">
+		  <figure class="media-left" style="width: 20%;">
+		    <p class="image is-64x64" style="width: 80%; margin: auto;">
+		      <img src="assets/images/img1.jpg">
 		    </p>
 		  </figure>
 		  <div class="media-content">
 		    <div class="content">
+		      <p style="font-size: 20px">
+		        <strong>สนามบอล นกฮูกตาโตโอโหเตะบอล</strong> <small>เขตฐานทัพ</small> <small>อำเภอเพ้อถึงเธอ</small> <small>กรุงเทพมหานคร</small>
+              </p>
 		      <p>
-		        <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-		        <br>
-		        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                    ซื้อ 1 แถม 1 !!! ซื้อสนามบอลของเรา เอาไปเลย สนามข้างๆ
 		      </p>
 		    </div>
 		    <nav class="level is-mobile">
@@ -335,4 +330,23 @@
 		</article>
 		    </div>
 		  </div>
-    <script type="text/javascript">jssor_1_slider_init();</script>
+    <!--<script type="text/javascript">jssor_1_slider_init();</script>-->
+    <div class="container" style="margin: auto; margin-bottom: 100px; text-align: center;">
+        <h1 style="font-size: 50px">Contact Us</h1>
+    </div>
+    <div class="columns">
+        <div class="column is-one-third notification is-primary" style="text-align: center;">
+            <img src="assets/images/imagebot1.png">
+            <h1 style="text-align: center; margin-top:10px">Worapong Malaiwong</h1>
+        </div>
+
+        <div class="column is-one-third notification is-warning" style="text-align: center;">
+            <img src="assets/images/imagebot2.ico">
+            <h1 style="text-align: center; margin-top:10px">jobza55+@gmail.com</h1>
+        </div>
+
+        <div class="columncolumn notification is-danger" style="text-align: center; margin-bottom: 23px">
+            <img src="assets/images/imagebot3.png" style="width: 55%; margin-bottom: -20px">
+            <h1 style="text-align: center; margin-top:30px;">Worapong Malaiwong</h1>
+        </div>
+    </div>
