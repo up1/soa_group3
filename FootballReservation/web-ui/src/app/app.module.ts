@@ -32,7 +32,7 @@ const appRoutes: Routes = [
   { path: 'manage', component: AppManage  },
   { path: 'manage/create', component: StadiumCreate },
   { path: 'manage/edit', component: StadiumEdit },
-  { path: 'home', component: HomeComponent }
+  { path: '', component: HomeComponent }
 ];
 
 @NgModule({
