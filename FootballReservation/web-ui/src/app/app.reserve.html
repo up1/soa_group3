@@ -40,10 +40,7 @@
         <label class="label-reserve">วันที่ต้องการจอง</label>
         <ng2-datepicker [options]="options" [(ngModel)]="date"></ng2-datepicker>
         <br>
-        <div class="input-field col s12">
-          <label for="timepicker">Time</label>
-          <input id="timepicker" class="timepicker" type="time">
-        </div>
+
       </div>
     </section>
     <footer class="modal-card-foot">
@@ -51,11 +48,3 @@
     </footer>
   </div>
 </div>
-<script>
-  $('#timepicker').pickatime({
-    autoclose: false,
-    twelvehour: false,
-    default: '14:20:00'
-  });
-
-</script>
