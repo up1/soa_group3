@@ -29,7 +29,7 @@ export class StadiumEdit implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe((params: Params) => {
-      this.ex_id = params['substadium'];
+      this.ex_id = params['stadium.field_id'];
     });
 
     this._stadiumService.getSubStadiumData(this.ex_id)

@@ -47,6 +47,12 @@ export class StadiumService {
       .map((response: Response) => response.json());
   }
 
+  editSubStadium(ex_id: number, fieldex_name: string, rent: number, size: string, floor: string) {
+    return this._http
+      .put('http://localhost:9003/field_ex/'+ex_id.toString()+'/update', JSON.parse('{"field_id": 1,"fieldex_name": "' + fieldex_name + '","rent": ' + rent.toString() + ',"image": "img","size": "' + size + '","floor": "' + floor + '"}'))
+      .map((response: Response) => response.json());
+  }
+
   deleteSubStadium(ex_id: number) {
     return this._http
       .delete('http://localhost:9003/field_ex/'+ex_id.toString()+'/delete')

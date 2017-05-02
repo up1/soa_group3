@@ -27,7 +27,7 @@
             <br><br> {{stadium.detail | slice:0:10}}...
           </div>
           <a class="button is-info">ข้อมูลเพิ่มเติม</a>
-          <a class="button is-primary" (click)="toggleBooking(stadium.field_id)" >จองสนาม</a>
+          <a class="button is-primary" [routerLink]="[ '/reserve', stadium.field_id ]" >จองสนาม</a>
         </div>
       </div>
     </div>

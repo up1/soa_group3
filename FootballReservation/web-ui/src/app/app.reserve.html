@@ -1,47 +1,61 @@
 <div class="container">
-  <h2 class="title is-2 has-text-centered">รายการจองสนาม</h2>
-  <div class="tabs is-toggle is-fullwidth">
-  <ul>
-    <li (click)="reserveMode(0)" class="is-active">
-      <a>
-        <span>การจองปัจจุบัน</span>
-      </a>
-    </li>
-    <li (click)="reserveMode(1)">
-      <a>
-        <span>ประวัติการจอง</span>
-      </a>
-    </li>
-  </ul>
+  <h2 class="title is-2 has-text-centered">เลือกสนาม</h2>
+  <h4 class="title is-4 has-text-centered" *ngIf="sodium">สนาม: {{ sodium.field_name }}</h4>
+  <div class="block">
+    <a class="button is-primary is-outlined" routerLink="/reserve"><= ย้อนกลับ</a>
+  </div>
+  <div class="columns is-multiline is-mobile">
+    <div class="column is-one-quarter" *ngFor="let stadium of soda">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="http://filacrosse.com/wp-content/uploads/2015/06/scg-stadium.jpg" alt="Image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">s
+            <div class="media-content">
+              <p class="title is-5">{{stadium.fieldex_name}}</p>
+              <p class="subtitle is-6">ขนาด {{stadium.size}} <br> {{stadium.floor}}</p>
+            </div>
+          </div>
+          <div class="content">
+            <span class="tag is-info">{{stadium.rent}} บาท / ชั่วโมง</span>
+          </div>
+          <a class="button is-primary" *ngIf="sodium" (click)="toggleBooking(sodium.ex_id)">จองสนามนี้</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-  <table class="table">
-  <thead>
-    <tr>
-      <th>ลำดับที่</th>
-      <th>สนาม</th>
-      <th>สนามย่อย</th>
-      <th>วันที่</th>
-      <th>เวลา</th>
-      <th>สถานะ</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>บุรีรัมย์ ยูไนเต็ด</td>
-      <td>สนามซ้อม</td>
-      <td>06/04/2560</td>
-      <td>17:00-21:00</td>
-      <td><a class="button is-warning is-active">รอการยืนยัน</a></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>SCG Stadium</td>
-      <td>สนามหลัก</td>
-      <td>07/04/2560</td>
-      <td>08:00-18:00</td>
-      <td><a class="button is-success is-active">ยืนยันแล้ว</a></td>
-    </tr>
-  </tbody>
-  </table>
+<div class="modal" [class.is-active]=modalWork>
+  <div class="modal-background"></div>
+  <div class="modal-card" id="booking-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">จองสนาม</p>
+      <button class="delete" (click)="toggleBooking(0)"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="field" style="text-align: center;">
+        <label class="label-reserve">วันที่ต้องการจอง</label>
+        <ng2-datepicker [options]="options" [(ngModel)]="date"></ng2-datepicker>
+        <br>
+        <div class="input-field col s12">
+          <label for="timepicker">Time</label>
+          <input id="timepicker" class="timepicker" type="time">
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <a class="button is-success" id="bookingButton">จอง</a>
+    </footer>
+  </div>
 </div>
+<script>
+  $('#timepicker').pickatime({
+    autoclose: false,
+    twelvehour: false,
+    default: '14:20:00'
+  });
+
+</script>

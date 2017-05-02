@@ -20,11 +20,13 @@ import { StadiumEdit } from './stadium.edit';
 import { StadiumService } from 'app/data/stadium.service';
 import { HomeComponent } from './home/home.component';
 
+import { DatePickerModule } from 'ng2-datepicker';
+
 const appRoutes: Routes = [
   { path: 'auth', component: AppLogin },
   { path: 'auth/regis', component: AppRegister },
   { path: 'reserve', component: AppStadium },
-  { path: 'reserve/id', component: AppReserve },
+  { path: 'reserve/:id', component: AppReserve },
   { path: 'reserve/id/history', component: AppReserve },
   { path: 'user/id', component: AppUser  },
   { path: 'manage', component: AppManage  },
@@ -52,7 +54,8 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    ImageUploadModule.forRoot()
+    ImageUploadModule.forRoot(),
+    DatePickerModule
   ],
   providers: [
         //AuthGuard,
