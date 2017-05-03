@@ -30,10 +30,18 @@
     <tr *ngFor="let sodemacom of reservelist">
       <td>1</td>
       <td>{{ sodemacom.reserv_field_id }}</td>
-      <td>สนามซ้อม</td>
-      <td>{{ sodemacom.reserv_date }}</td>
+      <td>{{ sodemacom.reserv_ex_id }}</td>
+      <td>{{ sodemacom.reserv_date | date:"dd/MM/yyyy" }}</td>
       <td>{{ sodemacom.reserv_start_time }}:00-{{ sodemacom.reserv_end_time }}:00</td>
-      <td><a class="button is-warning is-active">รอการยืนยัน</a></td>
+      <td *ngIf="sodemacom.reserv_status == 'pending'">
+        <span class="tag is-warning is-medium">รอการยืนยัน</span>      
+      </td>
+      <td *ngIf="sodemacom.reserv_status == 'confirm'">
+        <span class="tag is-success is-medium">เรียบร้อย</span>      
+      </td>
+      <td *ngIf="sodemacom.reserv_status == 'decline'">
+        <span class="tag is-danger is-medium">ยกเลิก</span>      
+      </td>
     </tr>
   </tbody>
   </table>
