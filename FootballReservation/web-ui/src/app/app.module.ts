@@ -22,6 +22,8 @@ import { HomeComponent } from './home/home.component';
 import { AppReserveList } from './app.reservelist';
 
 import { DatePickerModule } from 'ng2-datepicker';
+import { ManagermanagmentComponent } from './managermanagment/managermanagment.component';
+import { UsermanagementComponent } from './usermanagement/usermanagement.component';
 
 const appRoutes: Routes = [
   { path: 'auth', component: AppLogin },
@@ -33,7 +35,9 @@ const appRoutes: Routes = [
   { path: 'manage', component: AppManage  },
   { path: 'manage/create', component: StadiumCreate },
   { path: 'manage/edit', component: StadiumEdit },
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
+  { path: 'managermanagment', component: ManagermanagmentComponent},
+  { path: 'usermanagement', component: UsermanagementComponent}
 ];
 
 @NgModule({
@@ -49,7 +53,9 @@ const appRoutes: Routes = [
     StadiumCreate,
     StadiumEdit,
     HomeComponent,
-    AppReserveList
+    AppReserveList,
+    ManagermanagmentComponent,
+    UsermanagementComponent
   ],
   imports: [
     BrowserModule,

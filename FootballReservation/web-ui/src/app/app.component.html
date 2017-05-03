@@ -43,12 +43,42 @@
         <span class="icon">
           <i class="fa fa-user"></i>
         </span>
-        User
+        manager
+      </a>
+      <a class="nav-item is-tab" routerLink="/auth" routerLinkActive="is-active">เข้าสู่ระบบ</a>
+    </div>
+  </div>
+
+  <div *ngIf="mode === 3" class="container">
+    <div class="nav-left">
+      <a class="nav-item" routerLink="/" routerLinkActive="active">
+        <img src="assets/images/web-logo2.png" alt="Reserve Football Stadium">
+      </a>
+      <a class="nav-item is-tab is-hidden-mobile" routerLink="/managermanagment" routerLinkActive="is-active">ผู้จัดการ</a>
+      <a class="nav-item is-tab is-hidden-mobile" routerLink="/usermanagement" routerLinkActive="is-active">ผู้ใช้ทั่วไป</a>
+    </div>
+    <span class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div class="nav-right nav-menu">
+      <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">ผู้จัดการ</a>
+      <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">ผู้ใช้ทั่วไป</a>
+      <a class="nav-item is-tab" routerLink="/user/id" routerLinkActive="is-active">
+        <span class="icon">
+          <i class="fa fa-user"></i>
+        </span>
+        admin
       </a>
       <a class="nav-item is-tab" routerLink="/auth" routerLinkActive="is-active">เข้าสู่ระบบ</a>
     </div>
   </div>
 </nav>
+
+
+
+
 <alert></alert>
 <router-outlet></router-outlet>
 <footer class="footer">
