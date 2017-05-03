@@ -25,6 +25,8 @@ import { AppReserveList } from './app.reservelist';
 import { DatePickerModule } from 'ng2-datepicker';
 import { ManagermanagmentComponent } from './managermanagment/managermanagment.component';
 import { UsermanagementComponent } from './usermanagement/usermanagement.component';
+import { getStadium } from 'app/data/getStadium.pipe';
+
 
 const appRoutes: Routes = [
   { path: 'regis', component: AppRegister },
@@ -64,7 +66,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     ImageUploadModule.forRoot(),
     DatePickerModule,
-    ModalModule
+    ModalModule,
+    getStadium
   ],
   providers: [
         //AuthGuard,
