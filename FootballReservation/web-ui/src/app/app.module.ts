@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { ImageUploadModule } from 'angular2-image-upload';
+import { ModalModule } from 'ng2-modal-dialog/modal.module';
+import { LoginModalComponent } from './app.login-modal.componenet';
 
 import { AppComponent } from './app.component';
-import { AppLogin } from './app.login';
 import { AppRegister } from './app.register';
 import { AppReserve } from './app.reserve';
 import { AppStadium } from './app.stadium';
@@ -26,7 +27,6 @@ import { ManagermanagmentComponent } from './managermanagment/managermanagment.c
 import { UsermanagementComponent } from './usermanagement/usermanagement.component';
 
 const appRoutes: Routes = [
-  { path: 'auth', component: AppLogin },
   { path: 'auth/regis', component: AppRegister },
   { path: 'reserve', component: AppStadium },
   { path: 'reserve/:id', component: AppReserve },
@@ -43,7 +43,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    AppLogin,
     AppRegister,
     AppReserve,
     AppStadium,
@@ -56,6 +55,7 @@ const appRoutes: Routes = [
     AppReserveList,
     ManagermanagmentComponent,
     UsermanagementComponent
+    LoginModalComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +64,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     ImageUploadModule.forRoot(),
     DatePickerModule,
+    ModalModule
   ],
   providers: [
         //AuthGuard,
