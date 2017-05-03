@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Modal } from 'ng2-modal-dialog/modal.module';
+import {Router} from '@angular/router'
  
 @Component({
   selector: 'app-login-modal',
@@ -15,10 +16,15 @@ export class LoginModalComponent {
   // Will fetch the userCreds passed from the callback.
   userCreds;
  
-  constructor() { }
+  constructor(private router: Router) { 
+  }
  
   onCancel(): void {
     this.closeModal();
+  }
+  onRegister(): void{
+    this.closeModal();
+    this.router.navigate(['/regis']);
   }
  
   onSubmit(formCreds): void {
