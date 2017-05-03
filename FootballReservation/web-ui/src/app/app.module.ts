@@ -57,7 +57,8 @@ const appRoutes: Routes = [
     AppReserveList,
     ManagermanagmentComponent,
     UsermanagementComponent,
-    LoginModalComponent
+    LoginModalComponent,
+    getStadium
   ],
   imports: [
     BrowserModule,
@@ -67,14 +68,14 @@ const appRoutes: Routes = [
     ImageUploadModule.forRoot(),
     DatePickerModule,
     ModalModule,
-    getStadium
   ],
   providers: [
         //AuthGuard,
         StadiumService,
         AlertService,
         AuthenticationService,
-        UserService
+        UserService,
+        getStadium
   ],
   bootstrap: [AppComponent]
 })
