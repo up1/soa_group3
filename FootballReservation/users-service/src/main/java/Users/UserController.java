@@ -1,6 +1,8 @@
 package Users;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,18 +22,24 @@ public class UserController {
     public User getUser(@PathVariable int id) {
         return this.UserRepository.findById((long) id);
     }
+
     @RequestMapping(value = "/users",method = RequestMethod.GET)
     public List<User> getUsers(
             @RequestParam(value="page", defaultValue="1") int page,
             @RequestParam(value="item_per_page", defaultValue="10") int itemPerPage) {
         return this.UserRepository.findAllUser(page, itemPerPage);
     }
+
     @RequestMapping(value = "/user" , method = {RequestMethod.GET, RequestMethod.POST})
-    public User loginUser(
-            @RequestParam(value="email") String email,
-            @RequestParam(value="password") String password) {
-        return this.UserRepository.login(email,password);
+    public ResponseEntity loginUser(@RequestBody User user) {
+        return  new ResponseEntity(this.UserRepository.login(user), HttpStatus.OK);
     }
+
+//    @RequestMapping(value = "/user" , method = {RequestMethod.GET, RequestMethod.POST})
+//    public ResponseEntity loginUser(@RequestBody User user) {
+//        new ResponseEntity("asdf",HttpStatus.ACCEPTED);
+//        return  new ResponseEntity(this.UserRepository.login(user), HttpStatus.CREATED);
+//    }
 
     @RequestMapping(value = "/user/add", method = RequestMethod.POST)
     public void addUser(@RequestBody User user) {
