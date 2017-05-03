@@ -13,6 +13,8 @@ export class AppReserveList implements OnInit {
   reservelist: Reservation[];
   errorMessage: string;
 
+  somalia = ""
+
   constructor(private _stadiumService: StadiumService) {
     this.mode = 0;
   }
@@ -38,10 +40,5 @@ export class AppReserveList implements OnInit {
       reservelist => this.reservelist = reservelist,
       error => this.errorMessage = <any>error
       );
-    console.log(this._stadiumService.getReservebyName(name)
-      .subscribe(
-      reservelist => this.reservelist = reservelist,
-      error => this.errorMessage = <any>error
-      ))
   }
- }
+}
