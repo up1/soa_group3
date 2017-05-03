@@ -8,8 +8,8 @@ public class User {
     private String fname;
     private String lname;
     private String email;
-    private String password;
     private String role;
+    private String password;
 
     public Long getId() {
         return id;

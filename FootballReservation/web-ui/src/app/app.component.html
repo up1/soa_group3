@@ -45,7 +45,7 @@
         </span>
         manager
       </a>
-      <a class="nav-item is-tab" routerLink="/auth" routerLinkActive="is-active">เข้าสู่ระบบ</a>
+      <a class="nav-item is-tab" href="javascript:void(0);" (click)="openLoginModal(passedParameter = { username: 'user', password: 'pass'})" routerLinkActive="is-active">เข้าสู่ระบบ</a>
     </div>
   </div>
 
