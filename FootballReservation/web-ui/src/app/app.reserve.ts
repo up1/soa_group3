@@ -4,7 +4,6 @@ import { Stadium } from 'app/data/stadium';
 import { SubStadium } from 'app/data/substadium';
 import { StadiumService } from 'app/data/stadium.service';
 import { DatePickerOptions, DateModel } from 'ng2-datepicker';
-import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 
 @Component({
   moduleId: module.id,

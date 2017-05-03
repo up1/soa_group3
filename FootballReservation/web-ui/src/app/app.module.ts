@@ -22,7 +22,6 @@ import { HomeComponent } from './home/home.component';
 import { AppReserveList } from './app.reservelist';
 
 import { DatePickerModule } from 'ng2-datepicker';
-import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 
 const appRoutes: Routes = [
   { path: 'auth', component: AppLogin },
@@ -59,7 +58,6 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     ImageUploadModule.forRoot(),
     DatePickerModule,
-    NKDatetimeModule
   ],
   providers: [
         //AuthGuard,

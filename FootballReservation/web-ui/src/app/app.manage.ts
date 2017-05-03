@@ -36,7 +36,8 @@ export class AppManage implements OnInit {
   }
 
   editSubStadium(ex_id: number) {
-    this.router.navigate(['/manage/edit'], { queryParams: { substadium: ex_id } });
+    this.router.navigate(['/manage/edit'], {queryParams: { 'ex_id': ex_id }});
+    console.log(ex_id);
   }
 
   deleteSubStadium(ex_id: number) {
