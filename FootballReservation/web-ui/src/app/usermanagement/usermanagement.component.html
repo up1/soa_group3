@@ -1,0 +1,33 @@
+  <div style="margin-left: 50px; margin-right: 50px">
+  <table class='table'>
+  <thead>
+    <tr>
+      <th>fname</th>
+      <th>email</th>
+      <th>address</th>
+      <th>picture</th>
+      <th>username</th>
+      <th>password</th>
+      <td></td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let page of pages">
+      <td>{{page.fname}}</td>
+      <td>{{page.email}}</td>
+      <td>{{page.address}}</td>
+      <td>{{page.picture}}</td>
+      <td>{{page.username}}</td>
+      <td>{{page.password}}</td>
+      <div *ngIf="page.role === 2" >
+      <td> <a class="button is-success">Success</a></td>
+      </div>
+      <div *ngIf="page.role === 1" >
+      <td>  </td>
+      </div>
+      <td> <a class="button is-danger">Delete</a></td>
+    </tr>
+  </tbody>
+</table>
+  </div>
