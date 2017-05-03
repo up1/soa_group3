@@ -40,6 +40,11 @@ public class UserRepository {
         List <User> users = jdbcTemplate.query(sql, new Object[]{itemPerPage, offset},new UserRowMapper());
         return users;
     }
+    public List<User> findbyRole(int role){
+        String sql = "select * from USERS WHERE role=?";
+        List <User> users = jdbcTemplate.query(sql, new Object[]{role},new UserRowMapper());
+        return users;
+    }
 
     public User login(String email, String password){
         return this.jdbcTemplate.queryForObject("SELECT * FROM USERS WHERE email=? AND password=?", new Object[]{email,password}, new UserRowMapper());
