@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Stadium } from './stadium';
 import { SubStadium } from './substadium';
+import { Reservation } from './reservation';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -57,6 +58,12 @@ export class StadiumService {
     return this._http
       .delete('http://localhost:9003/field_ex/'+ex_id.toString()+'/delete')
       .map((response: Response) => response.json());
+  }
+  
+  getReservebyName(name: string) {
+    return this._http
+      .get('http://localhost:9004/reservation?user='+name)
+      .map((response: Response) => <Reservation[]>response.json());
   }
 
 }

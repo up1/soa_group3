@@ -5,15 +5,17 @@ public class Reserv {
     private String reserv_user;
     private int reserv_field_id;
     private int reserv_ex_id;
-    private int reserv_time;
+    private int reserv_start_time;
+    private int reserv_end_time;
     private String reserv_date;
     private String reserv_status;
 
-    public Reserv(String reserv_user, int reserv_field_id, int reserv_ex_id, int reserv_time, String reserv_date) {
+    public Reserv(String reserv_user, int reserv_field_id, int reserv_ex_id, int reserv_start_time, int reserv_end_time, String reserv_date) {
         this.reserv_user = reserv_user;
         this.reserv_field_id = reserv_field_id;
         this.reserv_ex_id = reserv_ex_id;
-        this.reserv_time = reserv_time;
+        this.reserv_start_time = reserv_start_time;
+        this.reserv_end_time = reserv_end_time;
         this.reserv_date = reserv_date;
     }
 
@@ -52,12 +54,18 @@ public class Reserv {
         this.reserv_ex_id = reserv_ex_id;
     }
 
-    public int getReserv_time() {
-        return reserv_time;
+    public int getReserv_start_time() {
+        return reserv_start_time;
     }
 
-    public void setReserv_time(int reserv_time) {
-        this.reserv_time = reserv_time;
+    public void setReserv_start_time(int reserv_start_time) {
+        this.reserv_start_time = reserv_start_time;
+    }
+
+    public int getReserv_end_time() { return reserv_end_time; }
+
+    public void setReserv_end_time(int reserv_end_time) {
+        this.reserv_end_time = reserv_end_time;
     }
 
     public String getReserv_date() {

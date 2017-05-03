@@ -2,7 +2,7 @@
   <h2 class="title is-2 has-text-centered">เลือกสนาม</h2>
   <h4 class="title is-4 has-text-centered" *ngIf="sodium">สนาม: {{ sodium.field_name }}</h4>
   <div class="block">
-    <a class="button is-primary is-outlined" routerLink="/reserve"><= ย้อนกลับ</a>
+    <a class="button is-primary is-outlined" routerLink="/reserve"> <= ย้อนกลับ</a>
   </div>
   <div class="columns is-multiline is-mobile">
     <div class="column is-one-quarter" *ngFor="let stadium of soda">
@@ -13,7 +13,7 @@
           </figure>
         </div>
         <div class="card-content">
-          <div class="media">s
+          <div class="media">
             <div class="media-content">
               <p class="title is-5">{{stadium.fieldex_name}}</p>
               <p class="subtitle is-6">ขนาด {{stadium.size}} <br> {{stadium.floor}}</p>
@@ -39,8 +39,114 @@
       <div class="field" style="text-align: center;">
         <label class="label-reserve">วันที่ต้องการจอง</label>
         <ng2-datepicker [options]="options" [(ngModel)]="date"></ng2-datepicker>
-        <br>
-
+        <br><br>
+        <label class="label-reserve">เวลาที่ต้องการจอง</label>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>เวลา</th>
+              <th>เลือก</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>00:00-01:00</td>
+              <td><input type="checkbox" disabled></td>
+            </tr>
+            <tr>
+              <td>01:00-02:00</td>
+              <td><input type="checkbox" disabled></td>
+            </tr>
+            <tr>
+              <td>02:00-03:00</td>
+              <td><input type="checkbox" disabled></td>
+            </tr>
+            <tr>
+              <td>03:00-04:00</td>
+              <td><input type="checkbox" disabled></td>
+            </tr>
+            <tr>
+              <td>04:00-05:00</td>
+              <td><input type="checkbox" disabled></td>
+            </tr>
+            <tr>
+              <td>05:00-06:00</td>
+              <td><input type="checkbox" disabled></td>
+            </tr>
+            <tr>
+              <td>06:00-07:00</td>
+              <td><input type="checkbox" disabled></td>
+            </tr>
+            <tr>
+              <td>07:00-08:00</td>
+              <td><input type="checkbox" disabled></td>
+            </tr>
+            <tr>
+              <td>08:00-09:00</td>
+              <td><input type="checkbox" disabled></td>
+            </tr>
+            <tr>
+              <td>09:00-10:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>10:00-11:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>11:00-12:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>12:00-13:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>13:00-14:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>14:00-15:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>15:00-16:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>16:00-17:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>17:00-18:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>18:00-19:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>19:00-20:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>20:00-21:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>21:00-22:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>22:00-23:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>23:00-00:00</td>
+              <td><input type="checkbox"></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
     <footer class="modal-card-foot">
