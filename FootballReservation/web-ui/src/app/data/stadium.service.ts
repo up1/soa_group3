@@ -5,6 +5,7 @@ import { Stadium } from './stadium';
 import { SubStadium } from './substadium';
 import { Reservation } from './reservation';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class StadiumService {
@@ -40,7 +41,7 @@ export class StadiumService {
       .get('http://localhost:9003/field_ex/' + ex_id.toString())
       .map((response: Response) => <SubStadium[]>response.json());
   }
-  
+
 
   createSubStadium(fieldex_name: string, rent: number, size: string, floor: string) {
     return this._http
@@ -50,20 +51,44 @@ export class StadiumService {
 
   editSubStadium(ex_id: number, fieldex_name: string, rent: number, size: string, floor: string) {
     return this._http
-      .put('http://localhost:9003/field_ex/'+ex_id.toString()+'/update', JSON.parse('{"field_id": 1,"fieldex_name": "' + fieldex_name + '","rent": ' + rent.toString() + ',"image": "img","size": "' + size + '","floor": "' + floor + '"}'))
+      .put('http://localhost:9003/field_ex/' + ex_id.toString() + '/update', JSON.parse('{"field_id": 1,"fieldex_name": "' + fieldex_name + '","rent": ' + rent.toString() + ',"image": "img","size": "' + size + '","floor": "' + floor + '"}'))
       .map((response: Response) => response.json());
   }
 
   deleteSubStadium(ex_id: number) {
     return this._http
-      .delete('http://localhost:9003/field_ex/'+ex_id.toString()+'/delete')
+      .delete('http://localhost:9003/field_ex/' + ex_id.toString() + '/delete')
       .map((response: Response) => response.json());
   }
-  
+
   getReservebyName(name: string) {
     return this._http
-      .get('http://localhost:9004/reservation?user='+name)
+      .get('http://localhost:9004/reservation?user=' + name)
       .map((response: Response) => <Reservation[]>response.json());
   }
 
+  getStadiumPromise(field_id: number): Promise<Stadium[]> {
+    return this._http.get('http://localhost:9001/field?field_id=' + field_id.toString())
+      .toPromise()
+      .then(this.extractData)
+      .catch(this.handleError);
+  }
+
+  private extractData(res: Response) {
+    let body = res.json();
+    return body.data || {};
+  }
+  private handleError(error: Response | any) {
+    // In a real world app, we might use a remote logging infrastructure
+    let errMsg: string;
+    if (error instanceof Response) {
+      const body = error.json() || '';
+      const err = body.error || JSON.stringify(body);
+      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+    } else {
+      errMsg = error.message ? error.message : error.toString();
+    }
+    console.error(errMsg);
+    return Promise.reject(errMsg);
+  }
 }
