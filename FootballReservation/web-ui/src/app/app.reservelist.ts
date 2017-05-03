@@ -13,7 +13,7 @@ export class AppReserveList implements OnInit {
   reservelist: Reservation[];
   errorMessage: string;
 
-  somalia = ""
+  soma: string[] = [];
 
   constructor(private _stadiumService: StadiumService) {
     this.mode = 0;
@@ -21,7 +21,7 @@ export class AppReserveList implements OnInit {
 
   ngOnInit() {
     this.getReserveByName("TestUser")
-
+    this.getStadiumNames()
   }
 
   reserveMode(num: number) {
@@ -37,8 +37,22 @@ export class AppReserveList implements OnInit {
   getReserveByName(name: string) {
     this._stadiumService.getReservebyName(name)
       .subscribe(
-      reservelist => this.reservelist = reservelist,
+      reservelist => {
+        this.reservelist = reservelist
+      },
       error => this.errorMessage = <any>error
       );
   }
+
+  getStadiumNames() {
+    this._stadiumService.getStadiums()
+      .subscribe(
+      res => {
+        for (let cat of res) {
+          this.soma.push(cat['field_name']);
+        }
+      }
+      )
+  }
+
 }
