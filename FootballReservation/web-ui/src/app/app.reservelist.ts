@@ -38,5 +38,10 @@ export class AppReserveList implements OnInit {
       reservelist => this.reservelist = reservelist,
       error => this.errorMessage = <any>error
       );
+    console.log(this._stadiumService.getReservebyName(name)
+      .subscribe(
+      reservelist => this.reservelist = reservelist,
+      error => this.errorMessage = <any>error
+      ))
   }
  }
