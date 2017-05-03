@@ -53,24 +53,41 @@ public class UserRepository {
         return users;
     }
 
-    public String login(User user){
-
+    public User login(User user){
         User auth = getUser(user.getEmail());
 
         String token = "";
 
         if(auth!=null){
             if(auth.getPassword().equals(user.getPassword())){
-                Jwt jwtUser = new Jwt(auth.getEmail(), auth.getRole());
-                token = jwtStart.getToken(jwtUser);
+                user = auth;
             }else{
                 throw new WrongPasswordException();
             }
         }else{
             throw new UserNotFoundException(user.getEmail());
         }
-        return token;
+        return user;
     }
+
+//    public String login(User user){
+//
+//        User auth = getUser(user.getEmail());
+//
+//        String token = "";
+//
+//        if(auth!=null){
+//            if(auth.getPassword().equals(user.getPassword())){
+//                Jwt jwtUser = new Jwt(auth.getEmail(), auth.getRole());
+//                token = jwtStart.getToken(jwtUser);
+//            }else{
+//                throw new WrongPasswordException();
+//            }
+//        }else{
+//            throw new UserNotFoundException(user.getEmail());
+//        }
+//        return token;
+//    }
 
     public void update(User user, Long id){
         String sql = "UPDATE USERS SET user_fname = ? , user_lname = ?, user_email = ? , WHERE user_id= ?";
