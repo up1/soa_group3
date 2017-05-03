@@ -24,23 +24,16 @@
       <th>เวลา</th>
       <th>สถานะ</th>
     </tr>
+    
   </thead>
   <tbody>
-    <tr>
+    <tr *ngFor="let sodemacom of reservelist">
       <td>1</td>
-      <td>บุรีรัมย์ ยูไนเต็ด</td>
+      <td>{{ sodemacom.reserv_field_id }}</td>
       <td>สนามซ้อม</td>
-      <td>06/04/2560</td>
-      <td>17:00-21:00</td>
+      <td>{{ sodemacom.reserv_date }}</td>
+      <td>{{ sodemacom.reserv_start_time }}:00-{{ sodemacom.reserv_end_time }}:00</td>
       <td><a class="button is-warning is-active">รอการยืนยัน</a></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>SCG Stadium</td>
-      <td>สนามหลัก</td>
-      <td>07/04/2560</td>
-      <td>08:00-18:00</td>
-      <td><a class="button is-success is-active">ยืนยันแล้ว</a></td>
     </tr>
   </tbody>
   </table>

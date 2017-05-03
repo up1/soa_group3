@@ -59,11 +59,11 @@ public class ReservRepository {
     @Transactional
     public void doReserv(Reserv reserv){
         String sql = "INSERT INTO RESERVATION" +
-                "(reserv_user, reserv_field_id, reserv_ex_id, reserv_time, reserv_date) " +
+                "(reserv_user, reserv_field_id, reserv_ex_id, reserv_start_time, reserv_end_time, reserv_date) " +
                 "VALUE(?,?,?,?,?);";
         try {
             this.jdbcTemplate.update(sql, reserv.getReserv_user(), reserv.getReserv_field_id(),
-                    reserv.getReserv_ex_id(), reserv.getReserv_time(), reserv.getReserv_date());
+                    reserv.getReserv_ex_id(), reserv.getReserv_start_time(), reserv.getReserv_end_time(), reserv.getReserv_date());
         }catch (Exception ex){
             throw new AlreadyReservException(reserv);
         }

@@ -19,15 +19,17 @@ import { StadiumCreate } from './stadium.create';
 import { StadiumEdit } from './stadium.edit';
 import { StadiumService } from 'app/data/stadium.service';
 import { HomeComponent } from './home/home.component';
+import { AppReserveList } from './app.reservelist';
 
 import { DatePickerModule } from 'ng2-datepicker';
+import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 
 const appRoutes: Routes = [
   { path: 'auth', component: AppLogin },
   { path: 'auth/regis', component: AppRegister },
   { path: 'reserve', component: AppStadium },
   { path: 'reserve/:id', component: AppReserve },
-  { path: 'reserve/id/history', component: AppReserve },
+  { path: 'reservelist', component: AppReserveList },
   { path: 'user/id', component: AppUser  },
   { path: 'manage', component: AppManage  },
   { path: 'manage/create', component: StadiumCreate },
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
     AlertComponent,
     StadiumCreate,
     StadiumEdit,
-    HomeComponent
+    HomeComponent,
+    AppReserveList
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     ImageUploadModule.forRoot(),
-    DatePickerModule
+    DatePickerModule,
+    NKDatetimeModule
   ],
   providers: [
         //AuthGuard,
