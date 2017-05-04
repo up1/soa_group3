@@ -22,10 +22,12 @@ export class UsermanagementComponent implements OnInit {
 
   deleteById(id: number): void{
     this.adminservice.delete(id).subscribe();
+    location.reload();
   }
 
   changerole(id: number): void{
     this.adminservice.ChangeRole(id).subscribe();
+    location.reload();
   }
 
   ngOnInit() {
