@@ -18,13 +18,13 @@
       <td>{{user.email}}</td>
       <td>{{user.password}}</td>
       <td>{{user.role}}</td>
-      <div *ngIf="user.role === 2" >
-      <td> <a class="button is-success">Success</a></td>
+      <div *ngIf="user.role === 'user'" >
+      <td> <button (click)="changerole(user.id)" class="button is-success">Success</button></td>
       </div>
       <div *ngIf="user.role === 1" >
       <td>  </td>
       </div>
-      <td> <a class="button is-danger">Delete</a></td>
+      <td> <button (click)="deleteById(user.id)" class="button is-danger">Delete</button></td>
     </tr>
   </tbody>
 </table>

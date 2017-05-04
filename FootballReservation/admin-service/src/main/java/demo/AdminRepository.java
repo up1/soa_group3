@@ -34,7 +34,7 @@ public class AdminRepository {
     }
     public List<User> findbyRole(int role){
         String sql = "select * from USERS WHERE role=?";
-        List <User> users = jdbcTemplate.query(sql, new Object[]{role},new UserRowMapper());
+        List <User> users = jdbcTemplate.query(sql, new Object[]{role},new AdminRowMapper());
         return users;
     }
 }
