@@ -25,7 +25,6 @@ import { AppReserveList } from './app.reservelist';
 import { DatePickerModule } from 'ng2-datepicker';
 import { ManagermanagmentComponent } from './managermanagment/managermanagment.component';
 import { UsermanagementComponent } from './usermanagement/usermanagement.component';
-import { getStadium } from 'app/data/getStadium.pipe';
 
 
 const appRoutes: Routes = [
@@ -58,7 +57,6 @@ const appRoutes: Routes = [
     ManagermanagmentComponent,
     UsermanagementComponent,
     LoginModalComponent,
-    getStadium
   ],
   imports: [
     BrowserModule,
@@ -75,7 +73,6 @@ const appRoutes: Routes = [
         AlertService,
         AuthenticationService,
         UserService,
-        getStadium
   ],
   bootstrap: [AppComponent]
 })
