@@ -55,6 +55,10 @@ public class UserController {
     public void updateUser(User user,@PathVariable Long id) {
         this.UserRepository.update(user,id);
     }
+    @RequestMapping(value = "/users/management/{role}",method = RequestMethod.GET)
+    public List<User> getUsers(@PathVariable int role) {
+        return this.UserRepository.findbyRole(role);
+    }
 
 
 

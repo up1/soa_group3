@@ -13,17 +13,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let page of pages">
-      <td>{{page.fname}}</td>
-      <td>{{page.email}}</td>
-      <td>{{page.address}}</td>
-      <td>{{page.picture}}</td>
-      <td>{{page.username}}</td>
-      <td>{{page.password}}</td>
-      <div *ngIf="page.role === 2" >
+    <tr *ngFor="let user of users">
+      <td>{{user.fname}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.address}}</td>
+      <td>{{user.picture}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.password}}</td>
+      <div *ngIf="user.role === 2" >
       <td> <a class="button is-success">Success</a></td>
       </div>
-      <div *ngIf="page.role === 1" >
+      <div *ngIf="user.role === 1" >
       <td>  </td>
       </div>
       <td> <a class="button is-danger">Delete</a></td>
