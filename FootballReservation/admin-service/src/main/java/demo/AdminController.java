@@ -22,6 +22,11 @@ public class AdminController {
         this.adminRepository = adminRepository;
     }
 
+    @RequestMapping(value = "/admin/management/{role}",method = RequestMethod.GET)
+    public List<User> getUsers(@PathVariable int role) {
+        return this.UserRepository.findbyRole(role);
+    }
+
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public List<User> getUsers(
             @RequestParam(value="page", defaultValue="1") int page,

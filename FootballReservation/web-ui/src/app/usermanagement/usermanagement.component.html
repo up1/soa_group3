@@ -3,11 +3,10 @@
   <thead>
     <tr>
       <th>fname</th>
+      <th>lname</th>
       <th>email</th>
-      <th>address</th>
-      <th>picture</th>
-      <th>username</th>
       <th>password</th>
+      <th>role</th>
       <td></td>
       <td></td>
     </tr>
@@ -15,11 +14,10 @@
   <tbody>
     <tr *ngFor="let user of users">
       <td>{{user.fname}}</td>
+      <td>{{user.lname}}</td>
       <td>{{user.email}}</td>
-      <td>{{user.address}}</td>
-      <td>{{user.picture}}</td>
-      <td>{{user.username}}</td>
       <td>{{user.password}}</td>
+      <td>{{user.role}}</td>
       <div *ngIf="user.role === 2" >
       <td> <a class="button is-success">Success</a></td>
       </div>
