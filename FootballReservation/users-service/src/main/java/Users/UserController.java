@@ -30,7 +30,7 @@ public class UserController {
         return this.UserRepository.findAllUser(page, itemPerPage);
     }
 
-    @RequestMapping(value = "/user" , method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "/user" , method = RequestMethod.POST)
     public ResponseEntity loginUser(@RequestBody User user) {
         return  new ResponseEntity(this.UserRepository.login(user), HttpStatus.OK);
     }
