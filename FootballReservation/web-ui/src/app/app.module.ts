@@ -39,7 +39,8 @@ const appRoutes: Routes = [
   { path: 'manage/edit', component: StadiumEdit },
   { path: '', component: HomeComponent },
   { path: 'managermanagment', component: ManagermanagmentComponent},
-  { path: 'usermanagement', component: UsermanagementComponent}
+  { path: 'usermanagement', component: UsermanagementComponent},
+  { path: 'login', component: LoginModalComponent}
 ];
 
 @NgModule({

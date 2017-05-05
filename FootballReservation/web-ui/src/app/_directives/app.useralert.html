@@ -1,5 +1,3 @@
-<div class="container">
   <div class="column is-half is-offset-one-quarter">
-<div *ngIf="message" [ngClass]="{ 'notification': message, 'notification is-success': message.type === 'success', 'notification is-danger': message.type === 'error' }">{{message.text}}</div>
+<div *ngIf="message" [ngClass]="{ 'notification': message, 'is-danger': message.type === 'error', 'is-success': message.type === 'success'}">{{message.text}}</div>
   </div>
-</div>
