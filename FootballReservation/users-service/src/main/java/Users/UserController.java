@@ -30,7 +30,7 @@ public class UserController {
         return this.UserRepository.findAllUser(page, itemPerPage);
     }
 
-    @RequestMapping(value = "/user" , method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "/user" , method = RequestMethod.POST)
     public ResponseEntity loginUser(@RequestBody User user) {
         return  new ResponseEntity(this.UserRepository.login(user), HttpStatus.OK);
     }
@@ -42,8 +42,9 @@ public class UserController {
 //    }
 
     @RequestMapping(value = "/user/add", method = RequestMethod.POST)
-    public void addUser(@RequestBody User user) {
+    public ResponseEntity addUser(@RequestBody User user) {
         this.UserRepository.save(user);
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "/user/{id}/delete", method = RequestMethod.DELETE)

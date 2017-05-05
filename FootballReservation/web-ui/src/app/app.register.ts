@@ -19,20 +19,20 @@ export class AppRegister {
  
     register() {
         this.loading = true;
-        this.userService.create(this.model).subscribe();
+        this.userService.create(this.model);
         this.alertService.success('Registration successful', true);
         this.router.navigate(['/']);
             // .subscribe(
-            //     data => {
+            //     res => {
             //         console.log("Data Success");
             //         // set success message and pass true paramater to persist the message after redirecting to the login page
             //         this.alertService.success('Registration successful', true);
-            //         this.router.navigate(['/auth']);
-            //     },
-            //     error => {
-            //         console.log("data fail");
-            //         this.alertService.error(error);
-            //         this.loading = false;
-            //     });
+            //         this.router.navigate(['/']);
+            //      },
+            //      error => {
+            //          console.log("data fail");
+            //          this.alertService.error(error);
+            //          this.loading = false;
+            //      });
     }
 }
