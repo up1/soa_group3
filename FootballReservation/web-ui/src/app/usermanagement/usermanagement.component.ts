@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from 'app/_services/index';
+import {AdminService} from 'app/_services/index';
 import {User} from 'app/data/user'; 
 
 @Component({
@@ -11,13 +11,23 @@ export class UsermanagementComponent implements OnInit {
 
 
   users: User[];
-  constructor(private userservice: UserService) {}
+  constructor(private adminservice: AdminService) {}
    getByRole(role: number): void {
-    this.userservice.getByRole(role).subscribe(
+    this.adminservice.getByRole(role).subscribe(
       users => {this.users = users; console.log('this.users=' + this.users[0].fname);
                     console.log('this.users.length=' + this.users.length);
                     console.log('this.users[0].firstName=' + this.users[1]);}
     )
+  }
+
+  deleteById(id: number): void{
+    this.adminservice.delete(id).subscribe();
+    location.reload();
+  }
+
+  changerole(id: number): void{
+    this.adminservice.ChangeRole(id).subscribe();
+    location.reload();
   }
 
   ngOnInit() {
