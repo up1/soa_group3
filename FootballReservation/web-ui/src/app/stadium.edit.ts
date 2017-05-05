@@ -32,7 +32,7 @@ export class StadiumEdit implements OnInit {
     this.activatedRoute.queryParams.subscribe((params: Params) => {
       this.ex_id = params['ex_id'];
     });
-
+    
     this._stadiumService.getSubStadiumData(this.ex_id)
       .subscribe(
       soda => {
@@ -46,6 +46,7 @@ export class StadiumEdit implements OnInit {
       error => this.errorMessage = <any>error
 
       );
+      
   }
 
   editSubStadium() {
