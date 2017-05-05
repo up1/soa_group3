@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Page } from './page.model';
+import {AdminService} from 'app/_services/index';
+import {User} from 'app/data/user'; 
 
 @Component({
   selector: 'app-usermanagement',
@@ -8,77 +9,29 @@ import { Page } from './page.model';
 })
 export class UsermanagementComponent implements OnInit {
 
-  pages: Page[];
-  constructor() {
-        this.pages = [
-      {
-        "fname": "nammeeee",
-        "email": "test page#1",
-        "address": "TEST PAGE CONTENT#1",
-        "picture": "test page#1",
-        "username": "test page#1",
-        "password": "test page#1",
-        "role": 1,
-      },
-      {
-        "fname": "nammeeee",
-        "email": "test page#1",
-        "address": "TEST PAGE CONTENT#1",
-        "picture": "test page#1",
-        "username": "test page#1",
-        "password": "test page#1",
-        "role": 2,
-      },
-      {
-        "fname": "nammeeee",
-        "email": "test page#1",
-        "address": "TEST PAGE CONTENT#1",
-        "picture": "test page#1",
-        "username": "test page#1",
-        "password": "test page#1",
-        "role": 1,
-      },
-      {
-        "fname": "nammeeee",
-        "email": "test page#1",
-        "address": "TEST PAGE CONTENT#1",
-        "picture": "test page#1",
-        "username": "test page#1",
-        "password": "test page#1",
-        "role": 1,
-      },
-      {
-        "fname": "nammeeee",
-        "email": "test page#1",
-        "address": "TEST PAGE CONTENT#1",
-        "picture": "test page#1",
-        "username": "test page#1",
-        "password": "test page#1",
-        "role": 1,
-      },
-      {
-        "fname": "nammeeee",
-        "email": "test page#1",
-        "address": "TEST PAGE CONTENT#1",
-        "picture": "test page#1",
-        "username": "test page#1",
-        "password": "test page#1",
-        "role": 1,
-      },
-      {
-        "fname": "nammeeee",
-        "email": "test page#1",
-        "address": "TEST PAGE CONTENT#1",
-        "picture": "test page#1",
-        "username": "test page#1",
-        "password": "test page#1",
-        "role": 1,
-      }
 
-    ]
-   }
+  users: User[];
+  constructor(private adminservice: AdminService) {}
+   getByRole(role: number): void {
+    this.adminservice.getByRole(role).subscribe(
+      users => {this.users = users; console.log('this.users=' + this.users[0].fname);
+                    console.log('this.users.length=' + this.users.length);
+                    console.log('this.users[0].firstName=' + this.users[1]);}
+    )
+  }
+
+  deleteById(id: number): void{
+    this.adminservice.delete(id).subscribe();
+    location.reload();
+  }
+
+  changerole(id: number): void{
+    this.adminservice.ChangeRole(id).subscribe();
+    location.reload();
+  }
 
   ngOnInit() {
+    this.getByRole(1);
   }
 
 }

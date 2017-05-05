@@ -32,4 +32,9 @@ public class AdminRepository {
         String sql = "UPDATE USERS SET role = 'Manager' WHERE user_id = ?;";
         this.jdbcTemplate.update(sql, user_id);
     }
+    public List<User> findbyRole(int role){
+        String sql = "select * from USERS WHERE role=?";
+        List <User> users = jdbcTemplate.query(sql, new Object[]{role},new AdminRowMapper());
+        return users;
+    }
 }

@@ -15,7 +15,8 @@ import { AppUser } from './app.user';
 import { AppManage } from './app.manage';
 //import { AuthGuard } from './_guards/index';
 import { AlertComponent } from './_directives/index';
-import { AlertService, AuthenticationService, UserService } from './_services/index';
+import { AlertService, AuthenticationService, UserService, AdminService} from './_services/index';
+// import { AdminService } from './_services/index';
 import { StadiumCreate } from './stadium.create';
 import { StadiumEdit } from './stadium.edit';
 import { StadiumService } from 'app/data/stadium.service';
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
   { path: 'manage/edit', component: StadiumEdit },
   { path: '', component: HomeComponent },
   { path: 'managermanagment', component: ManagermanagmentComponent},
-  { path: 'usermanagement', component: UsermanagementComponent}
+  { path: 'usermanagement', component: UsermanagementComponent},
+  { path: 'login', component: LoginModalComponent}
 ];
 
 @NgModule({
@@ -73,6 +75,7 @@ const appRoutes: Routes = [
         AlertService,
         AuthenticationService,
         UserService,
+        AdminService
   ],
   bootstrap: [AppComponent]
 })
