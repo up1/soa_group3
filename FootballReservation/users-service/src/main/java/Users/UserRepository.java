@@ -95,7 +95,7 @@ public class UserRepository {
 //    }
 
     public void update(User user, Long id){
-        String sql = "UPDATE USERS SET user_fname = ? , user_lname = ?, user_email = ? , WHERE user_id= ?";
-        this.jdbcTemplate.update(sql, user.getFname(),  user.getLname(), user.getEmail(), id);
+        String sql = "UPDATE USERS SET user_fname = ? , user_lname = ?, user_email = ?, password = ? WHERE user_id= ?";
+        this.jdbcTemplate.update(sql, user.getFname(),  user.getLname(), user.getEmail(),user.getPassword(), id);
     }
 }

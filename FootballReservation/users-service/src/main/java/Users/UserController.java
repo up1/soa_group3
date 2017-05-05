@@ -52,7 +52,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/{id}/update", method = RequestMethod.PUT)
-    public void updateUser(User user,@PathVariable Long id) {
+    public void updateUser(@RequestBody User user,@PathVariable Long id) {
         this.UserRepository.update(user,id);
     }
     @RequestMapping(value = "/users/management/{role}",method = RequestMethod.GET)
