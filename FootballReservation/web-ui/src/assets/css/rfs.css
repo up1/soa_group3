@@ -90,3 +90,6 @@ body, button {
 #button-center{
     margin: 0 auto;
 }
+.extend_width {
+width: 1000px;
+}

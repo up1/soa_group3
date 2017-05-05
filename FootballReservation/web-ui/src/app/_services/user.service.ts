@@ -8,7 +8,6 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class UserService {
     constructor(private http: Http) { }
- 
     getAll() {
         return this.http.get('http://localhost:9005/users', this.jwt()).map((response: Response) => response.json());
     }
@@ -18,7 +17,7 @@ export class UserService {
     }
  
     create(user: User) {
-        return this.http.post('http://localhost:9005/user/add', user, this.jwt()).map((response: Response) => response.json());
+        return this.http.post('http://localhost:9005/user/add', user).map((response: Response) => response.json());
     }
  
     update(user: User, id: number) {

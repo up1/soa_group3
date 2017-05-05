@@ -17,8 +17,72 @@
       <td>{{user.email}}</td>
       <td>{{user.password}}</td>
       <td>{{user.role}}</td>
+      <td> <button (click)="toggleBooking(user.email)" class="button is-info">Detail</button></td>
+      <td> <button (click)="deleteById(user.id)" class="button is-danger">Delete</button></td>
     </tr>
   </tbody>
 </table>
+  </div>
+
+
+
+
+
+    <div class="modal" [class.is-active]=modalWork>
+    <div class="modal-background"></div>
+    <div class="modal-card extend_width">
+      <header class="modal-card-head">
+        <p class="modal-card-title">จองสนาม</p>
+        <button class="delete" (click)="toggleBooking(0)"></button>
+      </header>
+
+      <div style="background-color: white; height: 800px; overflow: scroll">
+
+
+
+      <article class="media">
+  <div class="media-content">
+    <div class="content">
+        <table class='table'>
+        <thead>
+          <tr>
+            <th>picture</th>
+            <th>id</th>
+            <th>name</th>
+            <th>rent</th>
+            <th>size</th>
+            <th>floor</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <th><figure class="media-left">
+              <p class="image is-64x64">
+                 <img src="assets/images/img.jpg">
+              </p>
+            </figure>
+            </th>
+            <td>{{user.fname}}</td>
+            <td>{{user.lname}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.role}}</td>
+            <td> <button (click)="toggleBooking(user.email)" class="button is-info">Detail</button></td>
+            <td> <button (click)="deleteById(user.id)" class="button is-danger">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</article>
+
+      </div>
+
+
+      <footer class="modal-card-foot">
+        <a class="button is-success" id="bookingButton">จอง</a>
+      </footer>
+    </div>
   </div>
 

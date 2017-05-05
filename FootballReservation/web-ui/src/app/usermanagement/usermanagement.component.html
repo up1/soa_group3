@@ -21,7 +21,7 @@
       <div *ngIf="user.role === 'user'" >
       <td> <button (click)="changerole(user.id)" class="button is-success">Success</button></td>
       </div>
-      <div *ngIf="user.role === 1" >
+      <div *ngIf="user.role !== 'user'" >
       <td>  </td>
       </div>
       <td> <button (click)="deleteById(user.id)" class="button is-danger">Delete</button></td>
