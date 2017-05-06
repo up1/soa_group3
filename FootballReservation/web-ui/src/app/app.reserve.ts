@@ -23,10 +23,19 @@ export class AppReserve implements OnInit {
 
   date: DateModel;
   options: DatePickerOptions;
+  nowday: Date;
 
   constructor(private _stadiumService: StadiumService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.modalWork = false;
     this.options = new DatePickerOptions();
+
+    this.options.initialDate = new Date(
+      Date.now()
+    )
+
+    this.nowday = new Date(Date.now())
+    this.options.minDate = this.nowday
+    this.options.maxDate = new Date(this.options.minDate.getTime() + (7 * 24 * 60 * 60 * 1000))
   }
 
   ngOnInit() {
@@ -68,6 +77,6 @@ export class AppReserve implements OnInit {
   }
 
   confirmBooking() {
-    console.log("Book!")
+    console.log(this.date)
   }
 }
