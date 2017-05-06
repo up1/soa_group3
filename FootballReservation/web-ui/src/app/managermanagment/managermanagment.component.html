@@ -33,7 +33,7 @@
     <div class="modal-card extend_width">
       <header class="modal-card-head">
         <p class="modal-card-title">จองสนาม</p>
-        <button class="delete" (click)="toggleBooking(0)"></button>
+        <button class="delete" (click)="toggleBooking('')"></button>
       </header>
 
       <div style="background-color: white; height: 800px; overflow: scroll">
@@ -47,33 +47,36 @@
       <table class='table'>
   <thead>
     <tr>
-      <th>fname</th>
-      <th>lname</th>
-      <th>email</th>
-      <th>password</th>
-      <th>role</th>
+      <td>Picture</td>
+      <td>Stadium name</td>
+      <td>Tel</td>
+      <td>Price</td>
+      <td>Location</td>
+      <td>Role</td>
+      <td>Website</td>
+      <td>Detail</td>
+      <td>Open</td>
+      <td>Close</td> 
 
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let stadium1 of stadium">
+    <tr>
       <th><figure class="media-left">
         <p class="image is-96x96">
             <img src="http://filacrosse.com/wp-content/uploads/2015/06/scg-stadium.jpg" alt="Image">
         </p>
       </figure>
       </th>
-      <td>{{stadium1.field_name}}</td>
-      <td>{{stadium1.tel}}</td>
-      <td>{{stadium1.price_range}</td>
-      <td>{{stadium1.location}}</td>
-      <td>{{stadium1.role}}</td>
-      <td>{{stadium1.email}}</td>
-      <td>{{stadium1.website}}</td>
-      <td>{{stadium1.detail}}</td>
-      <td>{{stadium1.stime}}</td>
-      <td>{{stadium1.etime}}</td>
-      <td>{{stadium1.username}}</td>
+      <td>{{model.field_name}}</td>
+      <td>{{model.tel}}</td>
+      <td>{{model.price}}</td>
+      <td>{{model.location}}</td>
+      <td>{{model.role}}</td>
+      <td>{{model.website}}</td>
+      <td>{{model.detail}}</td>
+      <td>{{model.stime}}</td>
+      <td>{{model.etime}}</td> 
     </tr>
   </tbody>
 </table>
@@ -120,7 +123,7 @@
 
 
       <footer class="modal-card-foot">
-        <a class="button is-success" id="bookingButton">จอง</a>
+        <!--<a class="button is-success" id="bookingButton">จอง</a>-->
       </footer>
     </div>
   </div>

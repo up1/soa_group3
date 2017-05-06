@@ -77,8 +77,8 @@ export class StadiumService {
   //    return this._http.post('http://localhost:9001/fieldmanage', JSON.stringify({ username: username }))
   //           .map((response: Response) => response.json());
   // }
-  getSubStadiumByUser(username: String): Observable<Stadium[]>{
+  getSubStadiumByUser(username: String): Observable<Stadium>{
      return this._http.post('http://localhost:9001/fieldmanage', JSON.parse('{"username":"'+ username +'"}'))
-            .map((response: Response) => <Stadium[]>response.json());
+            .map((response: Response) => response.json());
   }
 }

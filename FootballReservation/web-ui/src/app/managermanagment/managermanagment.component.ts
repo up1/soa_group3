@@ -18,7 +18,8 @@ export class ManagermanagmentComponent implements OnInit {
   users: User[];
   modalWork: boolean;
   soda: SubStadium[];
-  stadium: Stadium[];
+  stadium: Stadium;
+  model: any = {};
   constructor(private adminservice: AdminService, private _stadiumService: StadiumService) {
     this.modalWork = false;
   }
@@ -41,12 +42,21 @@ export class ManagermanagmentComponent implements OnInit {
     )
   }
 
+  // getStadiumByUser(username: String){
+  //   this._stadiumService.getSubStadiumByUser(username).subscribe(
+  //     stadium => {this.stadium.price = stadium.price; console.log('stadium.email=' + this.stadium.price);
+  //                   console.log('stadium.tel=' + this.stadium.tel);
+  //                   console.log('stadium.name eeieieiei=' + this.stadium.field_name);}
+  //   )
+  // }
+
   getStadiumByUser(username: String){
     this._stadiumService.getSubStadiumByUser(username).subscribe(
-      stadium => {this.stadium = stadium; console.log('stadium.email=' + this.stadium[0].price);
-                    console.log('stadium.tel=' + this.stadium[0].tel);
-                    console.log('stadium.name eeieieiei=' + this.stadium[0].field_name);}
+      stadium => {this.model = stadium; this.getSubStadium(this.model.field_id);
+                    console.log('stadium.tel=' + this.stadium.tel);
+                    console.log('stadium.name eeieieiei=' + this.stadium.field_name);}
     )
+    this.getSubStadium(this.model.field_id)
   }
 
 
@@ -58,8 +68,8 @@ export class ManagermanagmentComponent implements OnInit {
     toggleBooking(username: String) {
     if (this.modalWork === false) {
       this.modalWork = true;
-      this.getSubStadium(1)
       this.getStadiumByUser(username)
+      // this.getSubStadium(this.model.field_id)
       // console.log('last = '+ this.stadium.price)
       // console.log('stadium.name eeieieiei=' + this.stadium.field_name);
       // this.getSubStadium(field_id)
