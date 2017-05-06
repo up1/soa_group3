@@ -66,4 +66,19 @@ export class StadiumService {
       .get('http://localhost:9004/reservation?user=' + name)
       .map((response: Response) => <Reservation[]>response.json());
   }
+
+  // getStadiumByUser(username: String): Observable<Stadium[]> {
+  // return this._http
+  //   .get('http://localhost:9001/field/' + username)
+  //   .map((response: Response) => <Stadium[]>response.json());
+  // }
+
+  // getSubStadiumByUser(username: String): Observable<Stadium> {
+  //    return this._http.post('http://localhost:9001/fieldmanage', JSON.stringify({ username: username }))
+  //           .map((response: Response) => response.json());
+  // }
+  getSubStadiumByUser(username: String): Observable<Stadium[]>{
+     return this._http.post('http://localhost:9001/fieldmanage', JSON.parse('{"username":"'+ username +'"}'))
+            .map((response: Response) => <Stadium[]>response.json());
+  }
 }

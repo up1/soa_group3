@@ -41,4 +41,13 @@ public class FieldRepository {
         String sql ="select * from field_extend WHERE field_id=?";
         return jdbcTemplate.query(sql, new Object[]{field_id}, new FieldExtendRowMapper());
     }
+
+    // public Field getFieldByUser(String username) {
+    //     String sql ="select * from field WHERE username=?";
+    //     return jdbcTemplate.queryForObject(sql, new Object[]{username}, new FieldRowMapper());
+    // }
+    public Field getFieldByUser(Field field) {
+        String sql ="select * from field WHERE username=?";
+    return jdbcTemplate.queryForObject(sql, new Object[]{field.getUsername()}, new FieldRowMapper());
+    }
 }

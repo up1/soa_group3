@@ -42,6 +42,46 @@
 
       <article class="media">
   <div class="media-content">
+
+
+      <table class='table'>
+  <thead>
+    <tr>
+      <th>fname</th>
+      <th>lname</th>
+      <th>email</th>
+      <th>password</th>
+      <th>role</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let stadium1 of stadium">
+      <th><figure class="media-left">
+        <p class="image is-96x96">
+            <img src="http://filacrosse.com/wp-content/uploads/2015/06/scg-stadium.jpg" alt="Image">
+        </p>
+      </figure>
+      </th>
+      <td>{{stadium1.field_name}}</td>
+      <td>{{stadium1.tel}}</td>
+      <td>{{stadium1.price_range}</td>
+      <td>{{stadium1.location}}</td>
+      <td>{{stadium1.role}}</td>
+      <td>{{stadium1.email}}</td>
+      <td>{{stadium1.website}}</td>
+      <td>{{stadium1.detail}}</td>
+      <td>{{stadium1.stime}}</td>
+      <td>{{stadium1.etime}}</td>
+      <td>{{stadium1.username}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
     <div class="content">
         <table class='table'>
         <thead>
@@ -56,20 +96,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of users">
+          <tr *ngFor="let sod of soda">
             <th><figure class="media-left">
               <p class="image is-64x64">
                  <img src="assets/images/img.jpg">
               </p>
             </figure>
             </th>
-            <td>{{user.fname}}</td>
-            <td>{{user.lname}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.password}}</td>
-            <td>{{user.role}}</td>
-            <td> <button (click)="toggleBooking(user.email)" class="button is-info">Detail</button></td>
-            <td> <button (click)="deleteById(user.id)" class="button is-danger">Delete</button></td>
+            <td>{{sod.ex_id}}</td>
+            <td>{{sod.fieldex_name}}</td>
+            <td>{{sod.rent}}</td>
+            <td>{{sod.size}}</td>
+            <td>{{sod.floor}}</td>
+            <td>{{sod.role}}</td>
           </tr>
         </tbody>
       </table>

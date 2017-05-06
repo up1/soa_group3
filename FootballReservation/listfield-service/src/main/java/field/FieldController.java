@@ -45,5 +45,13 @@ public class FieldController {
     public List<FieldExtend> getFieldExs(@PathVariable int field_id) {
         return this.fieldRepository.getFieldExs(field_id);
     }
+    // @RequestMapping(value = "/fieldmanage/{username}", method = RequestMethod.GET)
+    // public Field getFieldByUser(@RequestBody String username) {
+    //     return this.fieldRepository.getFieldByUser(username);
+    // }
+    @RequestMapping(value = "/fieldmanage", method = RequestMethod.POST)
+        public Field getFieldByUser(@RequestBody Field field) {
+        return this.fieldRepository.getFieldByUser(field);
+    }
 
 }
