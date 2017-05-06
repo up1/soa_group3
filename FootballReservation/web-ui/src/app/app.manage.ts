@@ -19,12 +19,19 @@ export class AppManage implements OnInit {
   constructor(private _stadiumService: StadiumService, private router: Router) { }
 
   ngOnInit() {
-    this.getSubStadiumList(1);
+    this._stadiumService.getSubStadiumByUser(JSON.parse(localStorage.getItem("currentUser")).email)
+      .subscribe(rs => {
+      this.getSubStadiumList(rs.field_id);
+    });
+    // this.getSubStadiumList(1);
     this.SubStadiumModal = false;
   }
 
-  ngAfterContentInit() {
-    this.getSubStadiumList(1);
+  ngAfterContentInit() { 
+    this._stadiumService.getSubStadiumByUser(JSON.parse(localStorage.getItem("currentUser")).email)
+      .subscribe(rs => {
+      this.getSubStadiumList(rs.field_id);
+    });
   }
 
   getSubStadiumList(field_id: number) {
@@ -40,13 +47,16 @@ export class AppManage implements OnInit {
     console.log(ex_id);
   }
 
-  deleteSubStadium(ex_id: number) {
-    this._stadiumService.deleteSubStadium(ex_id)
-      .subscribe(
-      soda => this.soda = soda,
-      error => this.errorMessage = <any>error
-      );
-    this.router.navigate(['/manage']);
+  deleteSubStadium(ex_id: number,name: String) {
+    if(confirm("ลบสนาม "+name+" - Are you sure?")){
+      this._stadiumService.deleteSubStadium(ex_id)
+        .subscribe(
+        soda => this.soda = soda,
+        error => this.errorMessage = <any>error
+        );
+      // this.router.navigate(['/manage']);
+      location.reload();
+    }
   }
 
   toggleEditSubStadium() {

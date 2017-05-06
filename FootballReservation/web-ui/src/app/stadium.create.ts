@@ -23,21 +23,27 @@ export class StadiumCreate {
   size_h: number;
   size: string;
   floor: string;
+  field_id:number;
 
 
   constructor(private _stadiumService: StadiumService, private router: Router) { }
 
   createSubStadium() {
+    this._stadiumService.getSubStadiumByUser(JSON.parse(localStorage.getItem("currentUser")).email)
+      .subscribe(rs => {
+        this.size = this.size_w.toString()+"x"+this.size_h+" m";
 
-    this.size = this.size_w.toString()+"x"+this.size_h+" m";
-
-    this._stadiumService.createSubStadium(this.fieldex_name, this.rent, this.size, this.floor)
-      .subscribe(
-      soda => this.soda = soda,
-      error => this.errorMessage = <any>error
-      
-      ); 
-    this.router.navigate(['/manage']);
+        this._stadiumService.createSubStadium(rs.field_id,this.fieldex_name, this.rent, this.size, this.floor)
+          .subscribe(
+          soda => {this.soda = soda;
+            this.router.navigate(['/manage']);
+            // location.reload();
+          },
+          error => {this.errorMessage = <any>error;
+            this.router.navigate(['/manage']);
+            // location.reload();
+          });
+    }); 
   }
 
 }

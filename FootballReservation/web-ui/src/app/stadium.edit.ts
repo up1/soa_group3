@@ -55,11 +55,13 @@ export class StadiumEdit implements OnInit {
 
     this._stadiumService.editSubStadium(this.ex_id, this.fieldex_name, this.rent, this.size, this.floor)
       .subscribe(
-      soda => this.soda = soda,
-      error => this.errorMessage = <any>error
-
-      );
-    this.router.navigate(['/manage']);
+      soda => {this.soda = soda;
+        this.router.navigate(['/manage']);
+      },
+      error => {this.errorMessage = <any>error;
+        this.router.navigate(['/manage']);
+      });
+    // this.router.navigate(['/manage']);
   }
 
 }
