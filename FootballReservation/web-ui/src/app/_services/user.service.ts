@@ -17,7 +17,7 @@ export class UserService {
     }
  
     create(user: User) {
-        return this.http.post('http://localhost:9005/user/add', user).map((response: Response) => response.json());
+        return this.http.post('http://localhost:9005/user/add', user).map((response: Response) => "Created");
     }
  
     update(user: User, id: number) {
