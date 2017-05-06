@@ -10,6 +10,7 @@ import { AppModule } from './app.module';
 export class AppComponent {
   mode : number ;
   username : String ;
+  mode = 3;
   constructor(private modalService: ModalService) { }
   openLoginModal(userCreds): void {
   	// Service callback function to create the modal with an object passed as a parameter
