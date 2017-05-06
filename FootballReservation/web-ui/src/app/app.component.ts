@@ -8,10 +8,31 @@ import { AppModule } from './app.module';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  mode = 2;
+  mode : number ;
+  username : String ;
   constructor(private modalService: ModalService) { }
   openLoginModal(userCreds): void {
   	// Service callback function to create the modal with an object passed as a parameter
     this.modalService.create(AppModule, LoginModalComponent, {userCreds});
+  }
+  ngOnInit() {
+    if(localStorage.getItem("currentUser")){
+
+      this.username = JSON.parse(localStorage.getItem("currentUser")).email;
+
+      if(JSON.parse(localStorage.getItem("currentUser")).role === "admin"){
+        this.mode = 3;        
+      }else if(JSON.parse(localStorage.getItem("currentUser")).role === "manager"){
+        this.mode = 2;
+      }else{
+        this.mode = 1;
+      }
+    }else{
+      this.mode = 1;
+    }
+  }
+  logout(){
+    localStorage.removeItem("currentUser");
+    location.replace("/index.html");
   }
 }

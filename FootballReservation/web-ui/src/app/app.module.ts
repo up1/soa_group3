@@ -58,7 +58,7 @@ const appRoutes: Routes = [
     AppReserveList,
     ManagermanagmentComponent,
     UsermanagementComponent,
-    LoginModalComponent,
+    LoginModalComponent
   ],
   imports: [
     BrowserModule,

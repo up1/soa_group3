@@ -1,99 +1,95 @@
 <nav class="nav">
-  <div *ngIf="mode === 1" class="container">
-    <div class="nav-left">
-      <a class="nav-item" routerLink="/" routerLinkActive="active">
-        <img src="assets/images/web-logo2.png" alt="Reserve Football Stadium">
-      </a>
-      <a class="nav-item is-tab is-hidden-mobile" routerLink="/reserve" routerLinkActive="is-active">จองสนาม</a>
-      <a class="nav-item is-tab is-hidden-mobile" routerLink="/reservelist" routerLinkActive="is-active">รายการจองสนาม</a>
-    </div>
-    <span class="nav-toggle">
+    <div *ngIf="mode === 1" class="container">
+        <div class="nav-left">
+            <a class="nav-item" routerLink="/" routerLinkActive="active">
+                <img src="assets/images/web-logo2.png" alt="Reserve Football Stadium">
+            </a>
+            <a class="nav-item is-tab is-hidden-mobile" routerLink="/reserve" routerLinkActive="is-active">จองสนาม</a>
+            <a class="nav-item is-tab is-hidden-mobile" routerLink="/reservelist" routerLinkActive="is-active">รายการจองสนาม</a>
+        </div>
+        <span class="nav-toggle">
       <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div class="nav-right nav-menu">
-      <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">จองสนาม</a>
-      <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">รายการจองสนาม</a>
-      <a class="nav-item is-tab" routerLink="/user/id" routerLinkActive="is-active">
-        <span class="icon">
-          <i class="fa fa-user"></i>
+        <span></span>
+        <span></span>
         </span>
-        User
-      </a>
-      <a class="nav-item is-tab" href="javascript:void(0);" (click)="openLoginModal(passedParameter = { username: 'user', password: 'pass'})">เข้าสู่ระบบ</a>
+        <div class="nav-right nav-menu">
+            <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">จองสนาม</a>
+            <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">รายการจองสนาม</a>
+            <a *ngIf="username" class="nav-item is-tab" routerLink="/user/id" routerLinkActive="is-active">
+                <span class="icon">
+                <i class="fa fa-user"></i>
+              </span> {{username}}
+            </a>
+            <a *ngIf="!username" class="nav-item is-tab" href="javascript:void(0);" (click)="openLoginModal(passedParameter = { username: 'user', password: 'pass'})">เข้าสู่ระบบ</a>
+            <a *ngIf="username" class="nav-item is-tab" href="javascript:void(0);" (click)="logout()">LOGOUT</a>
+        </div>
     </div>
-  </div>
 
-  <div *ngIf="mode === 2" class="container">
-    <div class="nav-left">
-      <a class="nav-item" routerLink="/" routerLinkActive="active">
-        <img src="assets/images/web-logo2.png" alt="Reserve Football Stadium">
-      </a>
-      <a class="nav-item is-tab is-hidden-mobile" routerLink="/manage" routerLinkActive="is-active">จัดการสนาม</a>
-    </div>
-    <span class="nav-toggle">
+    <div *ngIf="mode === 2" class="container">
+        <div class="nav-left">
+            <a class="nav-item" routerLink="/" routerLinkActive="active">
+                <img src="assets/images/web-logo2.png" alt="Reserve Football Stadium">
+            </a>
+            <a class="nav-item is-tab is-hidden-mobile" routerLink="/manage" routerLinkActive="is-active">จัดการสนาม</a>
+        </div>
+        <span class="nav-toggle">
       <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div class="nav-right nav-menu">
-      <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">จัดการสนาม</a>
-      <a class="nav-item is-tab" routerLink="/user/id" routerLinkActive="is-active">
-        <span class="icon">
-          <i class="fa fa-user"></i>
+        <span></span>
+        <span></span>
         </span>
-        manager
-      </a>
-      <a class="nav-item is-tab" href="javascript:void(0);" (click)="openLoginModal(passedParameter = { username: 'user', password: 'pass'})" routerLinkActive="is-active">เข้าสู่ระบบ</a>
+        <div class="nav-right nav-menu">
+            <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">จัดการสนาม</a>
+            <a class="nav-item is-tab" routerLink="/user/id" routerLinkActive="is-active">
+                <span class="icon">
+          <i class="fa fa-user"></i>
+        </span> {{username}}
+            </a>
+            <a *ngIf="!username" class="nav-item is-tab" href="javascript:void(0);" (click)="openLoginModal(passedParameter = { username: 'user', password: 'pass'})">เข้าสู่ระบบ</a>
+            <a *ngIf="username" class="nav-item is-tab" href="javascript:void(0);" (click)="logout()">LOGOUT</a>
+        </div>
     </div>
-  </div>
 
-  <div *ngIf="mode === 3" class="container">
-    <div class="nav-left">
-      <a class="nav-item" routerLink="/" routerLinkActive="active">
-        <img src="assets/images/web-logo2.png" alt="Reserve Football Stadium">
-      </a>
-      <a class="nav-item is-tab is-hidden-mobile" routerLink="/managermanagment" routerLinkActive="is-active">ผู้จัดการ</a>
-      <a class="nav-item is-tab is-hidden-mobile" routerLink="/usermanagement" routerLinkActive="is-active">ผู้ใช้ทั่วไป</a>
-    </div>
-    <span class="nav-toggle">
+    <div *ngIf="mode === 3" class="container">
+        <div class="nav-left">
+            <a class="nav-item" routerLink="/" routerLinkActive="active">
+                <img src="assets/images/web-logo2.png" alt="Reserve Football Stadium">
+            </a>
+            <a class="nav-item is-tab is-hidden-mobile" routerLink="/managermanagment" routerLinkActive="is-active">ผู้จัดการ</a>
+            <a class="nav-item is-tab is-hidden-mobile" routerLink="/usermanagement" routerLinkActive="is-active">ผู้ใช้ทั่วไป</a>
+        </div>
+        <span class="nav-toggle">
       <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div class="nav-right nav-menu">
-      <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">ผู้จัดการ</a>
-      <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">ผู้ใช้ทั่วไป</a>
-      <a class="nav-item is-tab" routerLink="/user/id" routerLinkActive="is-active">
-        <span class="icon">
-          <i class="fa fa-user"></i>
+        <span></span>
+        <span></span>
         </span>
-        admin
-      </a>
-      <a class="nav-item is-tab" href="javascript:void(0);" (click)="openLoginModal(passedParameter = {
-    username: 'user',
-    password: 'pass'
-  })">เข้าสู่ระบบ</a>
+        <div class="nav-right nav-menu">
+            <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">ผู้จัดการ</a>
+            <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">ผู้ใช้ทั่วไป</a>
+            <a class="nav-item is-tab" routerLink="/user/id" routerLinkActive="is-active">
+                <span class="icon">
+          <i class="fa fa-user"></i>
+        </span> {{username}}
+            </a>
+            <a *ngIf="!username" class="nav-item is-tab" href="javascript:void(0);" (click)="openLoginModal(passedParameter = { username: 'user', password: 'pass'})">เข้าสู่ระบบ</a>
+            <a *ngIf="username" class="nav-item is-tab" href="javascript:void(0);" (click)="logout()">LOGOUT</a>
+        </div>
     </div>
-  </div>
 </nav>
 <alert></alert>
 <modal-placeholder></modal-placeholder>
 <router-outlet></router-outlet>
 <footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <p>
-        <strong>Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
-      </p>
-      <p>
-        <a class="icon" href="https://github.com/jgthms/bulma">
-          <i class="fa fa-github"></i>
-        </a>
-      </p>
+    <div class="container">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
+            </p>
+            <p>
+                <a class="icon" href="https://github.com/jgthms/bulma">
+                    <i class="fa fa-github"></i>
+                </a>
+            </p>
+        </div>
     </div>
-  </div>
 </footer>
