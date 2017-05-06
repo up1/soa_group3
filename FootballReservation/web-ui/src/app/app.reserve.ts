@@ -58,19 +58,6 @@ export class AppReserve implements OnInit {
       );
   }
 
-  editSubStadium(ex_id: number) {
-    this.router.navigate(['/manage/edit'], { queryParams: { substadium: ex_id } });
-  }
-
-  deleteSubStadium(ex_id: number) {
-    this._stadiumService.deleteSubStadium(ex_id)
-      .subscribe(
-      soda => this.soda = soda,
-      error => this.errorMessage = <any>error
-      );
-    this.router.navigate(['/manage']);
-  }
-
   toggleBooking(field_id: number) {
     if (this.modalWork === false) {
       this.modalWork = true;
@@ -78,5 +65,9 @@ export class AppReserve implements OnInit {
     else if (this.modalWork === true) {
       this.modalWork = false;
     }
+  }
+
+  confirmBooking() {
+    console.log("Book!")
   }
 }

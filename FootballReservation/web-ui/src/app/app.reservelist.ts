@@ -24,8 +24,6 @@ export class AppReserveList implements OnInit {
 
   constructor(private _stadiumService: StadiumService) { }
 
-
-
   ngOnInit() {
     this.getReserveByName("TestUser")
   }
