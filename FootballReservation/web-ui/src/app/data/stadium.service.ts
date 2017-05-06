@@ -43,15 +43,15 @@ export class StadiumService {
   }
 
 
-  createSubStadium(fieldex_name: string, rent: number, size: string, floor: string) {
+  createSubStadium(field_id: number,fieldex_name: string, rent: number, size: string, floor: string) {
     return this._http
-      .post('http://localhost:9003/field_ex/add', JSON.parse('{"field_id": 1,"fieldex_name": "' + fieldex_name + '","rent": ' + rent.toString() + ',"image": "img","size": "' + size + '","floor": "' + floor + '"}'))
+      .post('http://localhost:9003/field_ex/add', JSON.parse('{"field_id": '+field_id+',"fieldex_name": "' + fieldex_name + '","rent": ' + rent.toString() + ',"image": "img","size": "' + size + '","floor": "' + floor + '"}'))
       .map((response: Response) => response.json());
   }
 
   editSubStadium(ex_id: number, fieldex_name: string, rent: number, size: string, floor: string) {
     return this._http
-      .put('http://localhost:9003/field_ex/' + ex_id.toString() + '/update', JSON.parse('{"field_id": 1,"fieldex_name": "' + fieldex_name + '","rent": ' + rent.toString() + ',"image": "img","size": "' + size + '","floor": "' + floor + '"}'))
+      .put('http://localhost:9003/field_ex/' + ex_id.toString() + '/update', JSON.parse('{"fieldex_name": "' + fieldex_name + '","rent": ' + rent.toString() + ',"image": "img","size": "' + size + '","floor": "' + floor + '"}'))
       .map((response: Response) => response.json());
   }
 
