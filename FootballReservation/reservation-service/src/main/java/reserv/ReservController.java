@@ -20,8 +20,8 @@ public class ReservController {
     @RequestMapping(value = "/reservation", method = RequestMethod.GET)
     public List<Reserv> getReseervByDate(
             @RequestParam(value = "date", required = false) String date,
-            @RequestParam(value = "user", required = false) String user){
-        return this.reservRepository.findByFilter(date,user);
+            @RequestParam(value = "user_id", required = false) int user_id){
+        return this.reservRepository.findByFilter(date,user_id);
     }
 
     @RequestMapping(value = "/reservations", method = RequestMethod.GET)

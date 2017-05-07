@@ -11,7 +11,7 @@ public class ReservRowMapper implements RowMapper<Reserv> {
     public Reserv mapRow(ResultSet resultSet, int i) throws SQLException {
         Reserv reserv = new Reserv();
         reserv.setReserv_id(resultSet.getInt("reservation_id"));
-        reserv.setReserv_user(resultSet.getString("reservation_user"));
+        reserv.setReserv_user_id(resultSet.getInt("reservation_user_id"));
         reserv.setReserv_field_id(resultSet.getInt("reservation_field_id"));
         reserv.setReserv_ex_id(resultSet.getInt("reservation_ex_id"));
         reserv.setReserv_start_time(resultSet.getInt("reservation_start_time"));

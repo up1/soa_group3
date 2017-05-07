@@ -2,7 +2,7 @@ package reserv;
 
 public class Reserv {
     private int reserv_id;
-    private String reserv_user;
+    private int reserv_user_id;
     private int reserv_field_id;
     private int reserv_ex_id;
     private int reserv_start_time;
@@ -10,8 +10,8 @@ public class Reserv {
     private String reserv_date;
     private String reserv_status;
 
-    public Reserv(String reserv_user, int reserv_field_id, int reserv_ex_id, int reserv_start_time, int reserv_end_time, String reserv_date) {
-        this.reserv_user = reserv_user;
+    public Reserv(int reserv_user_id, int reserv_field_id, int reserv_ex_id, int reserv_start_time, int reserv_end_time, String reserv_date) {
+        this.reserv_user_id = reserv_user_id;
         this.reserv_field_id = reserv_field_id;
         this.reserv_ex_id = reserv_ex_id;
         this.reserv_start_time = reserv_start_time;
@@ -30,12 +30,12 @@ public class Reserv {
         this.reserv_id = reserv_id;
     }
 
-    public String getReserv_user() {
-        return reserv_user;
+    public int getReserv_user_id() {
+        return reserv_user_id;
     }
 
-    public void setReserv_user(String reserv_user) {
-        this.reserv_user = reserv_user;
+    public void setReserv_user_id(int reserv_user_id) {
+        this.reserv_user_id = reserv_user_id;
     }
 
     public int getReserv_field_id() {

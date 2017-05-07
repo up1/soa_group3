@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS RESERVATION;
 CREATE TABLE RESERVATION(
 
     reservation_id int(11) NOT NULL AUTO_INCREMENT,
-    reservation_user varchar(100) NOT NULL,
+    reservation_user_id int(11) NOT NULL,
     reservation_field_id int(11) NOT NULL,
     reservation_ex_id int(11) NOT NULL,
     reservation_start_time int(2) NOT NULL,

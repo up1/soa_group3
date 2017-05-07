@@ -25,7 +25,7 @@ export class AppReserveList implements OnInit {
   constructor(private _stadiumService: StadiumService) { }
 
   ngOnInit() {
-    this.getReserveByName("TestUser")
+    this.getReserveByUserId(JSON.parse(localStorage.getItem("currentUser")).user_id)
   }
 
   reserveMode(num: number) {
@@ -38,15 +38,15 @@ export class AppReserveList implements OnInit {
     }
   }
 
-  getReserveByName(name: string) {
-    this._stadiumService.getReservebyName(name)
+  getReserveByUserId(user_id: number) {
+    this._stadiumService.getReservebyUserId(user_id)
       .subscribe(
       reservelist => {
         this.reservelist = reservelist
 
         for (let i in reservelist) {
-          this.getStadiumName(Number(i), this.reservelist[0].reserv_field_id)
-          this.getSubStadiumName(Number(i), this.reservelist[0].reserv_ex_id)
+          this.getStadiumName(Number(i), this.reservelist[i].reserv_field_id)
+          this.getSubStadiumName(Number(i), this.reservelist[i].reserv_ex_id)
         }
       },
       error => this.errorMessage = <any>error
@@ -68,6 +68,7 @@ export class AppReserveList implements OnInit {
     this._stadiumService.getSubStadiumData(ex_id)
       .subscribe(
       substadium => {
+        console.log(substadium[0].fieldex_name)
         this.substadium = substadium;
         this.reservelist[num].reserv_ex_id = substadium[0].fieldex_name
 
