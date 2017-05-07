@@ -68,7 +68,6 @@ export class AppReserveList implements OnInit {
     this._stadiumService.getSubStadiumData(ex_id)
       .subscribe(
       substadium => {
-        console.log(substadium[0].fieldex_name)
         this.substadium = substadium;
         this.reservelist[num].reserv_ex_id = substadium[0].fieldex_name
 

@@ -15,7 +15,6 @@ export class AppReserve implements OnInit {
 
   soda: SubStadium[];
   sodium: Stadium[];
-  sonar: SubStadium[];
   errorMessage: string;
   modalWork: boolean;
 
@@ -24,6 +23,11 @@ export class AppReserve implements OnInit {
   date: DateModel;
   options: DatePickerOptions;
   nowday: Date;
+
+  //For Booking
+  booking_field_id: number;
+  booking_ex_id: number;
+  time = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 
   constructor(private _stadiumService: StadiumService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.modalWork = false;
@@ -67,16 +71,24 @@ export class AppReserve implements OnInit {
       );
   }
 
-  toggleBooking(field_id: number) {
+  toggleBooking(field_id: number, ex_id: number) {
     if (this.modalWork === false) {
       this.modalWork = true;
+      this.booking_field_id = field_id
+      this.booking_ex_id = ex_id
     }
     else if (this.modalWork === true) {
       this.modalWork = false;
+      this.booking_field_id = null
+      this.booking_ex_id = null
     }
   }
 
   confirmBooking() {
-    console.log(this.date)
+    console.log("field_id:" + this.booking_field_id)
+    console.log("ex_id:" + this.booking_ex_id)
+    console.log(this.date.formatted)
+
+    //console.log(this.time)
   }
 }

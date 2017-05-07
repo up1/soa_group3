@@ -22,7 +22,7 @@
           <div class="content">
             <span class="tag is-info">{{stadium.rent}} บาท / ชั่วโมง</span>
           </div>
-          <a class="button is-primary" *ngIf="sodium" (click)="toggleBooking(sodium.ex_id)">จองสนามนี้</a>
+          <a class="button is-primary" *ngIf="sodium" (click)="toggleBooking(sodium.field_id, stadium.ex_id)">จองสนามนี้</a>
         </div>
       </div>
     </div>
@@ -48,102 +48,102 @@
               <th>เลือก</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
+          <tbody *ngIf="sodium">
+            <tr *ngIf="sodium.stime <= 0 && sodium.etime >= 1">
               <td>00:00-01:00</td>
-              <td><input type="checkbox" disabled></td>
+              <td><input type="checkbox" [(ngModel)]="time[0]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 1 && sodium.etime >= 2">
               <td>01:00-02:00</td>
-              <td><input type="checkbox" disabled></td>
+              <td><input type="checkbox" [(ngModel)]="time[1]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 2 && sodium.etime >= 3">
               <td>02:00-03:00</td>
-              <td><input type="checkbox" disabled></td>
+              <td><input type="checkbox" [(ngModel)]="time[2]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 3 && sodium.etime >= 4">
               <td>03:00-04:00</td>
-              <td><input type="checkbox" disabled></td>
+              <td><input type="checkbox" [(ngModel)]="time[3]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 4 && sodium.etime >= 5">
               <td>04:00-05:00</td>
-              <td><input type="checkbox" disabled></td>
+              <td><input type="checkbox" [(ngModel)]="time[4]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 5 && sodium.etime >= 6">
               <td>05:00-06:00</td>
-              <td><input type="checkbox" disabled></td>
+              <td><input type="checkbox" [(ngModel)]="time[5]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 6 && sodium.etime >= 7">
               <td>06:00-07:00</td>
-              <td><input type="checkbox" disabled></td>
+              <td><input type="checkbox" [(ngModel)]="time[6]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 7 && sodium.etime >= 8">
               <td>07:00-08:00</td>
-              <td><input type="checkbox" disabled></td>
+              <td><input type="checkbox" [(ngModel)]="time[7]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 8 && sodium.etime >= 9">
               <td>08:00-09:00</td>
-              <td><input type="checkbox" disabled></td>
+              <td><input type="checkbox" [(ngModel)]="time[8]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 9 && sodium.etime >= 10">
               <td>09:00-10:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[9]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 10 && sodium.etime >= 11">
               <td>10:00-11:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[10]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 11 && sodium.etime >= 12">
               <td>11:00-12:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[11]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 12 && sodium.etime >= 13">
               <td>12:00-13:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[12]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 13 && sodium.etime >= 14">
               <td>13:00-14:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[13]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 14 && sodium.etime >= 15">
               <td>14:00-15:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[14]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 15 && sodium.etime >= 16">
               <td>15:00-16:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[15]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 16 && sodium.etime >= 17">
               <td>16:00-17:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[16]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 17 && sodium.etime >= 18">
               <td>17:00-18:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[17]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 18 && sodium.etime >= 19">
               <td>18:00-19:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[18]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 19 && sodium.etime >= 20">
               <td>19:00-20:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[19]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 20 && sodium.etime >= 21">
               <td>20:00-21:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[20]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 21 && sodium.etime >= 22">
               <td>21:00-22:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[21]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 22 && sodium.etime >= 23">
               <td>22:00-23:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[22]"></td>
             </tr>
-            <tr>
+            <tr *ngIf="sodium.stime <= 23 && sodium.etime >= 24">
               <td>23:00-00:00</td>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" [(ngModel)]="time[23]"></td>
             </tr>
           </tbody>
         </table>
