@@ -22,7 +22,7 @@
           <div class="content">
             <span class="tag is-info">{{stadium.rent}} บาท / ชั่วโมง</span>
           </div>
-          <a class="button is-primary" *ngIf="sodium" (click)="toggleBooking(sodium.field_id, stadium.ex_id)">จองสนามนี้</a>
+          <a class="button is-primary" *ngIf="sodium" (click)="toggleBooking(sodium.field_id, stadium.ex_id, stadium.rent)">จองสนามนี้</a>
         </div>
       </div>
     </div>
@@ -150,7 +150,8 @@
       </div>
     </section>
     <footer class="modal-card-foot">
-      <a class="button is-success" id="bookingButton" (click)="confirmBooking()">จอง</a>
+      <p class="modal-card-title">จำนวน: {{ hour }} ชั่วโมง | รวม {{ hour*rent}} บาท</p>
+      <button class="button is-success" id="bookingButton" (click)="confirmBooking()">จอง</button>
     </footer>
   </div>
 </div>

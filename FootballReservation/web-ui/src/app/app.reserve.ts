@@ -27,7 +27,9 @@ export class AppReserve implements OnInit {
   //For Booking
   booking_field_id: number;
   booking_ex_id: number;
-  time = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+  time = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+  hour = 0;
+  rent = 0;
 
   constructor(private _stadiumService: StadiumService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.modalWork = false;
@@ -48,6 +50,17 @@ export class AppReserve implements OnInit {
     });
     this.getSubStadiumList(this.field_id);
     this.getStadiumDetail(this.field_id);
+  }
+
+  ngDoCheck() {
+    
+    this.hour = 0;
+
+    for (let count of this.time) {
+      if (count) {
+        this.hour += 1;
+      }
+    }
   }
 
   ngAfterContentInit() {
@@ -71,24 +84,27 @@ export class AppReserve implements OnInit {
       );
   }
 
-  toggleBooking(field_id: number, ex_id: number) {
+  toggleBooking(field_id: number, ex_id: number, rent: number) {
     if (this.modalWork === false) {
       this.modalWork = true;
       this.booking_field_id = field_id
       this.booking_ex_id = ex_id
+      this.rent = rent
     }
     else if (this.modalWork === true) {
       this.modalWork = false;
       this.booking_field_id = null
       this.booking_ex_id = null
+      this.rent = 0
     }
   }
+
 
   confirmBooking() {
     console.log("field_id:" + this.booking_field_id)
     console.log("ex_id:" + this.booking_ex_id)
     console.log(this.date.formatted)
 
-    //console.log(this.time)
+    console.log(this.time)
   }
 }
