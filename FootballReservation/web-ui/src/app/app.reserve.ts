@@ -27,7 +27,7 @@ export class AppReserve implements OnInit {
   //For Booking
   booking_field_id: number;
   booking_ex_id: number;
-  time = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+  time = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
   hour = 0;
   rent = 0;
 
@@ -53,7 +53,7 @@ export class AppReserve implements OnInit {
   }
 
   ngDoCheck() {
-    
+
     this.hour = 0;
 
     for (let count of this.time) {
@@ -106,5 +106,32 @@ export class AppReserve implements OnInit {
     console.log(this.date.formatted)
 
     console.log(this.time)
+    //alert("test")
+
+
+    let stime = 0;
+    let etime = 0
+
+    //find start-end time
+    for (let counthour in this.time) {
+      if (this.time[counthour]) {
+        if (stime == 0)
+        {
+          stime = Number(counthour);
+          etime = Number(counthour)+1;
+        }
+        else {
+          etime = Number(counthour)+1;
+        }
+      }
+    }
+
+    console.log("start: "+stime)
+    console.log("end: "+etime)
+
+    if (etime-stime != this.hour) {
+      alert("please fill between start hour and end hour")
+    }
+
   }
 }
