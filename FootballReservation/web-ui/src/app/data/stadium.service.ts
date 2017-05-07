@@ -67,14 +67,12 @@ export class StadiumService {
       .map((response: Response) => <Reservation[]>response.json());
   }
 
-/*
   PostReserveStadium(user_id: number, field_id: number, ex_id: number, start_time: number, end_time: number, date: String) {
     //wait for edit data
      return this._http
-      .post('http://localhost:9004/reserv', JSON.parse('{"field_id": '+field_id+',"fieldex_name": "' + fieldex_name + '","rent": ' + rent.toString() + ',"image": "img","size": "' + size + '","floor": "' + floor + '"}'))
+      .post('http://localhost:9004/reserv', JSON.parse('{"reserv_user_id": '+user_id+',"reserv_field_id": "' + field_id + '","reserv_ex_id": ' + ex_id.toString() + ',"reserv_start_time": '+ start_time.toString() +',"reserv_end_time": ' + end_time.toString() + ',"reserv_date": "' + date + '"}'))
       .map((response: Response) => response.json());
   }
-  */
 
   // getStadiumByUser(username: String): Observable<Stadium[]> {
   // return this._http

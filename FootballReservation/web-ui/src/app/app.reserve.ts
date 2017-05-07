@@ -132,6 +132,13 @@ export class AppReserve implements OnInit {
     if (etime-stime != this.hour) {
       alert("please fill between start hour and end hour")
     }
+    else {
+      this._stadiumService.PostReserveStadium(JSON.parse(localStorage.getItem("currentUser")).user_id, this.booking_field_id, this.booking_ex_id, stime, etime, this.date.formatted)
+      .subscribe(res => {
+        this.router.navigate(['/reserve']);
+      }
+      )
+    }
 
   }
 }
