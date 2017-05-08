@@ -1,16 +1,18 @@
+# [Reserve Football Stadium Click here!](http://128.199.170.6:4200)
+
 # Service port and ip
 
-listfield-service     port:9001 - 139.59.123.175
+listfield-service     http://139.59.123.175:9001
 
-admin-service         port:9002 - 139.59.123.174
+admin-service         http://139.59.123.174:9002
 
-manage-service        port:9003 - 139.59.123.175
+manage-service        http://139.59.123.175:9003
 
-reservation-service   port:9004 - 139.59.123.172
+reservation-service   http://139.59.123.172:9004
 
-users-service         port:9005 - 139.59.123.174
+users-service         http://139.59.123.174:9005
 
-web-ui                port:4200 - 128.199.170.6
+web-ui                http://128.199.170.6:4200
 
 root@139.59.123.174    user-admin
 
