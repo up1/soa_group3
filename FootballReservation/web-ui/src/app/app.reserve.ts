@@ -138,6 +138,7 @@ export class AppReserve implements OnInit {
         this.router.navigate(['/reserve']);
       }
       )
+        this.router.navigate(['/reservelist']);
     }
 
   }

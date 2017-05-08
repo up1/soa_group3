@@ -26,15 +26,15 @@ export class AdminService {
     // }
 
     ChangeRole(id: number) {
-        return this.http.put('http://localhost:9002/admin/' + id +'/changerole', id).map((response: Response) => response.json());
+        return this.http.put('http://139.59.123.174:9002/admin/' + id +'/changerole', id).map((response: Response) => response.json());
     }
  
     delete(id: number) {
-        return this.http.delete('http://localhost:9002/admin/' + id +'/delete').map((response: Response) => response.json());
+        return this.http.delete('http://139.59.123.174:9002/admin/' + id +'/delete').map((response: Response) => response.json());
     }
 
     getByRole(role: number){
-        return this.http.get('http://localhost:9002/admin/management/'+ role).map((response: Response) => <User[]>response.json());
+        return this.http.get('http://139.59.123.174:9002/admin/management/'+ role).map((response: Response) => <User[]>response.json());
     }
  
 }

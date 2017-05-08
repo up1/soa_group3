@@ -9,34 +9,34 @@ import { Observable } from 'rxjs/Observable';
 export class UserService {
     constructor(private http: Http) { }
     getAll() {
-        return this.http.get('http://localhost:9005/users', this.jwt()).map((response: Response) => response.json());
+        return this.http.get('http://139.59.123.174:9005/users', this.jwt()).map((response: Response) => response.json());
     }
  
     getById(id: number) {
-        return this.http.get('http://localhost:9005/user/' + id, this.jwt()).map((response: Response) => response.json());
+        return this.http.get('http://139.59.123.174:9005/user/' + id, this.jwt()).map((response: Response) => response.json());
     }
  
     create(user: User) {
-        return this.http.post('http://localhost:9005/user/add', user).map((response: Response) => "Created");
+        return this.http.post('http://139.59.123.174:9005/user/add', user).map((response: Response) => "Created");
     }
  
     update(user: User, id: number) {
-        return this.http.put('http://localhost:9005/user/' + id +'/update', user, this.jwt()).map((response: Response) => response.json());
+        return this.http.put('http://139.59.123.174:9005/user/' + id +'/update', user, this.jwt()).map((response: Response) => response.json());
     }
  
     delete(id: number) {
-        return this.http.delete('http://localhost:9005/user/' + id +'/delete', this.jwt()).map((response: Response) => response.json());
+        return this.http.delete('http://139.59.123.174:9005/user/' + id +'/delete', this.jwt()).map((response: Response) => response.json());
     // }
     // getByRole(role: number): Observable<User[]>{
     //     return this.http.get('http://localhost:9005/users/management/' + role).map((response: Response) => <User[]>response.json());
     // }
         }
     getByRole(role: number){
-        return this.http.get('http://localhost:9005/users/management/'+ role).map((response: Response) => <User[]>response.json());
+        return this.http.get('http://139.59.123.174:9005/users/management/'+ role).map((response: Response) => <User[]>response.json());
     }
 
     login(user:User){        
-        return this.http.post('http://localhost:9005/user', user, this.jwt())
+        return this.http.post('http://139.59.123.174:9005/user', user, this.jwt())
         .map((response: Response) => {
             let res = response.json();
             localStorage.setItem("currentUser",JSON.stringify({user_id:res.id ,email:user.email , role:res.role}))
