@@ -14,6 +14,10 @@ users-service         http://139.59.123.174:9005
 
 web-ui                http://128.199.170.6:4200
 
+grafana               http://128.199.170.20:3000
+
+root@128.199.170.20    grafana-prometheus
+
 root@139.59.123.174    user-admin
 
 root@139.59.123.175    manage-listfield
