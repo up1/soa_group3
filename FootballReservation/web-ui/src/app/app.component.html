@@ -1,4 +1,23 @@
 <nav class="nav">
+    <div *ngIf="mode === 0" class="container">
+        <div class="nav-left">
+            <a class="nav-item" routerLink="/" routerLinkActive="active">
+                <img src="assets/images/web-logo2.png" alt="Reserve Football Stadium">
+            </a>
+            <a class="nav-item is-tab is-hidden-mobile" routerLink="/reserve" routerLinkActive="is-active">จองสนาม</a>
+        </div>
+        <span class="nav-toggle">
+      <span></span>
+        <span></span>
+        <span></span>
+        </span>
+        <div class="nav-right nav-menu">
+            <a class="nav-item is-tab is-hidden-tablet" routerLinkActive="is-active">จองสนาม</a>
+            <a *ngIf="!username" class="nav-item is-tab" href="javascript:void(0);" (click)="openLoginModal(passedParameter = { username: 'user', password: 'pass'})">เข้าสู่ระบบ</a>
+        </div>
+    </div>
+
+
     <div *ngIf="mode === 1" class="container">
         <div class="nav-left">
             <a class="nav-item" routerLink="/" routerLinkActive="active">
@@ -78,18 +97,28 @@
 <alert></alert>
 <modal-placeholder></modal-placeholder>
 <router-outlet></router-outlet>
+
+<!--
 <footer class="footer">
     <div class="container">
         <div class="content has-text-centered">
             <p>
-                <strong>Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
+                <strong>RFS</strong> คือ <strong>Reservation Football Stadium</strong>
             </p>
             <p>
-                <a class="icon" href="https://github.com/jgthms/bulma">
+                <strong>บริหารงานโดย</strong>
+            </p>
+            <p>ณัฐกิตติ์  วัยวัฒน์ภัทรกุล  57070033</p>
+            <p>พศวัต  พฤกษ์พนาสันต์  57070077</p>
+            <p>พิพัฒน์  เสวย  57070080</p>
+            <p>วรพงษ์  มาลัยวงษ์  57070103</p>
+            <p>วัฒกร  มะลิขาว  57070106</p>
+            <p>
+                <a class="icon" href="https://github.com/up1/soa_group3">
                     <i class="fa fa-github"></i>
                 </a>
             </p>
         </div>
     </div>
 </footer>
+-->

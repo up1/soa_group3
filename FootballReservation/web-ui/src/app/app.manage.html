@@ -1,7 +1,8 @@
 <div class="container">
   <h2 class="title is-2 has-text-centered">จัดการสนาม</h2>
+  <h4 class="title is-4 has-text-centered" *ngIf="stadium">{{stadium.field_name}}</h4>
   <div class="block" id="manage-control">
-    <a class="button is-info">แก้ไขข้อมูลสนาม</a>
+    <a class="button is-info" routerLink="/manage/infoedit">แก้ไขข้อมูลสนาม</a>
     <a class="button is-success" routerLink="/manage/create" >เพิ่มสนาม</a>
   </div>
   <div class="columns is-multiline is-mobile">
@@ -29,3 +30,4 @@
     </div>
   </div>
 </div>
+<br>

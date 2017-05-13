@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
  
 import { AlertService, UserService } from './_services/index';
+import { routerTransition } from './router.animations';
 
 @Component({
   moduleId: module.id,
   selector: 'register-page',
-  templateUrl: './app.register.html'
+  templateUrl: './app.register.html',
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class AppRegister { 
   model: any = {};

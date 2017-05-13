@@ -1,0 +1,132 @@
+<div class="container">
+  <div class="column is-half is-offset-one-quarter">
+    <h2 class="title is-2 has-text-centered">แก้ไขข้อมูลสนาม</h2>
+  </div>
+  <div class="block">
+    <a class="button is-primary is-outlined" routerLink="/manage"><= ย้อนกลับ</a>
+  </div>
+
+  <div class="column is-half is-offset-one-quarter">
+    <div class="field">
+      <label class="label">ชื่อสนาม</label>
+      <p class="control">
+        <input class="input" type="text" placeholder="" [(ngModel)]="field_name">
+      </p>
+    </div>
+  </div>
+
+  <div class="column is-half is-offset-one-quarter">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">เปิดเวลา</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control is-expanded">
+            <input class="input" type="number" placeholder="เปิด" min="0" max="23" [(ngModel)]="s_time">
+          </p>
+        </div>
+        <div class="field-label is-normal">
+          <label class="label">:00-</label>
+        </div>
+        <div class="field">
+          <p class="control is-expanded">
+            <input class="input" type="number" placeholder="ปิด" min="0" max="23" [(ngModel)]="e_time">
+          </p>
+        </div>
+        <div class="field-label is-normal">
+          <label class="label">:00</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-half is-offset-one-quarter">
+    <div class="field">
+      <label class="label">ที่อยู่</label>
+      <p class="control">
+        <textarea class="input" type="text" placeholder="" rows="3" [(ngModel)]="address" style="height: 100%;"></textarea>
+      </p>
+    </div>
+  </div>
+
+  <div class="column is-half is-offset-one-quarter">
+    <div class="field">
+      <label class="label">เบอร์โทรศัพท์</label>
+      <p class="control">
+        <input class="input" type="tel" placeholder="" [(ngModel)]="telno">
+      </p>
+    </div>
+  </div>
+
+  <div class="column is-half is-offset-one-quarter">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">ช่วงราคา</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control is-expanded">
+            <input class="input" type="number" placeholder="เริ่มต้น" [(ngModel)]="s_rent">
+          </p>
+        </div>
+        <div class="field-label is-normal">
+          <label class="label">-</label>
+        </div>
+        <div class="field">
+          <p class="control is-expanded">
+            <input class="input" type="number" placeholder="ถึง" [(ngModel)]="e_rent">
+          </p>
+        </div>
+        <div class="field-label is-normal">
+          <label class="label">บาท</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-half is-offset-one-quarter">
+    <div class="field">
+      <label class="label">รูปภาพ</label>
+      <p class="control">
+        <image-upload [max]="1"></image-upload>
+      </p>
+    </div>
+  </div>
+
+  <div class="column is-half is-offset-one-quarter">
+    <div class="field">
+      <label class="label">E-mail ที่ใช้ติดต่อ</label>
+      <p class="control">
+        <input class="input" type="E-mail" placeholder="" [(ngModel)]="email">
+      </p>
+    </div>
+  </div>
+
+  <div class="column is-half is-offset-one-quarter">
+    <div class="field">
+      <label class="label">Website</label>
+      <p class="control">
+        <input class="input" type="url" placeholder="" [(ngModel)]="website">
+      </p>
+    </div>
+  </div>
+
+  <div class="column is-half is-offset-one-quarter">
+    <div class="field">
+      <label class="label">ข้อมูลสนาม</label>
+      <p class="control">
+        <textarea class="input" type="text" placeholder="" rows="3" [(ngModel)]="detail
+        
+        " style="height: 100%;"></textarea>
+      </p>
+    </div>
+  </div>
+
+  <div class="column is-half is-offset-one-quarter">
+    <div class="block">
+      <a class="button is-success" (click)="editSubStadium()">บันทึกข้อมูล</a>
+    </div>
+  </div>
+
+</div>

@@ -19,6 +19,7 @@ import { AlertService, AuthenticationService, UserService, AdminService} from '.
 // import { AdminService } from './_services/index';
 import { StadiumCreate } from './stadium.create';
 import { StadiumEdit } from './stadium.edit';
+import { StadiumInfoEdit } from './stadium.info.edit';
 import { StadiumService } from 'app/data/stadium.service';
 import { HomeComponent } from './home/home.component';
 import { AppReserveList } from './app.reservelist';
@@ -26,6 +27,8 @@ import { AppReserveList } from './app.reservelist';
 import { DatePickerModule } from 'ng2-datepicker';
 import { ManagermanagmentComponent } from './managermanagment/managermanagment.component';
 import { UsermanagementComponent } from './usermanagement/usermanagement.component';
+
+
 
 
 const appRoutes: Routes = [
@@ -37,10 +40,13 @@ const appRoutes: Routes = [
   { path: 'manage', component: AppManage  },
   { path: 'manage/create', component: StadiumCreate },
   { path: 'manage/edit', component: StadiumEdit },
+  { path: 'manage/infoedit', component: StadiumInfoEdit },
   { path: '', component: HomeComponent },
   { path: 'managermanagment', component: ManagermanagmentComponent},
   { path: 'usermanagement', component: UsermanagementComponent},
   { path: 'login', component: LoginModalComponent}
+
+
 ];
 
 @NgModule({
@@ -58,7 +64,8 @@ const appRoutes: Routes = [
     AppReserveList,
     ManagermanagmentComponent,
     UsermanagementComponent,
-    LoginModalComponent
+    LoginModalComponent,
+    StadiumInfoEdit
   ],
   imports: [
     BrowserModule,

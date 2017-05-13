@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Stadium } from 'app/data/stadium';
 import { SubStadium } from 'app/data/substadium';
 import { StadiumService } from 'app/data/stadium.service';
+import { routerTransition } from './router.animations';
 
 @Component({
   selector: 'stadium-page',
-  templateUrl: './app.stadium.html'
+  templateUrl: './app.stadium.html',
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 
 export class AppStadium implements OnInit {

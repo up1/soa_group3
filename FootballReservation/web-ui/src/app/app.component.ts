@@ -2,14 +2,17 @@ import { Component } from '@angular/core';
 import { ModalService } from 'ng2-modal-dialog/modal.module';
 import { LoginModalComponent } from './app.login-modal.componenet';
 import { AppModule } from './app.module';
+import { routerTransition } from './router.animations';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class AppComponent {
-  mode : number ;
-  username : String ;
+  mode: number;
+  username: String;
   constructor(private modalService: ModalService) { }
   openLoginModal(userCreds): void {
   	// Service callback function to create the modal with an object passed as a parameter
@@ -28,7 +31,7 @@ export class AppComponent {
         this.mode = 1;
       }
     }else{
-      this.mode = 1;
+      this.mode = 0;
     }
   }
   logout(){

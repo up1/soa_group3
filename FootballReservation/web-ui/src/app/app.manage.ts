@@ -3,16 +3,20 @@ import { Router } from '@angular/router';
 import { Stadium } from 'app/data/stadium';
 import { SubStadium } from 'app/data/substadium';
 import { StadiumService } from 'app/data/stadium.service';
+import { routerTransition } from './router.animations';
 
 @Component({
   moduleId: module.id,
   selector: 'manage-page',
-  templateUrl: './app.manage.html'
+  templateUrl: './app.manage.html',
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 
 export class AppManage implements OnInit {
 
   soda: SubStadium[];
+  stadium: Stadium;
   errorMessage: string;
   SubStadiumModal: boolean;
 
@@ -21,7 +25,7 @@ export class AppManage implements OnInit {
   ngOnInit() {
     this._stadiumService.getSubStadiumByUser(JSON.parse(localStorage.getItem("currentUser")).email)
       .subscribe(rs => {
-      this.getSubStadiumList(rs.field_id);
+      this.getSubStadiumList(rs.field_id); this.stadium = rs;
     });
     // this.getSubStadiumList(1);
     this.SubStadiumModal = false;
