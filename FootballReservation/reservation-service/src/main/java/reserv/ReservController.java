@@ -2,7 +2,6 @@ package reserv;
 
 import java.util.List;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +19,8 @@ public class ReservController {
     @RequestMapping(value = "/reservation", method = RequestMethod.GET)
     public List<Reserv> getReseervByDate(
             @RequestParam(value = "date", required = false) String date,
-            @RequestParam(value = "user_id", required = false) int user_id){
-        return this.reservRepository.findByFilter(date,user_id);
+            @RequestParam(value = "user_id", required = false) int userId){
+        return this.reservRepository.findByFilter(date,userId);
     }
 
     @RequestMapping(value = "/reservations", method = RequestMethod.GET)
@@ -31,33 +30,28 @@ public class ReservController {
         return this.reservRepository.findByPage(page, itemPerPage);
     }
 
-    @RequestMapping(value = "/reservation/{reservation_id}", method = RequestMethod.GET)
-    public Reserv getReservByID(@PathVariable int reservation_id) {
-        return reservRepository.getReservByID(reservation_id);
+    @RequestMapping(value = "/reservation/{reservationId}", method = RequestMethod.GET)
+    public Reserv getReservByID(@PathVariable int reservationId) {
+        return reservRepository.getReservByID(reservationId);
     }
 
-
-
-
-
-
-    @RequestMapping(value = "/reservation/{reservation_id}/confirm", method = RequestMethod.PUT)
-    public ResponseEntity confirmReserv(@PathVariable int reservation_id) {
-        reservRepository.confirmReserv(reservation_id);
+    @RequestMapping(value = "/reservation/{reservationId}/confirm", method = RequestMethod.PUT)
+    public ResponseEntity confirmReserv(@PathVariable int reservationId) {
+        reservRepository.confirmReserv(reservationId);
         return new ResponseEntity(HttpStatus.OK);
     }
 
     //Customer already paid
-    @RequestMapping(value = "/reservation/{reservation_id}/cancel", method = RequestMethod.PUT)
-    public ResponseEntity cancelReserv(@PathVariable int reservation_id) {
-        reservRepository.cancelReserv(reservation_id);
+    @RequestMapping(value = "/reservation/{reservationId}/cancel", method = RequestMethod.PUT)
+    public ResponseEntity cancelReserv(@PathVariable int reservationId) {
+        reservRepository.cancelReserv(reservationId);
         return new ResponseEntity(HttpStatus.OK);
     }
 
 
-    @RequestMapping(value = "/reserv/{reserv_id}/delete", method = RequestMethod.DELETE)
-    public ResponseEntity deleteReserv(@PathVariable int reserv_id) {
-        reservRepository.deleteReserv(reserv_id);
+    @RequestMapping(value = "/reserv/{reservId}/delete", method = RequestMethod.DELETE)
+    public ResponseEntity deleteReserv(@PathVariable int reservId) {
+        reservRepository.deleteReserv(reservId);
         return new ResponseEntity(HttpStatus.OK);
     }
 

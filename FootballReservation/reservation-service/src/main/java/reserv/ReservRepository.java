@@ -21,12 +21,12 @@ public class ReservRepository {
 
 
     @Transactional(readOnly = true)
-    public Reserv getReservByID(int reserv_id) {
+    public Reserv getReservByID(int reservId) {
         try {
             return this.jdbcTemplate.queryForObject("SELECT * FROM RESERVATION WHERE reservation_id=?",
-                    new Object[]{reserv_id},new ReservRowMapper());
+                    new Object[]{reservId},new ReservRowMapper());
         }catch (Exception ex){
-            throw new ReservNotFoundException(reserv_id);
+            throw new ReservNotFoundException(ex);
         }
     }
 
@@ -38,21 +38,21 @@ public class ReservRepository {
     }
 
     @Transactional(readOnly = true)
-    public List<Reserv> findByFilter(String date,int user_id) {
-        if(date == null && user_id < 1) {
+    public List<Reserv> findByFilter(String date,int userId) {
+        if(date == null && userId < 1) {
             LocalDate localDate = LocalDate.now();
             return this.jdbcTemplate.query("SELECT * FROM RESERVATION WHERE reservation_date>?",
                     new Object[]{dtf.format(localDate)}, new ReservRowMapper());
         }
-        else if(date != null && user_id > 0){
+        else if(date != null && userId > 0){
             return this.jdbcTemplate.query("SELECT * FROM RESERVATION WHERE reservation_date=? AND reservation_user_id=?",
-                    new Object[]{date,user_id}, new ReservRowMapper());
+                    new Object[]{date,userId}, new ReservRowMapper());
         }else if(date != null){
             return this.jdbcTemplate.query("SELECT * FROM RESERVATION WHERE reservation_date=?",
                     new Object[]{date}, new ReservRowMapper());
         }else{
             return this.jdbcTemplate.query("SELECT * FROM RESERVATION WHERE reservation_user_id=?",
-                    new Object[]{user_id}, new ReservRowMapper());
+                    new Object[]{userId}, new ReservRowMapper());
         }
     }
 
@@ -62,42 +62,42 @@ public class ReservRepository {
                 "(reservation_user_id, reservation_field_id, reservation_ex_id, reservation_start_time, reservation_end_time, reservation_date)" +
                 "VALUES(?,?,?,?,?,?);";
         try {
-            this.jdbcTemplate.update(sql, reserv.getReserv_user_id(), reserv.getReserv_field_id(),
-                    reserv.getReserv_ex_id(), reserv.getReserv_start_time(), reserv.getReserv_end_time(), reserv.getReserv_date());
+            this.jdbcTemplate.update(sql, reserv.getReservUserId(), reserv.getReservFieldId(),
+                    reserv.getReservExId(), reserv.getReservStartTime(), reserv.getReservEndTime(), reserv.getReservDate());
         }catch (Exception ex){
-            throw new AlreadyReservException(reserv);
+            throw new AlreadyReservException(ex);
         }
 
     }
 
     @Transactional
-    public void confirmReserv(int reserv_id){
+    public void confirmReserv(int reservId){
         String sql = "UPDATE RESERVATION SET reservation_status='confirm' WHERE reservation_id=?;";
         try {
-            this.jdbcTemplate.update(sql,reserv_id);
+            this.jdbcTemplate.update(sql,reservId);
         }catch (Exception ex){
-            throw new ReservNotFoundException(reserv_id);
+            throw new ReservNotFoundException(ex);
         }
     }
 
     @Transactional
-    public void deleteReserv(int reserv_id) {
+    public void deleteReserv(int reservId) {
         String sql = "DELETE FROM RESERVATION WHERE reservation_id=?;";
         try {
-            this.jdbcTemplate.update(sql, reserv_id);
+            this.jdbcTemplate.update(sql, reservId);
         }catch (Exception ex){
-            throw new ReservNotFoundException(reserv_id);
+            throw new ReservNotFoundException(ex);
         }
     }
 
     //Customer already paid
     @Transactional
-    public void cancelReserv(int reserv_id) {
+    public void cancelReserv(int reservId) {
         String sql = "UPDATE RESERVATION SET reservation_status='cancel' WHERE reservation_id=?;";
         try {
-            this.jdbcTemplate.update(sql,reserv_id);
+            this.jdbcTemplate.update(sql,reservId);
         }catch (Exception ex) {
-            throw new ReservNotFoundException(reserv_id);
+            throw new ReservNotFoundException(ex);
         }
     }
 }

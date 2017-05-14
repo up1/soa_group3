@@ -1,86 +1,85 @@
 package reserv;
 
 public class Reserv {
-    private int reserv_id;
-    private int reserv_user_id;
-    private int reserv_field_id;
-    private int reserv_ex_id;
-    private int reserv_start_time;
-    private int reserv_end_time;
-    private String reserv_date;
-    private String reserv_status;
+    private int reservId;
+    private String reservUser;
+    private int reservFieldId;
+    private int reservExId;
+    private int reservStartTime;
+    private int reservEndTime;
+    private String reservDate;
+    private String reservStatus;
 
-    public Reserv(int reserv_user_id, int reserv_field_id, int reserv_ex_id, int reserv_start_time, int reserv_end_time, String reserv_date) {
-        this.reserv_user_id = reserv_user_id;
-        this.reserv_field_id = reserv_field_id;
-        this.reserv_ex_id = reserv_ex_id;
-        this.reserv_start_time = reserv_start_time;
-        this.reserv_end_time = reserv_end_time;
-        this.reserv_date = reserv_date;
+    public Reserv(String reservUser, int reservFieldId, int reservExId, int reservStartTime, int reservEndTime, String reservDate) {
+        this.reservUser = reservUser;
+        this.reservFieldId = reservFieldId;
+        this.reservExId = reservExId;
+        this.reservStartTime = reservStartTime;
+        this.reservEndTime = reservEndTime;
+        this.reservDate = reservDate;
     }
 
-    public Reserv() {
+    public int getReservId() {
+        return reservId;
     }
 
-    public int getReserv_id() {
-        return reserv_id;
+    public void setReservId(int reservId) {
+        this.reservId = reservId;
     }
 
-    public void setReserv_id(int reserv_id) {
-        this.reserv_id = reserv_id;
+    public String getReservUser() {
+        return reservUser;
     }
 
-    public int getReserv_user_id() {
-        return reserv_user_id;
+    public void setReservUser(String reservUser) {
+        this.reservUser = reservUser;
     }
 
-    public void setReserv_user_id(int reserv_user_id) {
-        this.reserv_user_id = reserv_user_id;
+    public int getReservFieldId() {
+        return reservFieldId;
     }
 
-    public int getReserv_field_id() {
-        return reserv_field_id;
+    public void setReservFieldId(int reservFieldId) {
+        this.reservFieldId = reservFieldId;
     }
 
-    public void setReserv_field_id(int reserv_field_id) {
-        this.reserv_field_id = reserv_field_id;
+    public int getReservExId() {
+        return reservExId;
     }
 
-    public int getReserv_ex_id() {
-        return reserv_ex_id;
+    public void setReservExId(int reservExId) {
+        this.reservExId = reservExId;
     }
 
-    public void setReserv_ex_id(int reserv_ex_id) {
-        this.reserv_ex_id = reserv_ex_id;
+    public int getReservStartTime() {
+        return reservStartTime;
     }
 
-    public int getReserv_start_time() {
-        return reserv_start_time;
+    public void setReservStartTime(int reservStartTime) {
+        this.reservStartTime = reservStartTime;
     }
 
-    public void setReserv_start_time(int reserv_start_time) {
-        this.reserv_start_time = reserv_start_time;
+    public int getReservEndTime() {
+        return reservEndTime;
     }
 
-    public int getReserv_end_time() { return reserv_end_time; }
-
-    public void setReserv_end_time(int reserv_end_time) {
-        this.reserv_end_time = reserv_end_time;
+    public void setReservEndTime(int reservEndTime) {
+        this.reservEndTime = reservEndTime;
     }
 
-    public String getReserv_date() {
-        return reserv_date;
+    public String getReservDate() {
+        return reservDate;
     }
 
-    public void setReserv_date(String reserv_date) {
-        this.reserv_date = reserv_date;
+    public void setReservDate(String reservDate) {
+        this.reservDate = reservDate;
     }
 
-    public String getReserv_status() {
-        return reserv_status;
+    public String getReservStatus() {
+        return reservStatus;
     }
 
-    public void setReserv_status(String reserv_status) {
-        this.reserv_status = reserv_status;
+    public void setReservStatus(String reservStatus) {
+        this.reservStatus = reservStatus;
     }
 }
