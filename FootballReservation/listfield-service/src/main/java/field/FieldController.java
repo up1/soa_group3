@@ -3,8 +3,6 @@ package field;
 import field.model.Field;
 import field.model.FieldExtend;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,25 +28,22 @@ public class FieldController {
     }
 
     @RequestMapping(value = "/field", method = RequestMethod.GET)
-    public Field getField( @RequestParam(value = "field_id") int field_id) {
-        return this.fieldRepository.getFieldByID(field_id);
+    public Field getField( @RequestParam(value = "fieldId") int fieldId) {
+        return this.fieldRepository.getFieldByID(fieldId);
     }
 
 
-    @RequestMapping(value = "/field/{field_id}/{ex_id}", method = RequestMethod.GET)
-    public FieldExtend getFieldEx(@PathVariable int field_id,
-                                  @PathVariable int ex_id) {
-        return this.fieldRepository.getFieldEXByID(field_id,ex_id);
+    @RequestMapping(value = "/field/{fieldId}/{exId}", method = RequestMethod.GET)
+    public FieldExtend getFieldEx(@PathVariable int fieldId,
+                                  @PathVariable int exId) {
+        return this.fieldRepository.getFieldEXByID(fieldId,exId);
     }
 
-    @RequestMapping(value = "/field/{field_id}", method = RequestMethod.GET)
-    public List<FieldExtend> getFieldExs(@PathVariable int field_id) {
-        return this.fieldRepository.getFieldExs(field_id);
+    @RequestMapping(value = "/field/{fieldId}", method = RequestMethod.GET)
+    public List<FieldExtend> getFieldExs(@PathVariable int fieldId) {
+        return this.fieldRepository.getFieldExs(fieldId);
     }
-    // @RequestMapping(value = "/fieldmanage/{username}", method = RequestMethod.GET)
-    // public Field getFieldByUser(@RequestBody String username) {
-    //     return this.fieldRepository.getFieldByUser(username);
-    // }
+
     @RequestMapping(value = "/fieldmanage", method = RequestMethod.POST)
         public Field getFieldByUser(@RequestBody Field field) {
         return this.fieldRepository.getFieldByUser(field);

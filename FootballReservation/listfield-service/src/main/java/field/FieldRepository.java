@@ -20,32 +20,27 @@ public class FieldRepository {
     public List<Field> queryFields(int page, int itemPerPage) {
         int offset = (page - 1) * itemPerPage;
         String sql = "select * from field LIMIT ? OFFSET ?";
-        List<Field> fields = jdbcTemplate.query(sql, new Object[]{itemPerPage, offset},
+        return jdbcTemplate.query(sql, new Object[]{itemPerPage, offset},
                 new FieldRowMapper());
-        return fields;
     }
 
 
-    public Field getFieldByID(int field_id) {
-        String sql ="select * from field WHERE field_id=?";
-        return jdbcTemplate.queryForObject(sql, new Object[]{field_id}, new FieldRowMapper());
+    public Field getFieldByID(int fieldId) {
+        String sql ="select * from field WHERE fieldId=?";
+        return jdbcTemplate.queryForObject(sql, new Object[]{fieldId}, new FieldRowMapper());
     }
 
 
-    public FieldExtend getFieldEXByID(int field_id, int ex_id) {
-        String sql ="select * from field_extend WHERE ex_id=? AND field_id=?";
-        return jdbcTemplate.queryForObject(sql, new Object[]{ex_id,field_id}, new FieldExtendRowMapper());
+    public FieldExtend getFieldEXByID(int fieldId, int exId) {
+        String sql ="select * from field_extend WHERE exId=? AND fieldId=?";
+        return jdbcTemplate.queryForObject(sql, new Object[]{exId,fieldId}, new FieldExtendRowMapper());
     }
 
-    public List<FieldExtend> getFieldExs(int field_id) {
-        String sql ="select * from field_extend WHERE field_id=?";
-        return jdbcTemplate.query(sql, new Object[]{field_id}, new FieldExtendRowMapper());
+    public List<FieldExtend> getFieldExs(int fieldId) {
+        String sql ="select * from field_extend WHERE fieldId=?";
+        return jdbcTemplate.query(sql, new Object[]{fieldId}, new FieldExtendRowMapper());
     }
 
-    // public Field getFieldByUser(String username) {
-    //     String sql ="select * from field WHERE username=?";
-    //     return jdbcTemplate.queryForObject(sql, new Object[]{username}, new FieldRowMapper());
-    // }
     public Field getFieldByUser(Field field) {
         String sql ="select * from field WHERE username=?";
     return jdbcTemplate.queryForObject(sql, new Object[]{field.getUsername()}, new FieldRowMapper());

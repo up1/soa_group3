@@ -4,39 +4,36 @@ package field.model;
  * Created by LoserGhost on 18/3/2560.
  */
 public class FieldExtend {
-    int ex_id;
-    int field_id;
-    String fieldex_name;
+    int exId;
+    int fieldId;
+    String fieldexName;
     int rent;
     String image;
     String size;
     String floor;
 
-    public FieldExtend() {
+    public int getExId() {
+        return exId;
     }
 
-    public int getEx_id() {
-        return ex_id;
+    public void setExId(int exId) {
+        this.exId = exId;
     }
 
-    public void setEx_id(int ex_id) {
-        this.ex_id = ex_id;
+    public int getFieldId() {
+        return fieldId;
     }
 
-    public int getField_id() {
-        return field_id;
+    public void setFieldId(int fieldId) {
+        this.fieldId = fieldId;
     }
 
-    public void setField_id(int field_id) {
-        this.field_id = field_id;
+    public String getFieldexName() {
+        return fieldexName;
     }
 
-    public String getFieldex_name() {
-        return fieldex_name;
-    }
-
-    public void setFieldex_name(String fieldex_name) {
-        this.fieldex_name = fieldex_name;
+    public void setFieldexName(String fieldexName) {
+        this.fieldexName = fieldexName;
     }
 
     public int getRent() {
