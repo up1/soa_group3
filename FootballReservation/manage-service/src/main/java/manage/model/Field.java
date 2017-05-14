@@ -1,12 +1,8 @@
 package manage.model;
 
-import java.sql.Blob;
-import java.util.DoubleSummaryStatistics;
-
-
 public class Field {
-    private int field_id;
-    private String field_name;
+    private int fieldId;
+    private String fieldName;
     private String tel;
     private String price;
     private String location;
@@ -18,11 +14,8 @@ public class Field {
     private int etime;
     private String username;
 
-    public Field() {
-    }
-
-    public Field(String field_name, String tel, String price, String location, String email, String website, String detail, String image, int stime, int etime) {
-        this.field_name = field_name;
+    public Field(String fieldName, String tel, String price, String location, String email, String website, String detail, String image, int stime, int etime) {
+        this.fieldName = fieldName;
         this.tel = tel;
         this.price = price;
         this.location = location;
@@ -34,20 +27,20 @@ public class Field {
         this.etime = etime;
     }
 
-    public int getField_id() {
-        return field_id;
+    public int getFieldId() {
+        return fieldId;
     }
 
-    public void setField_id(int field_id) {
-        this.field_id = field_id;
+    public void setFieldId(int fieldId) {
+        this.fieldId = fieldId;
     }
 
-    public String getField_name() {
-        return field_name;
+    public String getFieldName() {
+        return fieldName;
     }
 
-    public void setField_name(String field_name) {
-        this.field_name = field_name;
+    public void setFieldName(String fieldName) {
+        this.fieldName = fieldName;
     }
 
     public String getTel() {

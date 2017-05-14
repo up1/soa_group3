@@ -4,19 +4,16 @@ package manage.model;
  * Created by LoserGhost on 16/4/2560.
  */
 public class FieldExtend {
-    int ex_id;
-    int field_id;
-    String fieldex_name;
+    int exId;
+    int fieldId;
+    String fieldexName;
     int rent;
     String image;
     String size;
     String floor;
 
-    public FieldExtend() {
-    }
-
-    public FieldExtend(String fieldex_name, int rent, String image, String size, String floor) {
-        this.fieldex_name = fieldex_name;
+    public FieldExtend(String fieldexName, int rent, String image, String size, String floor) {
+        this.fieldexName = fieldexName;
         this.rent = rent;
         this.image = image;
         this.size = size;
@@ -24,28 +21,28 @@ public class FieldExtend {
     }
 
 
-    public int getEx_id() {
-        return ex_id;
+    public int getExId() {
+        return exId;
     }
 
-    public void setEx_id(int ex_id) {
-        this.ex_id = ex_id;
+    public void setExId(int exId) {
+        this.exId = exId;
     }
 
-    public int getField_id() {
-        return field_id;
+    public int getFieldId() {
+        return fieldId;
     }
 
-    public void setField_id(int field_id) {
-        this.field_id = field_id;
+    public void setFieldId(int fieldId) {
+        this.fieldId = fieldId;
     }
 
-    public String getFieldex_name() {
-        return fieldex_name;
+    public String getFieldexName() {
+        return fieldexName;
     }
 
-    public void setFieldex_name(String fieldex_name) {
-        this.fieldex_name = fieldex_name;
+    public void setFieldexName(String fieldexName) {
+        this.fieldexName = fieldexName;
     }
 
     public int getRent() {

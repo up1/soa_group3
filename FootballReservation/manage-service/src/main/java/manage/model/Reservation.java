@@ -4,78 +4,85 @@ package manage.model;
  * Created by LoserGhost on 16/4/2560.
  */
 public class Reservation {
-    private int reserv_id;
-    private String reserv_user;
-    private int reserv_field_id;
-    private int reserv_ex_id;
-    private int reserv_time;
-    private String reserv_date;
-    private String reserv_status;
+    private int reservId;
+    private String reservUser;
+    private int reservFieldId;
+    private int reservExId;
+    private int reservStartTime;
+    private int reservEndTime;
+    private String reservDate;
+    private String reservStatus;
 
-    public Reservation(String reserv_user, int reserv_field_id, int reserv_ex_id, int reserv_time, String reserv_date) {
-        this.reserv_user = reserv_user;
-        this.reserv_field_id = reserv_field_id;
-        this.reserv_ex_id = reserv_ex_id;
-        this.reserv_time = reserv_time;
-        this.reserv_date = reserv_date;
+    public Reservation(String reservUser, int reservFieldId, int reservExId, int reservStartTime, int reservEndTime, String reservDate) {
+        this.reservUser = reservUser;
+        this.reservFieldId = reservFieldId;
+        this.reservExId = reservExId;
+        this.reservStartTime = reservStartTime;
+        this.reservEndTime = reservEndTime;
+        this.reservDate = reservDate;
     }
 
-    public Reservation() {
+    public int getReservId() {
+        return reservId;
     }
 
-    public int getReserv_id() {
-        return reserv_id;
+    public void setReservId(int reservId) {
+        this.reservId = reservId;
     }
 
-    public void setReserv_id(int reserv_id) {
-        this.reserv_id = reserv_id;
+    public String getReservUser() {
+        return reservUser;
     }
 
-    public String getReserv_user() {
-        return reserv_user;
+    public void setReservUser(String reservUser) {
+        this.reservUser = reservUser;
     }
 
-    public void setReserv_user(String reserv_user) {
-        this.reserv_user = reserv_user;
+    public int getReservFieldId() {
+        return reservFieldId;
     }
 
-    public int getReserv_field_id() {
-        return reserv_field_id;
+    public void setReservFieldId(int reservFieldId) {
+        this.reservFieldId = reservFieldId;
     }
 
-    public void setReserv_field_id(int reserv_field_id) {
-        this.reserv_field_id = reserv_field_id;
+    public int getReservExId() {
+        return reservExId;
     }
 
-    public int getReserv_ex_id() {
-        return reserv_ex_id;
+    public void setReservExId(int reservExId) {
+        this.reservExId = reservExId;
     }
 
-    public void setReserv_ex_id(int reserv_ex_id) {
-        this.reserv_ex_id = reserv_ex_id;
+    public int getReservStartTime() {
+        return reservStartTime;
     }
 
-    public int getReserv_time() {
-        return reserv_time;
+    public void setReservStartTime(int reservStartTime) {
+        this.reservStartTime = reservStartTime;
     }
 
-    public void setReserv_time(int reserv_time) {
-        this.reserv_time = reserv_time;
+    public int getReservEndTime() {
+        return reservEndTime;
     }
 
-    public String getReserv_date() {
-        return reserv_date;
+    public void setReservEndTime(int reservEndTime) {
+        this.reservEndTime = reservEndTime;
     }
 
-    public void setReserv_date(String reserv_date) {
-        this.reserv_date = reserv_date;
+    public String getReservDate() {
+        return reservDate;
     }
 
-    public String getReserv_status() {
-        return reserv_status;
+    public void setReservDate(String reservDate) {
+        this.reservDate = reservDate;
     }
 
-    public void setReserv_status(String reserv_status) {
-        this.reserv_status = reserv_status;
+    public String getReservStatus() {
+        return reservStatus;
+    }
+
+    public void setReservStatus(String reservStatus) {
+        this.reservStatus = reservStatus;
     }
 }

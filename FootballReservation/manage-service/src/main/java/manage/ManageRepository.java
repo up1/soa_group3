@@ -11,9 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Repository
@@ -23,24 +20,24 @@ public class ManageRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public Field getFieldByID(int field_id) {
+    public Field getFieldByID(int fieldId) {
         String sql ="select * from field WHERE field_id=?";
-        return jdbcTemplate.queryForObject(sql, new Object[]{field_id}, new FieldRowMapper());
+        return jdbcTemplate.queryForObject(sql, new Object[]{fieldId}, new FieldRowMapper());
     }
 
-    public FieldExtend getFieldEXByID(int field_id, int ex_id) {
+    public FieldExtend getFieldEXByID(int fieldId, int exId) {
         String sql ="select * from field_extend WHERE ex_id=? AND field_id=?";
-        return jdbcTemplate.queryForObject(sql, new Object[]{ex_id,field_id}, new FieldExtendRowMapper());
+        return jdbcTemplate.queryForObject(sql, new Object[]{exId,fieldId}, new FieldExtendRowMapper());
     }
 
-    public List<FieldExtend> getFieldExs(int field_id) {
+    public List<FieldExtend> getFieldExs(int fieldId) {
         String sql ="select * from field_extend WHERE field_id=?";
-        return jdbcTemplate.query(sql, new Object[]{field_id}, new FieldExtendRowMapper());
+        return jdbcTemplate.query(sql, new Object[]{fieldId}, new FieldExtendRowMapper());
     }
 
-    public List<FieldExtend> getFieldEx(int ex_id) {
+    public List<FieldExtend> getFieldEx(int exId) {
         String sql ="select * from field_extend WHERE ex_id=?";
-        return jdbcTemplate.query(sql, new Object[]{ex_id}, new FieldExtendRowMapper());
+        return jdbcTemplate.query(sql, new Object[]{exId}, new FieldExtendRowMapper());
     }
 
     public void updateField(Field field, Long id){
@@ -60,7 +57,7 @@ public class ManageRepository {
     @Transactional
     public void saveEx(FieldExtend ex) {
         String sql = "INSERT INTO field_extend(field_id, fieldex_name, rent, image, size, floor) VALUES (?,?,?,?,?,?)";
-        this.jdbcTemplate.update(sql,ex.getField_id(), ex.getFieldex_name(),ex.getRent(), ex.getImage(),ex.getSize(),ex.getFloor());
+        this.jdbcTemplate.update(sql,ex.getFieldId(), ex.getFieldex_name(),ex.getRent(), ex.getImage(),ex.getSize(),ex.getFloor());
     }
 
     public void deleteEx(Long id) {
@@ -69,61 +66,61 @@ public class ManageRepository {
     }
 
     @Transactional(readOnly = true)
-    public Reservation getReservByID(int reserv_id) {
+    public Reservation getReservByID(int reservId) {
         try {
             return this.jdbcTemplate.queryForObject("SELECT * FROM reservation WHERE reservation_id=?",
-                    new Object[]{reserv_id},new ReservationRowMapper());
+                    new Object[]{reservId},new ReservationRowMapper());
         }catch (Exception ex){
-            throw new ReservNotFoundException(reserv_id);
+            throw new ReservNotFoundException(ex);
         }
     }
 
     @Transactional(readOnly = true)
-    public List<Reservation> findByFilter(String field_id, String ex_id) {
-        if(field_id == null && ex_id == null) {
+    public List<Reservation> findByFilter(String fieldId, String exId) {
+        if(fieldId == null && exId == null) {
             throw new ManageException();
         }
-        else if(field_id != null && ex_id != null){
+        else if(fieldId != null && exId != null){
             return this.jdbcTemplate.query("SELECT * FROM reservation WHERE reservation_field_id=? AND reservation_ex_id=?",
-                    new Object[]{field_id,ex_id}, new ReservationRowMapper());
-        }else if(field_id != null){
+                    new Object[]{fieldId,exId}, new ReservationRowMapper());
+        }else if(fieldId != null){
             return this.jdbcTemplate.query("SELECT * FROM reservation WHERE reservation_field_id=?",
-                    new Object[]{field_id}, new ReservationRowMapper());
+                    new Object[]{fieldId}, new ReservationRowMapper());
         }else{
             return this.jdbcTemplate.query("SELECT * FROM reservation WHERE reservation_ex_id=?",
-                    new Object[]{ex_id}, new ReservationRowMapper());
+                    new Object[]{exId}, new ReservationRowMapper());
         }
     }
 
 
     @Transactional
-    public void confirmReserv(int reserv_id){
+    public void confirmReserv(int reservId){
         String sql = "UPDATE reserv SET reserv_status='confirm' WHERE reserv_id=?;";
         try {
-            this.jdbcTemplate.update(sql,reserv_id);
+            this.jdbcTemplate.update(sql,reservId);
         }catch (Exception ex){
-            throw new ReservNotFoundException(reserv_id);
+            throw new ReservNotFoundException(ex);
         }
     }
 
     @Transactional
-    public void deleteReserv(int reserv_id) {
+    public void deleteReserv(int reservId) {
         String sql = "DELETE FROM reserv WHERE reserv_id=?;";
         try {
-            this.jdbcTemplate.update(sql, reserv_id);
+            this.jdbcTemplate.update(sql, reservId);
         }catch (Exception ex){
-            throw new ReservNotFoundException(reserv_id);
+            throw new ReservNotFoundException(ex);
         }
     }
 
     //Customer already paid
     @Transactional
-    public void cancelReserv(int reserv_id) {
+    public void cancelReserv(int reservId) {
         String sql = "UPDATE reserv SET reserv_status='cancel' WHERE reserv_id=?;";
         try {
-            this.jdbcTemplate.update(sql,reserv_id);
+            this.jdbcTemplate.update(sql,reservId);
         }catch (Exception ex) {
-            throw new ReservNotFoundException(reserv_id);
+            throw new ReservNotFoundException(ex);
         }
     }
 }

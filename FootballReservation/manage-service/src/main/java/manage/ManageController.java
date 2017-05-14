@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -24,24 +23,24 @@ public class ManageController {
 
 
     @RequestMapping(value = "/field", method = RequestMethod.GET)
-    public Field getField( @RequestParam(value = "field_id") int field_id) {
-        return this.manageRepository.getFieldByID(field_id);
+    public Field getField( @RequestParam(value = "field_id") int fieldId) {
+        return this.manageRepository.getFieldByID(fieldId);
     }
 
-    @RequestMapping(value = "/field/{field_id}/{ex_id}", method = RequestMethod.GET)
-    public FieldExtend getFieldEx(@PathVariable int field_id,
-                                  @PathVariable int ex_id) {
-        return this.manageRepository.getFieldEXByID(field_id,ex_id);
+    @RequestMapping(value = "/field/{fieldId}/{exId}", method = RequestMethod.GET)
+    public FieldExtend getFieldEx(@PathVariable int fieldId,
+                                  @PathVariable int exId) {
+        return this.manageRepository.getFieldEXByID(fieldId,exId);
     }
 
-    @RequestMapping(value = "/field/{field_id}", method = RequestMethod.GET)
-    public List<FieldExtend> getFieldExs(@PathVariable int field_id) {
-        return this.manageRepository.getFieldExs(field_id);
+    @RequestMapping(value = "/field/{fieldId}", method = RequestMethod.GET)
+    public List<FieldExtend> getFieldExs(@PathVariable int fieldId) {
+        return this.manageRepository.getFieldExs(fieldId);
     }
 
-    @RequestMapping(value = "/field_ex/{ex_id}", method = RequestMethod.GET)
-    public List<FieldExtend> getFieldEx(@PathVariable int ex_id) {
-        return this.manageRepository.getFieldEx(ex_id);
+    @RequestMapping(value = "/field_ex/{exId}", method = RequestMethod.GET)
+    public List<FieldExtend> getFieldEx(@PathVariable int exId) {
+        return this.manageRepository.getFieldEx(exId);
     }
 
     @RequestMapping(value = "/field/{id}/update", method = RequestMethod.PUT)
@@ -66,34 +65,34 @@ public class ManageController {
 
     @RequestMapping(value = "/reservation", method = RequestMethod.GET)
     public List<Reservation> getReseervByDate(
-            @RequestParam(value = "field_id", required = false) String field_id,
-            @RequestParam(value = "ex_id", required = false) String ex_id){
-        return this.manageRepository.findByFilter(field_id,ex_id);
+            @RequestParam(value = "field_id", required = false) String fieldId,
+            @RequestParam(value = "ex_id", required = false) String exId){
+        return this.manageRepository.findByFilter(fieldId,exId);
     }
 
-    @RequestMapping(value = "/reservation/{reservation_id}", method = RequestMethod.GET)
-    public Reservation getReservByID(@PathVariable int reservation_id) {
-        return manageRepository.getReservByID(reservation_id);
+    @RequestMapping(value = "/reservation/{reservationId}", method = RequestMethod.GET)
+    public Reservation getReservByID(@PathVariable int reservationId) {
+        return manageRepository.getReservByID(reservationId);
     }
 
 
-    @RequestMapping(value = "/reservation/{reservation_id}/confirm", method = RequestMethod.PUT)
-    public ResponseEntity confirmReserv(@PathVariable int reservation_id) {
-        manageRepository.confirmReserv(reservation_id);
+    @RequestMapping(value = "/reservation/{reservationId}/confirm", method = RequestMethod.PUT)
+    public ResponseEntity confirmReserv(@PathVariable int reservationId) {
+        manageRepository.confirmReserv(reservationId);
         return new ResponseEntity(HttpStatus.OK);
     }
 
     //Customer already paid
-    @RequestMapping(value = "/reservation/{reservation_id}/cancel", method = RequestMethod.PUT)
-    public ResponseEntity cancelReserv(@PathVariable int reservation_id) {
-        manageRepository.cancelReserv(reservation_id);
+    @RequestMapping(value = "/reservation/{reservationId}/cancel", method = RequestMethod.PUT)
+    public ResponseEntity cancelReserv(@PathVariable int reservationId) {
+        manageRepository.cancelReserv(reservationId);
         return new ResponseEntity(HttpStatus.OK);
     }
 
 
-    @RequestMapping(value = "/reserv/{reserv_id}/delete", method = RequestMethod.DELETE)
-    public ResponseEntity deleteReserv(@PathVariable int reserv_id) {
-        manageRepository.deleteReserv(reserv_id);
+    @RequestMapping(value = "/reserv/{reservId}/delete", method = RequestMethod.DELETE)
+    public ResponseEntity deleteReserv(@PathVariable int reservId) {
+        manageRepository.deleteReserv(reservId);
         return new ResponseEntity(HttpStatus.OK);
     }
 }
