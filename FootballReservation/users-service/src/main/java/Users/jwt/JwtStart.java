@@ -1,4 +1,4 @@
-package Users.jwt;
+package users.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -9,17 +9,10 @@ import org.springframework.util.StringUtils;
 
 import javax.annotation.PostConstruct;
 import java.util.Base64;
-import java.util.Date;
-import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
     @Service
     public class JwtStart {
 
-//        @Value("${authentication.token.expired.hour}")
-//        private Long expireHours= Long.valueOf(1);
-
-//        @Value("${authentication.token.secret}")
         @Value("rfskey")
         private String plainSecret;
         private String encodedSecret;
@@ -39,13 +32,6 @@ import java.util.concurrent.TimeUnit;
                     .getEncoder()
                     .encodeToString(this.plainSecret.getBytes());
         }
-
-//        protected Date getExpirationTime()
-//        {
-//            Date now = new Date();
-//            Long expireInMilis = TimeUnit.HOURS.toMillis(expireHours);
-//            return new Date(expireInMilis + now.getTime());
-//        }
 
         protected Jwt getUser(String encodedSecret, String token)
         {
@@ -68,13 +54,9 @@ import java.util.concurrent.TimeUnit;
 
         protected String getToken(String encodedSecret, Jwt jwtUser)
         {
-//            Date now = new Date();
             return Jwts.builder()
-//                    .setId(UUID.randomUUID().toString())
                     .setSubject(jwtUser.getUsername())
                     .claim("role",jwtUser.getRole())
-//                    .setIssuedAt(now)
-//                    .setExpiration(getExpirationTime())
                     .signWith(SignatureAlgorithm.HS512, encodedSecret)
                     .compact();
         }

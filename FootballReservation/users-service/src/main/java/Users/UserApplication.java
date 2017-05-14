@@ -1,4 +1,4 @@
-package Users;
+package users;
 
 /**
  * Created by mosed on 3/13/2017.

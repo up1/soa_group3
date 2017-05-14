@@ -1,4 +1,4 @@
-package Users.jwt;
+package users.jwt;
 
 
 public class Jwt {
@@ -8,10 +8,6 @@ public class Jwt {
     public Jwt(String username, String role) {
         this.username = username;
         this.role = role;
-    }
-
-    public Jwt() {
-
     }
 
     public String getUsername() {

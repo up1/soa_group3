@@ -1,4 +1,4 @@
-package Users.exception;
+package users.exception;
 
 /**
  * Created by I3lackJacK on 3/5/2560.
