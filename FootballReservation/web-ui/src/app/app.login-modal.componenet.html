@@ -6,16 +6,14 @@
       <button class="delete" (click)="onCancel()"></button>
     </header>
     <section class="modal-card-body">
-    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" validate>
+        <div class="form-group">
             <label class="label" id="label-login"for="username">Email</label>
             <input type="text" class="input" name="username" placeholder="Email" [(ngModel)]="model.email" #email="ngModel" required />
-            <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+        <div class="form-group">
             <label for="password" class="password" id="label-login">Password</label>
             <input type="password" class="input" name="password" placeholder="Password" [(ngModel)]="model.password" #password="ngModel" required />
-            <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
         </div>
           <div class="form-group">
               <button [disabled]="loading" class="button is-success column is-4 is-offset-1" id="button-center" style="margin-top: 15px">Login</button>

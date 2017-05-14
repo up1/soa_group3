@@ -3,10 +3,14 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Stadium } from 'app/data/stadium';
 import { StadiumService } from 'app/data/stadium.service';
 import { AppManage } from './app.manage';
+import { routerTransition2 } from './router.animations';
+import { getId } from './getStadiumId';
 
 @Component({
   selector: 'stadium-info-edit-page',
-  templateUrl: './stadium.info.edit.html'
+  templateUrl: './stadium.info.edit.html',
+  animations: [routerTransition2()],
+  host: {'[@routerTransition]': ''}
 })
 
 export class StadiumInfoEdit implements OnInit {
@@ -16,26 +20,35 @@ export class StadiumInfoEdit implements OnInit {
   SubStadiumModal: boolean;
   ex_id: number;
 
-  fieldex_name: string;
-  rent: number;
-  size_w: number;
-  size_h: number;
-  size: string;
-  floor: string;
+  field_name: string;
+  s_time: number;
+  e_time: number;
+  address: string;
+  telno: string;
+  s_price: number;
+  e_price: number;
+  email: string;
+  website: string;
+  detail: string;
 
   constructor(private _stadiumService: StadiumService) { }
 
   ngOnInit() {
     
-    this._stadiumService.getStadium(2)
+    this._stadiumService.getStadium(getId())
       .subscribe(
       stadium => {
         this.stadium = stadium;
-        //this.fieldex_name = this.soda[0].fieldex_name;
-        //this.rent = this.soda[0].rent;
-        //this.size_w = Number(((this.soda[0].size).split(" ")[0]).split("x")[0]);
-        //this.size_h = Number(((this.soda[0].size).split(" ")[0]).split("x")[1]);
-        //this.floor = this.soda[0].floor;
+        this.field_name = stadium["field_name"];
+        this.s_time = stadium["stime"];
+        this.e_time = stadium["etime"];
+        this.address = stadium["location"]
+        this.telno = stadium["tel"]
+        this.s_price = parseInt((stadium["price"]).split(" ")[0].replace(/\,/g,''))
+        this.e_price = parseInt((stadium["price"]).split(" ")[2].replace(/\,/g,''))
+        this.email = stadium["email"]
+        this.website = stadium["website"]
+        this.detail = stadium["detail"]
       },
       error => this.errorMessage = <any>error
 

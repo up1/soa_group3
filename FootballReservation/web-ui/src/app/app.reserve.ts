@@ -4,11 +4,14 @@ import { Stadium } from 'app/data/stadium';
 import { SubStadium } from 'app/data/substadium';
 import { StadiumService } from 'app/data/stadium.service';
 import { DatePickerOptions, DateModel } from 'ng2-datepicker';
+import { routerTransition2 } from './router.animations';
 
 @Component({
   moduleId: module.id,
   selector: 'reserve-page',
-  templateUrl: './app.reserve.html'
+  templateUrl: './app.reserve.html',
+  animations: [routerTransition2()],
+  host: {'[@routerTransition]': ''}
 })
 
 export class AppReserve implements OnInit {
@@ -101,11 +104,11 @@ export class AppReserve implements OnInit {
 
 
   confirmBooking() {
-    console.log("field_id:" + this.booking_field_id)
-    console.log("ex_id:" + this.booking_ex_id)
-    console.log(this.date.formatted)
+    //console.log("field_id:" + this.booking_field_id)
+    //console.log("ex_id:" + this.booking_ex_id)
+    //console.log(this.date.formatted)
 
-    console.log(this.time)
+    //console.log(this.time)
     //alert("test")
 
 
@@ -130,15 +133,15 @@ export class AppReserve implements OnInit {
     console.log("end: "+etime)
 
     if (etime-stime != this.hour) {
-      alert("please fill between start hour and end hour")
+      alert("please fill between selected start hour and end hour to full")
     }
     else {
       this._stadiumService.PostReserveStadium(JSON.parse(localStorage.getItem("currentUser")).user_id, this.booking_field_id, this.booking_ex_id, stime, etime, this.date.formatted)
       .subscribe(res => {
+        alert("การจองสำเร็จ");
         this.router.navigate(['/reserve']);
       }
       )
-        this.router.navigate(['/reservelist']);
     }
 
   }

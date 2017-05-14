@@ -3,10 +3,13 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { AlertService, UserService, AuthenticationService } from './_services/index';
 import { User } from './data/userindex';
+import { routerTransition } from './router.animations';
 
 @Component({
   selector: 'user-page',
-  templateUrl: './app.user.html'
+  templateUrl: './app.user.html',
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class AppUser {
   model: any = {};

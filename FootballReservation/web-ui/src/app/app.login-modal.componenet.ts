@@ -34,10 +34,10 @@ export class LoginModalComponent {
     localStorage.removeItem("currentUser");  
     this.userService.login(this.model).subscribe( rs=>{
       if(localStorage.getItem("currentUser")){
-        this.closeModal();
+        //this.closeModal();
         location.reload();
-      }else{
 
+      }else{
       }
     });
   }

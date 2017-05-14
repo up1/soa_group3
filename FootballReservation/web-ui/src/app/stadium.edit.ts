@@ -4,10 +4,13 @@ import { Stadium } from 'app/data/stadium';
 import { SubStadium } from 'app/data/substadium';
 import { StadiumService } from 'app/data/stadium.service';
 import { AppManage } from './app.manage';
+import { routerTransition2 } from './router.animations';
 
 @Component({
   selector: 'stadium-edit-page',
-  templateUrl: './stadium.edit.html'
+  templateUrl: './stadium.edit.html',
+  animations: [routerTransition2()],
+  host: {'[@routerTransition]': ''}
 })
 
 export class StadiumEdit implements OnInit {

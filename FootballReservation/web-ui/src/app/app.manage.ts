@@ -4,6 +4,7 @@ import { Stadium } from 'app/data/stadium';
 import { SubStadium } from 'app/data/substadium';
 import { StadiumService } from 'app/data/stadium.service';
 import { routerTransition } from './router.animations';
+import { setId } from './getStadiumId';
 
 @Component({
   moduleId: module.id,
@@ -26,6 +27,7 @@ export class AppManage implements OnInit {
     this._stadiumService.getSubStadiumByUser(JSON.parse(localStorage.getItem("currentUser")).email)
       .subscribe(rs => {
       this.getSubStadiumList(rs.field_id); this.stadium = rs;
+      setId(rs.field_id);
     });
     // this.getSubStadiumList(1);
     this.SubStadiumModal = false;

@@ -49,6 +49,7 @@
             <a class="nav-item" routerLink="/" routerLinkActive="active">
                 <img src="assets/images/web-logo2.png" alt="Reserve Football Stadium">
             </a>
+            <div class="nav-item is-tab is-hidden-mobile" *ngIf="stadium">{{stadium.field_name}}</div>
             <a class="nav-item is-tab is-hidden-mobile" routerLink="/manage" routerLinkActive="is-active">จัดการสนาม</a>
         </div>
         <span class="nav-toggle">

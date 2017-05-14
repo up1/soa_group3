@@ -3,6 +3,7 @@ import { Reservation } from 'app/data/reservation';
 import { Stadium } from 'app/data/stadium';
 import { SubStadium } from 'app/data/substadium';
 import { StadiumService } from 'app/data/stadium.service';
+import { routerTransition } from './router.animations';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/interval';
@@ -12,7 +13,9 @@ import 'rxjs/add/operator/take';
 
 @Component({
   selector: 'reservelist-page',
-  templateUrl: './app.reservelist.html'
+  templateUrl: './app.reservelist.html',
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class AppReserveList implements OnInit {
   mode: number;
