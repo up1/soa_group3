@@ -35,14 +35,14 @@ public class AdminController {
     }
     
     @RequestMapping(value = "/admin/{user_id}/delete", method = RequestMethod.DELETE)
-    public ResponseEntity cancelUser(@PathVariable String user_id) {
-        adminRepository.deleteUser(Integer.valueOf(user_id));
+    public ResponseEntity cancelUser(@PathVariable String userId) {
+        adminRepository.deleteUser(Integer.valueOf(userId));
         return new ResponseEntity(HttpStatus.OK);
     }
 
     @RequestMapping(value = "/admin/{user_id}/changerole", method = RequestMethod.PUT)
-    public ResponseEntity updateRole(@PathVariable int user_id) {
-        adminRepository.changeRole(Integer.valueOf(user_id));
+    public ResponseEntity updateRole(@PathVariable int userId) {
+        adminRepository.changeRole(Integer.valueOf(userId));
         return new ResponseEntity(HttpStatus.OK);
     }
 }

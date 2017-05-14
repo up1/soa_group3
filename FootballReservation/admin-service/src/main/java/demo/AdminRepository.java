@@ -19,22 +19,20 @@ public class AdminRepository {
     public List<User> queryUsers(int page, int itemPerPage) {
         int offset = (page - 1) * itemPerPage;
         String sql = "SELECT * FROM USERS LIMIT ? OFFSET ?;";
-        List<User> users = jdbcTemplate.query(sql, new Object[]{itemPerPage, offset}, new AdminRowMapper());
-        return users;
+        return jdbcTemplate.query(sql, new Object[]{itemPerPage, offset}, new AdminRowMapper());
     }
 
-    public void deleteUser(int user_id) {
+    public void deleteUser(int userId) {
         String sql = "DELETE FROM USERS WHERE user_id = ?;";
-        this.jdbcTemplate.update(sql, user_id);
+        this.jdbcTemplate.update(sql, userId);
     }
 
-    public void changeRole(int user_id){
+    public void changeRole(int userId){
         String sql = "UPDATE USERS SET role = 'Manager' WHERE user_id = ?;";
-        this.jdbcTemplate.update(sql, user_id);
+        this.jdbcTemplate.update(sql, userId);
     }
     public List<User> findbyRole(int role){
         String sql = "select * from USERS WHERE role=?";
-        List <User> users = jdbcTemplate.query(sql, new Object[]{role},new AdminRowMapper());
-        return users;
+        return jdbcTemplate.query(sql, new Object[]{role},new AdminRowMapper());
     }
 }
